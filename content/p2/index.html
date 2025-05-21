@@ -1,0 +1,2225 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="jhonfvg">
+      
+      
+        <link rel="canonical" href="https://jfinfosena.github.io/25adso-react/content/p2/">
+      
+      
+        <link rel="prev" href="../p1/">
+      
+      
+        <link rel="next" href="../../pi/p1/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.3">
+    
+    
+      
+        <title>Tutorial: Crear Componentes en React con Next.js (JavaScript) y Estilizar con CSS - React</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.d7758b05.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#tutorial-crear-componentes-en-react-con-nextjs-javascript-y-estilizar-con-css" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="React" class="md-header__button md-logo" aria-label="React" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="m11.28 3.22 4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.275-.326.75.75 0 0 1 .215-.734L13.94 8l-3.72-3.72a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215m-6.56 0a.75.75 0 0 1 1.042.018.75.75 0 0 1 .018 1.042L2.06 8l3.72 3.72a.749.749 0 0 1-.326 1.275.75.75 0 0 1-.734-.215L.47 8.53a.75.75 0 0 1 0-1.06Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            React
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Tutorial: Crear Componentes en React con Next.js (JavaScript) y Estilizar con CSS
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="orange" data-md-color-accent="lime"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Inicio
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../p0/" class="md-tabs__link">
+          
+  
+    
+  
+  Contenido
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../pi/p1/" class="md-tabs__link">
+          
+  
+    
+  
+  Proyecto Integrador
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../blog/" class="md-tabs__link">
+          
+  
+    
+  
+  Blog
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../about/" class="md-tabs__link">
+        
+  
+    
+  
+  Acerca de
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="React" class="md-nav__button md-logo" aria-label="React" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="m11.28 3.22 4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.275-.326.75.75 0 0 1 .215-.734L13.94 8l-3.72-3.72a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215m-6.56 0a.75.75 0 0 1 1.042.018.75.75 0 0 1 .018 1.042L2.06 8l3.72 3.72a.749.749 0 0 1-.326 1.275.75.75 0 0 1-.734-.215L.47 8.53a.75.75 0 0 1 0-1.06Z"/></svg>
+
+    </a>
+    React
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Inicio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Contenido
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Contenido
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introducción a React y Configuración del Entorno
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Componente en React
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Tutorial: Crear Componentes en React con Next.js (JavaScript) y Estilizar con CSS
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Tutorial: Crear Componentes en React con Next.js (JavaScript) y Estilizar con CSS
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#que-son-las-props-en-react" class="md-nav__link">
+    <span class="md-ellipsis">
+      ¿Qué son las props en React?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#formas-de-usar-props-en-react" class="md-nav__link">
+    <span class="md-ellipsis">
+      Formas de usar props en React
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Formas de usar props en React">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-pasar-props-basicas-cadenas-numeros-booleanos" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Pasar props básicas (cadenas, números, booleanos)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-desestructuracion-de-props" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Desestructuración de props
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-pasar-objetos-o-arreglos-como-props" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Pasar objetos o arreglos como props
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-pasar-funciones-como-props" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Pasar funciones como props
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-pasar-componentes-como-props-render-props" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Pasar componentes como props (Render Props)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-props-con-children" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Props con children
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-valores-por-defecto-con-defaultprops" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Valores por defecto con defaultProps
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-validacion-de-props-con-proptypes" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Validación de props con PropTypes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-props-en-componentes-de-clase" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Props en componentes de clase
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-props-con-funciones-de-renderizado-render-props-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Props con funciones de renderizado (Render Props Pattern)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11-pasar-multiples-props-con-el-operador-spread" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Pasar múltiples props con el operador spread
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-props-condicionales" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. Props condicionales
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-props-con-hooks-y-estado" class="md-nav__link">
+    <span class="md-ellipsis">
+      13. Props con hooks y estado
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#buenas-practicas-con-props" class="md-nav__link">
+    <span class="md-ellipsis">
+      Buenas prácticas con props
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tutorial-crear-componentes-en-react-con-nextjs-javascript-y-estilizar-con-css_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tutorial: Crear Componentes en React con Next.js (JavaScript) y Estilizar con CSS
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tutorial: Crear Componentes en React con Next.js (JavaScript) y Estilizar con CSS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-introduccion-a-nextjs-y-react" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Introducción a Next.js y React
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-configuracion-del-proyecto-en-nextjs" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Configuración del Proyecto en Next.js
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Configuración del Proyecto en Next.js">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#paso-1-crear-un-proyecto-en-nextjs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 1: Crear un Proyecto en Next.js
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-2-estructura-del-proyecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 2: Estructura del Proyecto
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-creacion-de-un-componente-en-react" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Creación de un Componente en React
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Creación de un Componente en React">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#paso-1-crear-el-componente" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 1: Crear el Componente
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-2-usar-el-componente-en-una-pagina" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 2: Usar el Componente en una Página
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-estilizacion-con-css" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Estilización con CSS
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Estilización con CSS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enfoque-1-css-puro-global" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enfoque 1: CSS Puro (Global)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enfoque-2-modulos-css-estilos-locales" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enfoque 2: Módulos CSS (Estilos Locales)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enfoque-3-tailwind-css" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enfoque 3: Tailwind CSS
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-generacion-de-una-aplicacion-completa-standalone" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Generación de una Aplicación Completa (Standalone)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-mejores-practicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Mejores Prácticas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Proyecto Integrador
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Proyecto Integrador
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pi/p1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introducción Proyecto Integrador
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../blog/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Blog
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Blog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Archivo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Acerca de
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#que-son-las-props-en-react" class="md-nav__link">
+    <span class="md-ellipsis">
+      ¿Qué son las props en React?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#formas-de-usar-props-en-react" class="md-nav__link">
+    <span class="md-ellipsis">
+      Formas de usar props en React
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Formas de usar props en React">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-pasar-props-basicas-cadenas-numeros-booleanos" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Pasar props básicas (cadenas, números, booleanos)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-desestructuracion-de-props" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Desestructuración de props
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-pasar-objetos-o-arreglos-como-props" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Pasar objetos o arreglos como props
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-pasar-funciones-como-props" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Pasar funciones como props
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-pasar-componentes-como-props-render-props" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Pasar componentes como props (Render Props)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-props-con-children" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Props con children
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-valores-por-defecto-con-defaultprops" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Valores por defecto con defaultProps
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-validacion-de-props-con-proptypes" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Validación de props con PropTypes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-props-en-componentes-de-clase" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Props en componentes de clase
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-props-con-funciones-de-renderizado-render-props-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Props con funciones de renderizado (Render Props Pattern)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11-pasar-multiples-props-con-el-operador-spread" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Pasar múltiples props con el operador spread
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-props-condicionales" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. Props condicionales
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-props-con-hooks-y-estado" class="md-nav__link">
+    <span class="md-ellipsis">
+      13. Props con hooks y estado
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#buenas-practicas-con-props" class="md-nav__link">
+    <span class="md-ellipsis">
+      Buenas prácticas con props
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tutorial-crear-componentes-en-react-con-nextjs-javascript-y-estilizar-con-css_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tutorial: Crear Componentes en React con Next.js (JavaScript) y Estilizar con CSS
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tutorial: Crear Componentes en React con Next.js (JavaScript) y Estilizar con CSS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-introduccion-a-nextjs-y-react" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Introducción a Next.js y React
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-configuracion-del-proyecto-en-nextjs" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Configuración del Proyecto en Next.js
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Configuración del Proyecto en Next.js">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#paso-1-crear-un-proyecto-en-nextjs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 1: Crear un Proyecto en Next.js
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-2-estructura-del-proyecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 2: Estructura del Proyecto
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-creacion-de-un-componente-en-react" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Creación de un Componente en React
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Creación de un Componente en React">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#paso-1-crear-el-componente" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 1: Crear el Componente
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-2-usar-el-componente-en-una-pagina" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 2: Usar el Componente en una Página
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-estilizacion-con-css" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Estilización con CSS
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Estilización con CSS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enfoque-1-css-puro-global" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enfoque 1: CSS Puro (Global)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enfoque-2-modulos-css-estilos-locales" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enfoque 2: Módulos CSS (Estilos Locales)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enfoque-3-tailwind-css" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enfoque 3: Tailwind CSS
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-generacion-de-una-aplicacion-completa-standalone" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Generación de una Aplicación Completa (Standalone)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-mejores-practicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Mejores Prácticas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="tutorial-crear-componentes-en-react-con-nextjs-javascript-y-estilizar-con-css"><strong>Tutorial: Crear Componentes en React con Next.js (JavaScript) y Estilizar con CSS</strong></h1>
+<h2 id="que-son-las-props-en-react"><strong>¿Qué son las props en React?</strong></h2>
+<p>Las <strong>props</strong> (propiedades) son un mecanismo en React para pasar datos de un componente padre a un componente hijo. Son inmutables desde el componente hijo, lo que significa que el hijo no puede modificar las props directamente. Las props permiten que los componentes sean reutilizables y dinámicos.</p>
+<ul>
+<li><strong>Características principales</strong>:</li>
+<li>Son un objeto (<code>props</code>) que contiene los datos pasados al componente.</li>
+<li>Pueden incluir cualquier tipo de dato: cadenas, números, objetos, arreglos, funciones, componentes, etc.</li>
+<li>Son unidireccionales (del padre al hijo).</li>
+<li>Son opcionales, pero se pueden establecer valores por defecto.</li>
+</ul>
+<hr />
+<h2 id="formas-de-usar-props-en-react"><strong>Formas de usar props en React</strong></h2>
+<h3 id="1-pasar-props-basicas-cadenas-numeros-booleanos">1. <strong>Pasar props básicas (cadenas, números, booleanos)</strong></h3>
+<p>Las props más simples son valores primitivos como cadenas, números o booleanos.</p>
+<p><strong>Ejemplo</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Componente hijo</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">Saludo</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">Hola</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">nombre</span><span class="p">}</span><span class="o">!</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;;</span>
+<span class="p">}</span>
+
+<span class="c1">// Componente padre</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">Saludo</span><span class="w"> </span><span class="na">nombre</span><span class="o">=</span><span class="s">&quot;Juan&quot;</span><span class="w"> </span><span class="p">/&gt;;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Explicación</strong>:</p>
+<ul>
+<li>El componente padre <code>App</code> pasa la prop <code>nombre</code> con el valor <code>"Juan"</code>.</li>
+<li>El componente hijo <code>Saludo</code> accede a la prop a través del objeto <code>props</code> (<code>props.nombre</code>).</li>
+<li>En el renderizado, se muestra "Hola, Juan!".</li>
+</ul>
+<p><strong>Salida</strong>:
+<div class="highlight"><pre><span></span><code>Hola, Juan!
+</code></pre></div></p>
+<hr />
+<h3 id="2-desestructuracion-de-props">2. <strong>Desestructuración de props</strong></h3>
+<p>En componentes funcionales, puedes desestructurar las props directamente en los parámetros para escribir un código más limpio.</p>
+<p><strong>Ejemplo</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Componente hijo con desestructuración</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">Saludo</span><span class="p">({</span><span class="w"> </span><span class="nx">nombre</span><span class="p">,</span><span class="w"> </span><span class="nx">edad</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">Hola</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nx">nombre</span><span class="p">}.</span><span class="w"> </span><span class="nx">Tienes</span><span class="w"> </span><span class="p">{</span><span class="nx">edad</span><span class="p">}</span><span class="w"> </span><span class="nx">años</span><span class="p">.&lt;/</span><span class="nt">h1</span><span class="p">&gt;;</span>
+<span class="p">}</span>
+
+<span class="c1">// Componente padre</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">Saludo</span><span class="w"> </span><span class="na">nombre</span><span class="o">=</span><span class="s">&quot;Ana&quot;</span><span class="w"> </span><span class="na">edad</span><span class="o">=</span><span class="p">{</span><span class="mf">25</span><span class="p">}</span><span class="w"> </span><span class="p">/&gt;;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Explicación</strong>:</p>
+<ul>
+<li>En lugar de usar <code>props.nombre</code> y <code>props.edad</code>, desestructuramos <code>{ nombre, edad }</code> en los parámetros.</li>
+<li>Esto hace que el código sea más legible y evita repetir <code>props.</code>.</li>
+</ul>
+<p><strong>Salida</strong>:
+<div class="highlight"><pre><span></span><code>Hola, Ana. Tienes 25 años.
+</code></pre></div></p>
+<hr />
+<h3 id="3-pasar-objetos-o-arreglos-como-props">3. <strong>Pasar objetos o arreglos como props</strong></h3>
+<p>Puedes pasar estructuras de datos más complejas, como objetos o arreglos, como props.</p>
+<p><strong>Ejemplo</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Componente hijo</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">Perfil</span><span class="p">({</span><span class="w"> </span><span class="nx">usuario</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;{</span><span class="nx">usuario</span><span class="p">.</span><span class="nx">nombre</span><span class="p">}&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="nx">Hobbies</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">usuario</span><span class="p">.</span><span class="nx">hobbies</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s2">&quot;, &quot;</span><span class="p">)}&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// Componente padre</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">usuario</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">nombre</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;María&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">hobbies</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;leer&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;caminar&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;programar&quot;</span><span class="p">],</span>
+<span class="w">  </span><span class="p">};</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">Perfil</span><span class="w"> </span><span class="na">usuario</span><span class="o">=</span><span class="p">{</span><span class="nx">usuario</span><span class="p">}</span><span class="w"> </span><span class="p">/&gt;;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>chatbot
+<strong>Explicación</strong>:</p>
+<ul>
+<li>La prop <code>usuario</code> es un objeto que contiene <code>nombre</code> y <code>hobbies</code>.</li>
+<li>En el componente hijo, accedemos a las propiedades del objeto con <code>usuario.nombre</code> y <code>usuario.hobbies</code>.</li>
+<li>Usamos <code>join(", ")</code> para convertir el arreglo de hobbies en una cadena separada por comas.</li>
+</ul>
+<p><strong>Salida</strong>:
+<div class="highlight"><pre><span></span><code>María
+Hobbies: leer, caminar, programar
+</code></pre></div></p>
+<hr />
+<h3 id="4-pasar-funciones-como-props">4. <strong>Pasar funciones como props</strong></h3>
+<p>Puedes pasar funciones como props para permitir que el componente hijo ejecute lógica definida en el componente padre.</p>
+<p><strong>Ejemplo</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Componente hijo</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">Boton</span><span class="p">({</span><span class="w"> </span><span class="nx">onClick</span><span class="p">,</span><span class="w"> </span><span class="nx">texto</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">button</span><span class="w"> </span><span class="na">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">onClick</span><span class="p">}&gt;{</span><span class="nx">texto</span><span class="p">}&lt;/</span><span class="nt">button</span><span class="p">&gt;;</span>
+<span class="p">}</span>
+
+<span class="c1">// Componente padre</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">manejarClick</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;¡Botón clicado!&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="p">};</span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">Boton</span><span class="w"> </span><span class="na">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">manejarClick</span><span class="p">}</span><span class="w"> </span><span class="na">texto</span><span class="o">=</span><span class="s">&quot;Clic aquí&quot;</span><span class="w"> </span><span class="p">/&gt;;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Explicación</strong>:</p>
+<ul>
+<li>La prop <code>onClick</code> es una función que se pasa desde el componente padre.</li>
+<li>Cuando el usuario hace clic en el botón, se ejecuta la función <code>manejarClick</code> definida en el componente padre.</li>
+</ul>
+<p><strong>Salida</strong>:
+Un botón con el texto "Clic aquí" que muestra una alerta al hacer clic.</p>
+<hr />
+<h3 id="5-pasar-componentes-como-props-render-props">5. <strong>Pasar componentes como props (Render Props)</strong></h3>
+<p>Puedes pasar un componente como prop, lo que permite renderizar contenido dinámico en el componente hijo.</p>
+<p><strong>Ejemplo</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Componente hijo</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">Contenedor</span><span class="p">({</span><span class="w"> </span><span class="nx">contenido</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;{</span><span class="nx">contenido</span><span class="p">}&lt;/</span><span class="nt">div</span><span class="p">&gt;;</span>
+<span class="p">}</span>
+
+<span class="c1">// Componente padre</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">ContenidoDinamico</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="err">¡</span><span class="nx">Este</span><span class="w"> </span><span class="nx">es</span><span class="w"> </span><span class="nx">un</span><span class="w"> </span><span class="nx">componente</span><span class="w"> </span><span class="nx">dinámico</span><span class="o">!</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;;</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">Contenedor</span><span class="w"> </span><span class="na">contenido</span><span class="o">=</span><span class="p">{</span><span class="nx">ContenidoDinamico</span><span class="p">}</span><span class="w"> </span><span class="p">/&gt;;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Explicación</strong>:
+- La prop <code>contenido</code> es un elemento JSX que se renderiza directamente en el componente hijo.
+- Esto es útil para patrones como "render props", donde el hijo decide cómo renderizar contenido pasado por el padre.</p>
+<p><strong>Salida</strong>:
+<div class="highlight"><pre><span></span><code>¡Este es un componente dinámico!
+</code></pre></div></p>
+<hr />
+<h3 id="6-props-con-children">6. <strong>Props con children</strong></h3>
+<p>La prop especial <code>children</code> permite pasar contenido entre las etiquetas de apertura y cierre de un componente.</p>
+<p><strong>Ejemplo</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Componente hijo</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">Caja</span><span class="p">({</span><span class="w"> </span><span class="nx">children</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">style</span><span class="o">=</span><span class="p">{{</span><span class="w"> </span><span class="nx">border</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;1px solid black&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">padding</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;10px&quot;</span><span class="w"> </span><span class="p">}}&gt;{</span><span class="nx">children</span><span class="p">}&lt;/</span><span class="nt">div</span><span class="p">&gt;;</span>
+<span class="p">}</span>
+
+<span class="c1">// Componente padre</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">Caja</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">Título</span><span class="w"> </span><span class="nx">dentro</span><span class="w"> </span><span class="nx">de</span><span class="w"> </span><span class="nx">la</span><span class="w"> </span><span class="nx">caja</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="nx">Este</span><span class="w"> </span><span class="nx">es</span><span class="w"> </span><span class="nx">un</span><span class="w"> </span><span class="nx">párrafo</span><span class="p">.&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">Caja</span><span class="p">&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Explicación</strong>:</p>
+<ul>
+<li>Todo lo que se coloca entre <code>&lt;Caja&gt;</code> y <code>&lt;/Caja&gt;</code> se pasa como la prop <code>children</code>.</li>
+<li>El componente hijo renderiza <code>children</code> donde desee.</li>
+</ul>
+<p><strong>Salida</strong>:
+Un <code>div</code> con borde que contiene un título y un párrafo.</p>
+<hr />
+<h3 id="7-valores-por-defecto-con-defaultprops">7. <strong>Valores por defecto con defaultProps</strong></h3>
+<p>Puedes definir valores por defecto para las props usando <code>defaultProps</code> en componentes funcionales o de clase.</p>
+<p><strong>Ejemplo (Componente funcional)</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Componente hijo</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">Saludo</span><span class="p">({</span><span class="w"> </span><span class="nx">nombre</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">Hola</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nx">nombre</span><span class="p">}</span><span class="o">!</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;;</span>
+<span class="p">}</span>
+
+<span class="nx">Saludo</span><span class="p">.</span><span class="nx">defaultProps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">nombre</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Invitado&quot;</span><span class="p">,</span>
+<span class="p">};</span>
+
+<span class="c1">// Componente padre</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">Saludo</span><span class="w"> </span><span class="p">/&gt;;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Explicación</strong>:</p>
+<ul>
+<li>Si no se pasa la prop <code>nombre</code>, se usa el valor por defecto <code>"Invitado"</code>.</li>
+<li>Esto es útil para evitar errores cuando las props no se proporcionan.</li>
+</ul>
+<p><strong>Salida</strong>:
+<div class="highlight"><pre><span></span><code>Hola, Invitado!
+</code></pre></div></p>
+<hr />
+<h3 id="8-validacion-de-props-con-proptypes">8. <strong>Validación de props con PropTypes</strong></h3>
+<p>Para asegurar que las props tengan el tipo y formato correctos, puedes usar la librería <code>prop-types</code>.</p>
+<p><strong>Instalación</strong>:
+<div class="highlight"><pre><span></span><code>npm<span class="w"> </span>install<span class="w"> </span>prop-types
+</code></pre></div></p>
+<p><strong>Ejemplo</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="nx">PropTypes</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;prop-types&#39;</span><span class="p">;</span>
+
+<span class="c1">// Componente hijo</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">Perfil</span><span class="p">({</span><span class="w"> </span><span class="nx">nombre</span><span class="p">,</span><span class="w"> </span><span class="nx">edad</span><span class="p">,</span><span class="w"> </span><span class="nx">activo</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;{</span><span class="nx">nombre</span><span class="p">}&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="nx">Edad</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">edad</span><span class="p">}&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;{</span><span class="nx">activo</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s2">&quot;Activo&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Inactivo&quot;</span><span class="p">}&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">Perfil</span><span class="p">.</span><span class="nx">propTypes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">nombre</span><span class="o">:</span><span class="w"> </span><span class="nx">PropTypes</span><span class="p">.</span><span class="nx">string</span><span class="p">.</span><span class="nx">isRequired</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">edad</span><span class="o">:</span><span class="w"> </span><span class="nx">PropTypes</span><span class="p">.</span><span class="nx">number</span><span class="p">.</span><span class="nx">isRequired</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">activo</span><span class="o">:</span><span class="w"> </span><span class="nx">PropTypes</span><span class="p">.</span><span class="nx">bool</span><span class="p">,</span>
+<span class="p">};</span>
+
+<span class="nx">Perfil</span><span class="p">.</span><span class="nx">defaultProps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">activo</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="p">};</span>
+
+<span class="c1">// Componente padre</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">Perfil</span><span class="w"> </span><span class="na">nombre</span><span class="o">=</span><span class="s">&quot;Carlos&quot;</span><span class="w"> </span><span class="na">edad</span><span class="o">=</span><span class="p">{</span><span class="mf">30</span><span class="p">}</span><span class="w"> </span><span class="p">/&gt;;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Explicación</strong>:</p>
+<ul>
+<li><code>PropTypes.string.isRequired</code> asegura que <code>nombre</code> sea una cadena y sea obligatorio.</li>
+<li><code>PropTypes.number.isRequired</code> asegura que <code>edad</code> sea un número y obligatorio.</li>
+<li><code>PropTypes.bool</code> indica que <code>activo</code> debe ser un booleano, pero es opcional.</li>
+<li>Si no se pasa <code>activo</code>, se usa el valor por defecto <code>false</code>.</li>
+</ul>
+<p><strong>Salida</strong>:
+<div class="highlight"><pre><span></span><code>Carlos
+Edad: 30
+Inactivo
+</code></pre></div></p>
+<hr />
+<h3 id="9-props-en-componentes-de-clase">9. <strong>Props en componentes de clase</strong></h3>
+<p>Aunque los componentes funcionales son más comunes, las props también funcionan en componentes de clase.</p>
+<p><strong>Ejemplo</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="nx">React</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react&#39;</span><span class="p">;</span>
+
+<span class="kd">class</span><span class="w"> </span><span class="nx">Saludo</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">React</span><span class="p">.</span><span class="nx">Component</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">render</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">Hola</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">nombre</span><span class="p">}</span><span class="o">!</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Componente padre</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">Saludo</span><span class="w"> </span><span class="na">nombre</span><span class="o">=</span><span class="s">&quot;Sofía&quot;</span><span class="w"> </span><span class="p">/&gt;;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Explicación</strong>:</p>
+<ul>
+<li>En componentes de clase, las props se acceden con <code>this.props</code>.</li>
+<li>El resto del comportamiento es idéntico a los componentes funcionales.</li>
+</ul>
+<p><strong>Salida</strong>:
+<div class="highlight"><pre><span></span><code>Hola, Sofía!
+</code></pre></div></p>
+<hr />
+<h3 id="10-props-con-funciones-de-renderizado-render-props-pattern">10. <strong>Props con funciones de renderizado (Render Props Pattern)</strong></h3>
+<p>El patrón de "render props" consiste en pasar una función como prop que el componente hijo usa para renderizar contenido.</p>
+<p><strong>Ejemplo</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Componente hijo</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">RenderProp</span><span class="p">({</span><span class="w"> </span><span class="nx">render</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">datos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">nombre</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Lucía&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">edad</span><span class="o">:</span><span class="w"> </span><span class="mf">28</span><span class="w"> </span><span class="p">};</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;{</span><span class="nx">render</span><span class="p">(</span><span class="nx">datos</span><span class="p">)}&lt;/</span><span class="nt">div</span><span class="p">&gt;;</span>
+<span class="p">}</span>
+
+<span class="c1">// Componente padre</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">RenderProp</span>
+<span class="w">      </span><span class="na">render</span><span class="o">=</span><span class="p">{(</span><span class="nx">datos</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">(</span>
+<span class="w">        </span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="w">          </span><span class="p">{</span><span class="nx">datos</span><span class="p">.</span><span class="nx">nombre</span><span class="p">}</span><span class="w"> </span><span class="nx">tiene</span><span class="w"> </span><span class="p">{</span><span class="nx">datos</span><span class="p">.</span><span class="nx">edad</span><span class="p">}</span><span class="w"> </span><span class="nx">años</span>
+<span class="w">        </span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">)}</span>
+<span class="w">    </span><span class="p">/&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Explicación</strong>:</p>
+<ul>
+<li>La prop <code>render</code> es una función que recibe datos del componente hijo y devuelve JSX.</li>
+<li>Esto permite que el componente padre controle cómo se renderizan los datos del hijo.</li>
+</ul>
+<p><strong>Salida</strong>:
+<div class="highlight"><pre><span></span><code>Lucía tiene 28 años
+</code></pre></div></p>
+<hr />
+<h3 id="11-pasar-multiples-props-con-el-operador-spread">11. <strong>Pasar múltiples props con el operador spread</strong></h3>
+<p>El operador spread (<code>...</code>) permite pasar múltiples props de forma concisa.</p>
+<p><strong>Ejemplo</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Componente hijo</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">Perfil</span><span class="p">({</span><span class="w"> </span><span class="nx">nombre</span><span class="p">,</span><span class="w"> </span><span class="nx">edad</span><span class="p">,</span><span class="w"> </span><span class="nx">ciudad</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;{</span><span class="nx">nombre</span><span class="p">}&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="nx">Edad</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">edad</span><span class="p">}&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="nx">Ciudad</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">ciudad</span><span class="p">}&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// Componente padre</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">props</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">nombre</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Pedro&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">edad</span><span class="o">:</span><span class="w"> </span><span class="mf">35</span><span class="p">,</span><span class="w"> </span><span class="nx">ciudad</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Madrid&quot;</span><span class="w"> </span><span class="p">};</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">Perfil</span><span class="w"> </span><span class="p">{</span><span class="na">...props</span><span class="p">}</span><span class="w"> </span><span class="p">/&gt;;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Explicación</strong>:
+- El operador spread (<code>...props</code>) descompone el objeto <code>props</code> en props individuales.
+- Es equivalente a escribir <code>&lt;Perfil nombre="Pedro" edad={35} ciudad="Madrid" /&gt;</code>.</p>
+<p><strong>Salida</strong>:
+<div class="highlight"><pre><span></span><code>Pedro
+Edad: 35
+Ciudad: Madrid
+</code></pre></div></p>
+<hr />
+<h3 id="12-props-condicionales">12. <strong>Props condicionales</strong></h3>
+<p>Puedes pasar props condicionalmente usando operadores ternarios o lógicos.</p>
+<p><strong>Ejemplo</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Componente hijo</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">Boton</span><span class="p">({</span><span class="w"> </span><span class="nx">texto</span><span class="p">,</span><span class="w"> </span><span class="nx">deshabilitado</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">button</span><span class="w"> </span><span class="na">disabled</span><span class="o">=</span><span class="p">{</span><span class="nx">deshabilitado</span><span class="p">}&gt;{</span><span class="nx">texto</span><span class="p">}&lt;/</span><span class="nt">button</span><span class="p">&gt;;</span>
+<span class="p">}</span>
+
+<span class="c1">// Componente padre</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">estaDeshabilitado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">Boton</span><span class="w"> </span><span class="na">texto</span><span class="o">=</span><span class="s">&quot;Enviar&quot;</span><span class="w"> </span><span class="na">deshabilitado</span><span class="o">=</span><span class="p">{</span><span class="nx">estaDeshabilitado</span><span class="p">}</span><span class="w"> </span><span class="p">/&gt;;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Explicación</strong>:</p>
+<ul>
+<li>La prop <code>deshabilitado</code> se pasa condicionalmente según el estado o lógica del componente padre.</li>
+<li>Esto permite controlar el comportamiento del componente hijo dinámicamente.</li>
+</ul>
+<p><strong>Salida</strong>:
+Un botón con el texto "Enviar" que está deshabilitado.</p>
+<hr />
+<h3 id="13-props-con-hooks-y-estado">13. <strong>Props con hooks y estado</strong></h3>
+<p>Puedes combinar props con el estado interno del componente usando hooks como <code>useState</code>.</p>
+<p><strong>Ejemplo</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useState</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react&#39;</span><span class="p">;</span>
+
+<span class="c1">// Componente hijo</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">Contador</span><span class="p">({</span><span class="w"> </span><span class="nx">incremento</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">cuenta</span><span class="p">,</span><span class="w"> </span><span class="nx">setCuenta</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="mf">0</span><span class="p">);</span>
+
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">manejarClick</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">setCuenta</span><span class="p">(</span><span class="nx">cuenta</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">incremento</span><span class="p">);</span>
+<span class="w">  </span><span class="p">};</span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="nx">Cuenta</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">cuenta</span><span class="p">}&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">button</span><span class="w"> </span><span class="na">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">manejarClick</span><span class="p">}&gt;</span><span class="nx">Incrementar</span><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// Componente padre</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">Contador</span><span class="w"> </span><span class="na">incremento</span><span class="o">=</span><span class="p">{</span><span class="mf">2</span><span class="p">}</span><span class="w"> </span><span class="p">/&gt;;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Explicación</strong>:</p>
+<ul>
+<li>La prop <code>incremento</code> determina cuánto se incrementa el contador cada vez que se hace clic.</li>
+<li>El componente hijo usa <code>useState</code> para manejar su propio estado, pero la prop influye en la lógica.</li>
+</ul>
+<p><strong>Salida</strong>:
+Un contador que empieza en 0 y aumenta en 2 con cada clic.</p>
+<hr />
+<h2 id="buenas-practicas-con-props"><strong>Buenas prácticas con props</strong></h2>
+<ol>
+<li><strong>Nombres descriptivos</strong>: Usa nombres claros para las props (e.g., <code>nombre</code> en lugar de <code>n</code>).</li>
+<li><strong>Validación con PropTypes</strong>: Siempre valida las props en componentes reutilizables.</li>
+<li><strong>Evita modificar props</strong>: Las props son inmutables; usa el estado para datos que cambian.</li>
+<li><strong>Desestructura cuando sea posible</strong>: Mejora la legibilidad del código.</li>
+<li><strong>Evita pasar demasiadas props</strong>: Si un componente recibe muchas props, considera usar un objeto o el patrón de composición.</li>
+</ol>
+<hr />
+<h2 id="tutorial-crear-componentes-en-react-con-nextjs-javascript-y-estilizar-con-css_1">Tutorial: Crear Componentes en React con Next.js (JavaScript) y Estilizar con CSS</h2>
+<h3 id="1-introduccion-a-nextjs-y-react">1. Introducción a Next.js y React</h3>
+<p><strong>Next.js</strong> es un framework basado en React que facilita la creación de aplicaciones web modernas con renderizado del lado del servidor (SSR), generación de sitios estáticos (SSG) y una experiencia de desarrollo optimizada. Los componentes en React son bloques reutilizables que estructuran la interfaz de usuario de manera modular.</p>
+<p>En este tutorial, usaremos <strong>JavaScript</strong> puro (sin TypeScript) para crear un componente <code>ProductCard</code> que muestre información de un producto (imagen, título, descripción y precio). Exploraremos tres métodos de estilización:</p>
+<ul>
+<li><strong>CSS puro</strong> (hojas de estilo globales).</li>
+<li><strong>Módulos CSS</strong> (estilos locales para evitar conflictos).</li>
+<li><strong>Tailwind CSS</strong> (utilidades CSS para estilización rápida).</li>
+</ul>
+<hr />
+<h3 id="2-configuracion-del-proyecto-en-nextjs">2. Configuración del Proyecto en Next.js</h3>
+<h4 id="paso-1-crear-un-proyecto-en-nextjs">Paso 1: Crear un Proyecto en Next.js</h4>
+<ol>
+<li>Asegúrate de tener <strong>Node.js</strong> instalado (versión 18 o superior recomendada).</li>
+<li>Abre una terminal y ejecuta el siguiente comando para crear un nuevo proyecto:</li>
+</ol>
+<p><div class="highlight"><pre><span></span><code>npx<span class="w"> </span>create-next-app@latest<span class="w"> </span>my-next-app
+</code></pre></div>
+3. Durante la configuración, selecciona:</p>
+<ul>
+<li>¿TypeScript? <strong>No</strong> (usaremos JavaScript).</li>
+<li>¿ESLint? <strong>Sí</strong> (para mantener el código limpio).</li>
+<li>¿Tailwind CSS? <strong>Sí</strong> (lo usaremos más adelante).</li>
+<li>¿App Router? <strong>Sí</strong> (la nueva arquitectura de Next.js).</li>
+<li>
+<p>¿Import alias? Usa el valor predeterminado (<code>@/*</code>).</p>
+</li>
+<li>
+<p>Navega al directorio del proyecto:</p>
+</li>
+</ul>
+<p><div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>my-next-app
+</code></pre></div>
+5. Inicia el servidor de desarrollo:</p>
+<p><div class="highlight"><pre><span></span><code>npm<span class="w"> </span>run<span class="w"> </span>dev
+</code></pre></div>
+6. Abre tu navegador en <code>http://localhost:3000</code> para verificar que el proyecto funciona.</p>
+<h4 id="paso-2-estructura-del-proyecto">Paso 2: Estructura del Proyecto</h4>
+<p>Con App Router, Next.js organiza las páginas en la carpeta <code>app/</code>. Crearemos los componentes en una carpeta <code>components/</code> en la raíz del proyecto para mantener la modularidad.</p>
+<hr />
+<h3 id="3-creacion-de-un-componente-en-react">3. Creación de un Componente en React</h3>
+<p>Crearemos un componente reutilizable llamado <code>ProductCard</code> que mostrará información de un producto.</p>
+<h4 id="paso-1-crear-el-componente">Paso 1: Crear el Componente</h4>
+<ol>
+<li>Crea una carpeta <code>components/</code> en la raíz del proyecto.</li>
+<li>Dentro de <code>components/</code>, crea un archivo <code>ProductCard.js</code> con el siguiente código:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="nx">React</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react&#39;</span><span class="p">;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">ProductCard</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">({</span><span class="w"> </span><span class="nx">title</span><span class="p">,</span><span class="w"> </span><span class="nx">description</span><span class="p">,</span><span class="w"> </span><span class="nx">price</span><span class="p">,</span><span class="w"> </span><span class="nx">imageUrl</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="nx">div</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="s2">&quot;product-card&quot;</span><span class="o">&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">img</span><span class="w"> </span><span class="nx">src</span><span class="o">=</span><span class="p">{</span><span class="nx">imageUrl</span><span class="p">}</span><span class="w"> </span><span class="nx">alt</span><span class="o">=</span><span class="p">{</span><span class="nx">title</span><span class="p">}</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="s2">&quot;product-image&quot;</span><span class="w"> </span><span class="o">/&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">div</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="s2">&quot;product-content&quot;</span><span class="o">&gt;</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="nx">h2</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="s2">&quot;product-title&quot;</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">title</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/h2&gt;</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="nx">p</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="s2">&quot;product-description&quot;</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">description</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="nx">p</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="s2">&quot;product-price&quot;</span><span class="o">&gt;</span><span class="nx">$</span><span class="p">{</span><span class="nx">price</span><span class="p">.</span><span class="nx">toFixed</span><span class="p">(</span><span class="mf">2</span><span class="p">)}</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="nx">button</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="s2">&quot;product-button&quot;</span><span class="o">&gt;</span><span class="nx">Add</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">Cart</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="err">/div&gt;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="err">/div&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">ProductCard</span><span class="p">;</span>
+</code></pre></div>
+<p><strong>Explicación del Código</strong>:</p>
+<ul>
+<li><strong>Componente Funcional</strong>: Usamos un componente funcional en JavaScript que recibe <code>title</code>, <code>description</code>, <code>price</code> y <code>imageUrl</code> como props.</li>
+<li><strong>JSX</strong>: El componente renderiza una imagen, un título, una descripción, un precio y un botón.</li>
+<li><strong>Clases CSS</strong>: Usamos clases como <code>product-card</code>, <code>product-image</code>, etc., que estilizaremos más adelante.</li>
+</ul>
+<h4 id="paso-2-usar-el-componente-en-una-pagina">Paso 2: Usar el Componente en una Página</h4>
+<ol>
+<li>Edita el archivo <code>app/page.js</code> para incluir el componente <code>ProductCard</code>:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="nx">ProductCard</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@/components/ProductCard&#39;</span><span class="p">;</span>
+
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">Home</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="nx">main</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="s2">&quot;container&quot;</span><span class="o">&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Product</span><span class="w"> </span><span class="nx">Catalog</span><span class="o">&lt;</span><span class="err">/h1&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">div</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="s2">&quot;product-grid&quot;</span><span class="o">&gt;</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="nx">ProductCard</span>
+<span class="w">          </span><span class="nx">title</span><span class="o">=</span><span class="s2">&quot;Sample Product&quot;</span>
+<span class="w">          </span><span class="nx">description</span><span class="o">=</span><span class="s2">&quot;This is a sample product description.&quot;</span>
+<span class="w">          </span><span class="nx">price</span><span class="o">=</span><span class="p">{</span><span class="mf">29.99</span><span class="p">}</span>
+<span class="w">          </span><span class="nx">imageUrl</span><span class="o">=</span><span class="s2">&quot;https://via.placeholder.com/150&quot;</span>
+<span class="w">        </span><span class="o">/&gt;</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="nx">ProductCard</span>
+<span class="w">          </span><span class="nx">title</span><span class="o">=</span><span class="s2">&quot;Another Product&quot;</span>
+<span class="w">          </span><span class="nx">description</span><span class="o">=</span><span class="s2">&quot;This is another product description.&quot;</span>
+<span class="w">          </span><span class="nx">price</span><span class="o">=</span><span class="p">{</span><span class="mf">49.99</span><span class="p">}</span>
+<span class="w">          </span><span class="nx">imageUrl</span><span class="o">=</span><span class="s2">&quot;https://via.placeholder.com/150&quot;</span>
+<span class="w">        </span><span class="o">/&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="err">/div&gt;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="err">/main&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Explicación</strong>:</p>
+<ul>
+<li>Importamos <code>ProductCard</code> usando el alias <code>@</code> configurado por Next.js.</li>
+<li>Mostramos dos instancias de <code>ProductCard</code> con diferentes datos.</li>
+<li>Usamos una clase <code>product-grid</code> para el contenedor, que estilizaremos más adelante.</li>
+</ul>
+<hr />
+<h3 id="4-estilizacion-con-css">4. Estilización con CSS</h3>
+<p>Next.js soporta varias formas de estilizar componentes. Exploraremos tres enfoques: <strong>CSS puro</strong>, <strong>Módulos CSS</strong>, y <strong>Tailwind CSS</strong>.</p>
+<h4 id="enfoque-1-css-puro-global">Enfoque 1: CSS Puro (Global)</h4>
+<ol>
+<li>Edita el archivo <code>app/globals.css</code> (ya creado si seleccionaste Tailwind CSS):
+<div class="highlight"><pre><span></span><code><span class="p">@</span><span class="k">tailwind</span><span class="w"> </span><span class="nt">base</span><span class="p">;</span>
+<span class="p">@</span><span class="k">tailwind</span><span class="w"> </span><span class="nt">components</span><span class="p">;</span>
+<span class="p">@</span><span class="k">tailwind</span><span class="w"> </span><span class="nt">utilities</span><span class="p">;</span>
+
+<span class="p">.</span><span class="nc">container</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">max-width</span><span class="p">:</span><span class="w"> </span><span class="mi">1200</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">  </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="kc">auto</span><span class="p">;</span>
+<span class="w">  </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">product-grid</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="k">grid</span><span class="p">;</span>
+<span class="w">  </span><span class="k">grid-template-columns</span><span class="p">:</span><span class="w"> </span><span class="nf">repeat</span><span class="p">(</span><span class="kc">auto</span><span class="nv">-fit</span><span class="p">,</span><span class="w"> </span><span class="nf">minmax</span><span class="p">(</span><span class="mi">250</span><span class="kt">px</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="n">fr</span><span class="p">));</span>
+<span class="w">  </span><span class="k">gap</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">product-card</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="mh">#ddd</span><span class="p">;</span>
+<span class="w">  </span><span class="k">border-radius</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">  </span><span class="k">overflow</span><span class="p">:</span><span class="w"> </span><span class="kc">hidden</span><span class="p">;</span>
+<span class="w">  </span><span class="k">box-shadow</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">2</span><span class="kt">px</span><span class="w"> </span><span class="mi">5</span><span class="kt">px</span><span class="w"> </span><span class="nb">rgba</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.1</span><span class="p">);</span>
+<span class="w">  </span><span class="k">transition</span><span class="p">:</span><span class="w"> </span><span class="k">transform</span><span class="w"> </span><span class="mf">0.2</span><span class="kt">s</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">product-card</span><span class="p">:</span><span class="nd">hover</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">transform</span><span class="p">:</span><span class="w"> </span><span class="nb">translateY</span><span class="p">(</span><span class="mi">-5</span><span class="kt">px</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">product-image</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+<span class="w">  </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">150</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">  </span><span class="k">object-fit</span><span class="p">:</span><span class="w"> </span><span class="kc">cover</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">product-content</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">product-title</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mf">1.5</span><span class="kt">rem</span><span class="p">;</span>
+<span class="w">  </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">product-description</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">rem</span><span class="p">;</span>
+<span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#555</span><span class="p">;</span>
+<span class="w">  </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">product-price</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mf">1.2</span><span class="kt">rem</span><span class="p">;</span>
+<span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#2ecc71</span><span class="p">;</span>
+<span class="w">  </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">product-button</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#3498db</span><span class="p">;</span>
+<span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">white</span><span class="p">;</span>
+<span class="w">  </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">  </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;</span>
+<span class="w">  </span><span class="k">border-radius</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">  </span><span class="k">cursor</span><span class="p">:</span><span class="w"> </span><span class="kc">pointer</span><span class="p">;</span>
+<span class="w">  </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">product-button</span><span class="p">:</span><span class="nd">hover</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#2980b9</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></li>
+</ol>
+<p><strong>Explicación</strong>:</p>
+<ul>
+<li><strong>Estilos Globales</strong>: Estas clases se aplican a todo el proyecto y estilizan el componente <code>ProductCard</code> y la página principal.</li>
+<li><strong>Grid Layout</strong>: Usamos CSS Grid para una cuadrícula responsive.</li>
+<li><strong>Efectos</strong>: Añadimos un efecto de hover y sombras para un diseño moderno.</li>
+</ul>
+<p><strong>Ventajas</strong>:</p>
+<ul>
+<li>Fácil de implementar para estilos globales.</li>
+<li>Ideal para proyectos pequeños.</li>
+</ul>
+<p><strong>Desventajas</strong>:</p>
+<ul>
+<li>Riesgo de conflictos de nombres de clases en proyectos grandes.</li>
+<li>Los estilos no están encapsulados.</li>
+</ul>
+<h4 id="enfoque-2-modulos-css-estilos-locales">Enfoque 2: Módulos CSS (Estilos Locales)</h4>
+<p>Los módulos CSS encapsulan los estilos para evitar conflictos, generando nombres de clases únicos.</p>
+<ol>
+<li>
+<p>Crea un archivo <code>components/ProductCard.module.css</code>:
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">card</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="mh">#ddd</span><span class="p">;</span>
+<span class="w">  </span><span class="k">border-radius</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">  </span><span class="k">overflow</span><span class="p">:</span><span class="w"> </span><span class="kc">hidden</span><span class="p">;</span>
+<span class="w">  </span><span class="k">box-shadow</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">2</span><span class="kt">px</span><span class="w"> </span><span class="mi">5</span><span class="kt">px</span><span class="w"> </span><span class="nb">rgba</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.1</span><span class="p">);</span>
+<span class="w">  </span><span class="k">transition</span><span class="p">:</span><span class="w"> </span><span class="k">transform</span><span class="w"> </span><span class="mf">0.2</span><span class="kt">s</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">card</span><span class="p">:</span><span class="nd">hover</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">transform</span><span class="p">:</span><span class="w"> </span><span class="nb">translateY</span><span class="p">(</span><span class="mi">-5</span><span class="kt">px</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">image</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+<span class="w">  </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">150</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">  </span><span class="k">object-fit</span><span class="p">:</span><span class="w"> </span><span class="kc">cover</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">content</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">title</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mf">1.5</span><span class="kt">rem</span><span class="p">;</span>
+<span class="w">  </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">description</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">rem</span><span class="p">;</span>
+<span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#555</span><span class="p">;</span>
+<span class="w">  </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">price</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mf">1.2</span><span class="kt">rem</span><span class="p">;</span>
+<span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#2ecc71</span><span class="p">;</span>
+<span class="w">  </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">button</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#3498db</span><span class="p">;</span>
+<span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">white</span><span class="p">;</span>
+<span class="w">  </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">  </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;</span>
+<span class="w">  </span><span class="k">border-radius</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">  </span><span class="k">cursor</span><span class="p">:</span><span class="w"> </span><span class="kc">pointer</span><span class="p">;</span>
+<span class="w">  </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">button</span><span class="p">:</span><span class="nd">hover</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#2980b9</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Actualiza <code>ProductCard.js</code> para usar los módulos CSS:
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="nx">React</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="nx">styles</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./ProductCard.module.css&#39;</span><span class="p">;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">ProductCard</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">({</span><span class="w"> </span><span class="nx">title</span><span class="p">,</span><span class="w"> </span><span class="nx">description</span><span class="p">,</span><span class="w"> </span><span class="nx">price</span><span class="p">,</span><span class="w"> </span><span class="nx">imageUrl</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="nx">div</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">card</span><span class="p">}</span><span class="o">&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">img</span><span class="w"> </span><span class="nx">src</span><span class="o">=</span><span class="p">{</span><span class="nx">imageUrl</span><span class="p">}</span><span class="w"> </span><span class="nx">alt</span><span class="o">=</span><span class="p">{</span><span class="nx">title</span><span class="p">}</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">image</span><span class="p">}</span><span class="w"> </span><span class="o">/&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">div</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">content</span><span class="p">}</span><span class="o">&gt;</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="nx">h2</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">title</span><span class="p">}</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">title</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/h2&gt;</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="nx">p</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">description</span><span class="p">}</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">description</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="nx">p</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">price</span><span class="p">}</span><span class="o">&gt;</span><span class="nx">$</span><span class="p">{</span><span class="nx">price</span><span class="p">.</span><span class="nx">toFixed</span><span class="p">(</span><span class="mf">2</span><span class="p">)}</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="nx">button</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">button</span><span class="p">}</span><span class="o">&gt;</span><span class="nx">Add</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">Cart</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="err">/div&gt;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="err">/div&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">ProductCard</span><span class="p">;</span>
+</code></pre></div></p>
+</li>
+</ol>
+<p><strong>Explicación</strong>:
+- <strong>Importación de Módulos CSS</strong>: Los estilos se importan como un objeto (<code>styles</code>) desde <code>ProductCard.module.css</code>.
+- <strong>Clases Escópicas</strong>: Las clases como <code>styles.card</code> son únicas para el componente, evitando conflictos.
+- <strong>Mantenimiento</strong>: Los estilos están vinculados al componente, facilitando la modularidad.</p>
+<p><strong>Ventajas</strong>:
+- Encapsulación de estilos.
+- Ideal para proyectos grandes y componentes reutilizables.</p>
+<p><strong>Desventajas</strong>:
+- Requiere un archivo CSS por componente.
+- Configuración inicial más lenta para proyectos pequeños.</p>
+<h4 id="enfoque-3-tailwind-css">Enfoque 3: Tailwind CSS</h4>
+<p>Tailwind CSS permite estilizar directamente en el JSX usando clases de utilidades. Como seleccionamos Tailwind al crear el proyecto, ya está configurado.</p>
+<ol>
+<li>
+<p>Actualiza <code>ProductCard.js</code> para usar Tailwind CSS:
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="nx">React</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react&#39;</span><span class="p">;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">ProductCard</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">({</span><span class="w"> </span><span class="nx">title</span><span class="p">,</span><span class="w"> </span><span class="nx">description</span><span class="p">,</span><span class="w"> </span><span class="nx">price</span><span class="p">,</span><span class="w"> </span><span class="nx">imageUrl</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="nx">div</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="s2">&quot;border border-gray-200 rounded-lg overflow-hidden shadow-md hover:-translate-y-1 transition-transform&quot;</span><span class="o">&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">img</span><span class="w"> </span><span class="nx">src</span><span class="o">=</span><span class="p">{</span><span class="nx">imageUrl</span><span class="p">}</span><span class="w"> </span><span class="nx">alt</span><span class="o">=</span><span class="p">{</span><span class="nx">title</span><span class="p">}</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="s2">&quot;w-full h-40 object-cover&quot;</span><span class="w"> </span><span class="o">/&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">div</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="s2">&quot;p-4&quot;</span><span class="o">&gt;</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="nx">h2</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="s2">&quot;text-xl font-semibold mb-2&quot;</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">title</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/h2&gt;</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="nx">p</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="s2">&quot;text-gray-600 mb-2&quot;</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">description</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="nx">p</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="s2">&quot;text-green-500 text-lg mb-2&quot;</span><span class="o">&gt;</span><span class="nx">$</span><span class="p">{</span><span class="nx">price</span><span class="p">.</span><span class="nx">toFixed</span><span class="p">(</span><span class="mf">2</span><span class="p">)}</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="nx">button</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="s2">&quot;w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600&quot;</span><span class="o">&gt;</span>
+<span class="w">          </span><span class="nx">Add</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">Cart</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="err">/div&gt;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="err">/div&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">ProductCard</span><span class="p">;</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Actualiza <code>app/page.js</code> para usar Tailwind en la cuadrícula:
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="nx">ProductCard</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@/components/ProductCard&#39;</span><span class="p">;</span>
+
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">Home</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="nx">main</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="s2">&quot;max-w-7xl mx-auto p-6&quot;</span><span class="o">&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">h1</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="s2">&quot;text-3xl font-bold mb-6&quot;</span><span class="o">&gt;</span><span class="nx">Product</span><span class="w"> </span><span class="nx">Catalog</span><span class="o">&lt;</span><span class="err">/h1&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">div</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="s2">&quot;grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6&quot;</span><span class="o">&gt;</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="nx">ProductCard</span>
+<span class="w">          </span><span class="nx">title</span><span class="o">=</span><span class="s2">&quot;Sample Product&quot;</span>
+<span class="w">          </span><span class="nx">description</span><span class="o">=</span><span class="s2">&quot;This is a sample product description.&quot;</span>
+<span class="w">          </span><span class="nx">price</span><span class="o">=</span><span class="p">{</span><span class="mf">29.99</span><span class="p">}</span>
+<span class="w">          </span><span class="nx">imageUrl</span><span class="o">=</span><span class="s2">&quot;https://via.placeholder.com/150&quot;</span>
+<span class="w">        </span><span class="o">/&gt;</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="nx">ProductCard</span>
+<span class="w">          </span><span class="nx">title</span><span class="o">=</span><span class="s2">&quot;Another Product&quot;</span>
+<span class="w">          </span><span class="nx">description</span><span class="o">=</span><span class="s2">&quot;This is another product description.&quot;</span>
+<span class="w">          </span><span class="nx">price</span><span class="o">=</span><span class="p">{</span><span class="mf">49.99</span><span class="p">}</span>
+<span class="w">          </span><span class="nx">imageUrl</span><span class="o">=</span><span class="s2">&quot;https://via.placeholder.com/150&quot;</span>
+<span class="w">        </span><span class="o">/&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="err">/div&gt;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="err">/main&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></p>
+</li>
+</ol>
+<p><strong>Explicación</strong>:</p>
+<ul>
+<li><strong>Clases de Tailwind</strong>: Usamos clases como <code>border</code>, <code>rounded-lg</code>, <code>shadow-md</code>, <code>hover:-translate-y-1</code> para estilizar.</li>
+<li><strong>Responsive Design</strong>: Clases como <code>sm:grid-cols-2</code> hacen la cuadrícula adaptable.</li>
+<li><strong>Ventajas</strong>:</li>
+<li>Prototipado rápido.</li>
+<li>No requiere archivos CSS adicionales.</li>
+<li>Estilos consistentes.</li>
+<li><strong>Desventajas</strong>:</li>
+<li>JSX más largo y potencialmente menos legible.</li>
+<li>Curva de aprendizaje para las clases de Tailwind.</li>
+</ul>
+<hr />
+<h3 id="5-generacion-de-una-aplicacion-completa-standalone">5. Generación de una Aplicación Completa (Standalone)</h3>
+<p>Si prefieres un archivo HTML único con React y Tailwind CSS (usando CDNs), aquí tienes un ejemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span> <span class="p">/&gt;</span>
+  <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1.0&quot;</span> <span class="p">/&gt;</span>
+  <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>React Product Card<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdn.jsdelivr.net/npm/react@18/umd/react.development.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdn.jsdelivr.net/npm/react-dom@18/umd/react-dom.development.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdn.tailwindcss.com&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdn.jsdelivr.net/npm/@babel/standalone/babel.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;root&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/babel&quot;</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">ProductCard</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">({</span><span class="w"> </span><span class="nx">title</span><span class="p">,</span><span class="w"> </span><span class="nx">description</span><span class="p">,</span><span class="w"> </span><span class="nx">price</span><span class="p">,</span><span class="w"> </span><span class="nx">imageUrl</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="nx">div</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="s2">&quot;border border-gray-200 rounded-lg overflow-hidden shadow-md hover:-translate-y-1 transition-transform&quot;</span><span class="o">&gt;</span>
+<span class="w">          </span><span class="o">&lt;</span><span class="nx">img</span><span class="w"> </span><span class="nx">src</span><span class="o">=</span><span class="p">{</span><span class="nx">imageUrl</span><span class="p">}</span><span class="w"> </span><span class="nx">alt</span><span class="o">=</span><span class="p">{</span><span class="nx">title</span><span class="p">}</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="s2">&quot;w-full h-40 object-cover&quot;</span><span class="w"> </span><span class="o">/&gt;</span>
+<span class="w">          </span><span class="o">&lt;</span><span class="nx">div</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="s2">&quot;p-4&quot;</span><span class="o">&gt;</span>
+<span class="w">            </span><span class="o">&lt;</span><span class="nx">h2</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="s2">&quot;text-xl font-semibold mb-2&quot;</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">title</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/h2&gt;</span>
+<span class="w">            </span><span class="o">&lt;</span><span class="nx">p</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="s2">&quot;text-gray-600 mb-2&quot;</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">description</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+<span class="w">            </span><span class="o">&lt;</span><span class="nx">p</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="s2">&quot;text-green-500 text-lg mb-2&quot;</span><span class="o">&gt;</span><span class="nx">$</span><span class="p">{</span><span class="nx">price</span><span class="p">.</span><span class="nx">toFixed</span><span class="p">(</span><span class="mf">2</span><span class="p">)}</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+<span class="w">            </span><span class="o">&lt;</span><span class="nx">button</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="s2">&quot;w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600&quot;</span><span class="o">&gt;</span>
+<span class="w">              </span><span class="nx">Add</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">Cart</span>
+<span class="w">            </span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+<span class="w">          </span><span class="o">&lt;</span><span class="err">/div&gt;</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="err">/div&gt;</span>
+<span class="w">      </span><span class="p">);</span>
+<span class="w">    </span><span class="p">};</span>
+
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">App</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="nx">main</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="s2">&quot;max-w-7xl mx-auto p-6&quot;</span><span class="o">&gt;</span>
+<span class="w">          </span><span class="o">&lt;</span><span class="nx">h1</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="s2">&quot;text-3xl font-bold mb-6&quot;</span><span class="o">&gt;</span><span class="nx">Product</span><span class="w"> </span><span class="nx">Catalog</span><span class="o">&lt;</span><span class="err">/h1&gt;</span>
+<span class="w">          </span><span class="o">&lt;</span><span class="nx">div</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="s2">&quot;grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6&quot;</span><span class="o">&gt;</span>
+<span class="w">            </span><span class="o">&lt;</span><span class="nx">ProductCard</span>
+<span class="w">              </span><span class="nx">title</span><span class="o">=</span><span class="s2">&quot;Sample Product&quot;</span>
+<span class="w">              </span><span class="nx">description</span><span class="o">=</span><span class="s2">&quot;This is a sample product description.&quot;</span>
+<span class="w">              </span><span class="nx">price</span><span class="o">=</span><span class="p">{</span><span class="mf">29.99</span><span class="p">}</span>
+<span class="w">              </span><span class="nx">imageUrl</span><span class="o">=</span><span class="s2">&quot;https://via.placeholder.com/150&quot;</span>
+<span class="w">            </span><span class="o">/&gt;</span>
+<span class="w">            </span><span class="o">&lt;</span><span class="nx">ProductCard</span>
+<span class="w">              </span><span class="nx">title</span><span class="o">=</span><span class="s2">&quot;Another Product&quot;</span>
+<span class="w">              </span><span class="nx">description</span><span class="o">=</span><span class="s2">&quot;This is another product description.&quot;</span>
+<span class="w">              </span><span class="nx">price</span><span class="o">=</span><span class="p">{</span><span class="mf">49.99</span><span class="p">}</span>
+<span class="w">              </span><span class="nx">imageUrl</span><span class="o">=</span><span class="s2">&quot;https://via.placeholder.com/150&quot;</span>
+<span class="w">            </span><span class="o">/&gt;</span>
+<span class="w">          </span><span class="o">&lt;</span><span class="err">/div&gt;</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="err">/main&gt;</span>
+<span class="w">      </span><span class="p">);</span>
+<span class="w">    </span><span class="p">};</span>
+
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">root</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">createRoot</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;root&#39;</span><span class="p">));</span>
+<span class="w">    </span><span class="nx">root</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">App</span><span class="w"> </span><span class="o">/&gt;</span><span class="p">);</span>
+<span class="w">  </span><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+<p><strong>Nota</strong>: Este enfoque con CDN es útil para prototipos rápidos, pero para proyectos reales, usa la estructura de Next.js, que optimiza el rendimiento y el empaquetado.</p>
+<hr />
+<h3 id="6-mejores-practicas">6. Mejores Prácticas</h3>
+<ul>
+<li><strong>Reutilización</strong>: Diseña componentes con props para hacerlos flexibles.</li>
+<li><strong>Modularidad</strong>: Mantén los componentes pequeños y enfocados.</li>
+<li><strong>Estilos Encapsulados</strong>: Usa módulos CSS o Tailwind para evitar conflictos.</li>
+<li><strong>Optimización</strong>: Aprovecha las características de Next.js como el componente <code>Image</code> para imágenes optimizadas.</li>
+</ul>
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      2025 &copy; by JFVG
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs.sticky", "navigation.tabs", "navigation.top", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.indexes"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>
