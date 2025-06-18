@@ -1,0 +1,2357 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="jhonfvg">
+      
+      
+        <link rel="canonical" href="https://jfinfosena.github.io/25adso-react/content/p4/">
+      
+      
+        <link rel="prev" href="../p3/">
+      
+      
+        <link rel="next" href="../p5/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.3">
+    
+    
+      
+        <title>Tutorial de Rutas en Next.js con App Router - React</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.d7758b05.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#tutorial-de-rutas-en-nextjs-con-app-router" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="React" class="md-header__button md-logo" aria-label="React" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="m11.28 3.22 4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.275-.326.75.75 0 0 1 .215-.734L13.94 8l-3.72-3.72a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215m-6.56 0a.75.75 0 0 1 1.042.018.75.75 0 0 1 .018 1.042L2.06 8l3.72 3.72a.749.749 0 0 1-.326 1.275.75.75 0 0 1-.734-.215L.47 8.53a.75.75 0 0 1 0-1.06Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            React
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Tutorial de Rutas en Next.js con App Router
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="orange" data-md-color-accent="lime"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Inicio
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../p0/" class="md-tabs__link">
+          
+  
+    
+  
+  Contenido
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../pi/p1/" class="md-tabs__link">
+          
+  
+    
+  
+  Proyecto Integrador
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../blog/" class="md-tabs__link">
+          
+  
+    
+  
+  Blog
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../about/" class="md-tabs__link">
+        
+  
+    
+  
+  Acerca de
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="React" class="md-nav__button md-logo" aria-label="React" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="m11.28 3.22 4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.275-.326.75.75 0 0 1 .215-.734L13.94 8l-3.72-3.72a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215m-6.56 0a.75.75 0 0 1 1.042.018.75.75 0 0 1 .018 1.042L2.06 8l3.72 3.72a.749.749 0 0 1-.326 1.275.75.75 0 0 1-.734-.215L.47 8.53a.75.75 0 0 1 0-1.06Z"/></svg>
+
+    </a>
+    React
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Inicio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Contenido
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Contenido
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introducción a React y Configuración del Entorno
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Componente en React
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tutorial: Crear Componentes en React con Next.js (JavaScript) y Estilizar con CSS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hooks en React: Introducción y Ejemplos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Tutorial de Rutas en Next.js con App Router
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Tutorial de Rutas en Next.js con App Router
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introducción
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estructura-basica" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estructura básica
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Estructura básica">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-de-estructura" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplo de estructura
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#codigo-de-ejemplo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Código de ejemplo
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#layouts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Layouts
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Layouts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#layout-raiz" class="md-nav__link">
+    <span class="md-ellipsis">
+      Layout raíz
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rutas-dinamicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rutas dinámicas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Rutas dinámicas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#estructura" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estructura
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#codigo-de-ejemplo_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Código de ejemplo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rutas-dinamicas-anidadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rutas dinámicas anidadas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rutas-catch-all" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rutas catch-all
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Rutas catch-all">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#estructura_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estructura
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#codigo-de-ejemplo_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Código de ejemplo
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rutas-opcionales-catch-all" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rutas opcionales catch-all
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Rutas opcionales catch-all">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#estructura_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estructura
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#codigo-de-ejemplo_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Código de ejemplo
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generacion-estatica-y-dinamica" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generación estática y dinámica
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Generación estática y dinámica">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-de-ssr" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplo de SSR
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-de-isr" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplo de ISR
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manejo-de-errores" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manejo de errores
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Manejo de errores">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#codigo-de-ejemplo_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Código de ejemplo
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rutas-de-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rutas de API
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Rutas de API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#estructura_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estructura
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#codigo-de-ejemplo_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Código de ejemplo
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#navegacion-con-link" class="md-nav__link">
+    <span class="md-ellipsis">
+      Navegación con &lt;Link&gt;
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Navegación con <Link>">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#codigo-de-ejemplo_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Código de ejemplo
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tutorial-aplicacion-con-multiples-paginas-y-layouts-en-nextjs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tutorial: Aplicación con Múltiples Páginas y Layouts en Next.js
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tutorial: Aplicación con Múltiples Páginas y Layouts en Next.js">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerrequisitos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerrequisitos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-1-crear-un-nuevo-proyecto-nextjs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 1: Crear un nuevo proyecto Next.js
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-2-configurar-el-layout-raiz" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 2: Configurar el Layout Raíz
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-3-crear-la-pagina-principal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 3: Crear la Página Principal
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-4-crear-las-paginas-acerca-servicios-y-contacto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 4: Crear las Páginas "Acerca", "Servicios" y "Contacto"
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-5-crear-una-seccion-de-blog-con-layout-anidado" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 5: Crear una Sección de Blog con Layout Anidado
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-6-probar-la-aplicacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 6: Probar la Aplicación
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-7-construir-para-produccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 7: Construir para Producción
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estructura-final-del-proyecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estructura Final del Proyecto
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tutorial-configurar-nextjs-con-clerk-para-autenticacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tutorial: Configurar Next.js con Clerk para autenticación
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tutorial: Configurar Next.js con Clerk para autenticación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuracion-completa-con-rutas-publicas-y-protegidas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración completa con rutas públicas y protegidas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-alternativo-proteger-todo-excepto-rutas-publicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplo alternativo: Proteger todo excepto rutas públicas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-con-multiples-grupos-de-rutas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplo con múltiples grupos de rutas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#puntos-clave" class="md-nav__link">
+    <span class="md-ellipsis">
+      Puntos clave:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Guías de Prisma para Next.js
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Proyecto Integrador
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Proyecto Integrador
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pi/p1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introducción Proyecto Integrador
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../blog/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Blog
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Blog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Archivo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Acerca de
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introducción
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estructura-basica" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estructura básica
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Estructura básica">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-de-estructura" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplo de estructura
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#codigo-de-ejemplo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Código de ejemplo
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#layouts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Layouts
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Layouts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#layout-raiz" class="md-nav__link">
+    <span class="md-ellipsis">
+      Layout raíz
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rutas-dinamicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rutas dinámicas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Rutas dinámicas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#estructura" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estructura
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#codigo-de-ejemplo_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Código de ejemplo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rutas-dinamicas-anidadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rutas dinámicas anidadas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rutas-catch-all" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rutas catch-all
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Rutas catch-all">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#estructura_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estructura
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#codigo-de-ejemplo_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Código de ejemplo
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rutas-opcionales-catch-all" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rutas opcionales catch-all
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Rutas opcionales catch-all">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#estructura_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estructura
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#codigo-de-ejemplo_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Código de ejemplo
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generacion-estatica-y-dinamica" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generación estática y dinámica
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Generación estática y dinámica">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-de-ssr" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplo de SSR
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-de-isr" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplo de ISR
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manejo-de-errores" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manejo de errores
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Manejo de errores">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#codigo-de-ejemplo_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Código de ejemplo
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rutas-de-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rutas de API
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Rutas de API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#estructura_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estructura
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#codigo-de-ejemplo_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Código de ejemplo
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#navegacion-con-link" class="md-nav__link">
+    <span class="md-ellipsis">
+      Navegación con &lt;Link&gt;
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Navegación con <Link>">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#codigo-de-ejemplo_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Código de ejemplo
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tutorial-aplicacion-con-multiples-paginas-y-layouts-en-nextjs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tutorial: Aplicación con Múltiples Páginas y Layouts en Next.js
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tutorial: Aplicación con Múltiples Páginas y Layouts en Next.js">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerrequisitos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerrequisitos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-1-crear-un-nuevo-proyecto-nextjs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 1: Crear un nuevo proyecto Next.js
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-2-configurar-el-layout-raiz" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 2: Configurar el Layout Raíz
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-3-crear-la-pagina-principal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 3: Crear la Página Principal
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-4-crear-las-paginas-acerca-servicios-y-contacto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 4: Crear las Páginas "Acerca", "Servicios" y "Contacto"
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-5-crear-una-seccion-de-blog-con-layout-anidado" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 5: Crear una Sección de Blog con Layout Anidado
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-6-probar-la-aplicacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 6: Probar la Aplicación
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-7-construir-para-produccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 7: Construir para Producción
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estructura-final-del-proyecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estructura Final del Proyecto
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tutorial-configurar-nextjs-con-clerk-para-autenticacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tutorial: Configurar Next.js con Clerk para autenticación
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tutorial: Configurar Next.js con Clerk para autenticación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuracion-completa-con-rutas-publicas-y-protegidas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración completa con rutas públicas y protegidas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-alternativo-proteger-todo-excepto-rutas-publicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplo alternativo: Proteger todo excepto rutas públicas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-con-multiples-grupos-de-rutas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplo con múltiples grupos de rutas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#puntos-clave" class="md-nav__link">
+    <span class="md-ellipsis">
+      Puntos clave:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="tutorial-de-rutas-en-nextjs-con-app-router">Tutorial de Rutas en Next.js con App Router</h1>
+<h2 id="introduccion">Introducción</h2>
+<p>El <strong>App Router</strong> es el sistema de enrutamiento moderno de Next.js (introducido en Next.js 13), basado en el directorio <code>app</code>. Este sistema reemplaza al antiguo directorio <code>pages</code> y ofrece mayor flexibilidad con características como layouts anidados, rutas dinámicas y manejo avanzado de errores.</p>
+<p>Este tutorial cubre los fundamentos y características avanzadas del enrutamiento en Next.js con App Router.</p>
+<h2 id="estructura-basica">Estructura básica</h2>
+<ul>
+<li>El directorio <code>app</code> define las rutas de la aplicación.</li>
+<li>Cada carpeta dentro de <code>app</code> representa un segmento de la URL.</li>
+<li>Un archivo <code>page.js</code> (o <code>page.tsx</code> para TypeScript) en una carpeta define la página correspondiente a esa ruta.</li>
+</ul>
+<h3 id="ejemplo-de-estructura">Ejemplo de estructura</h3>
+<div class="highlight"><pre><span></span><code>app/
+├── page.js          # Ruta raíz: &quot;/&quot;
+├── about/
+│   └── page.js      # Ruta: &quot;/about&quot;
+├── blog/
+│   └── page.js      # Ruta: &quot;/blog&quot;
+</code></pre></div>
+<h3 id="codigo-de-ejemplo">Código de ejemplo</h3>
+<p><strong><code>app/page.js</code></strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">Home</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">Bienvenido</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">la</span><span class="w"> </span><span class="nx">página</span><span class="w"> </span><span class="nx">principal</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong><code>app/about/page.js</code></strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">About</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">Acerca</span><span class="w"> </span><span class="nx">de</span><span class="w"> </span><span class="nx">nosotros</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;;</span>
+<span class="p">}</span>
+</code></pre></div>
+<ul>
+<li>Acceder a <code>/</code> renderiza <code>app/page.js</code>.</li>
+<li>Acceder a <code>/about</code> renderiza <code>app/about/page.js</code>.</li>
+</ul>
+<h2 id="layouts">Layouts</h2>
+<p>Los <strong>layouts</strong> permiten definir una estructura común para un grupo de páginas. Se crean con un archivo <code>layout.js</code> en el directorio correspondiente.</p>
+<h3 id="layout-raiz">Layout raíz</h3>
+<p><strong><code>app/layout.js</code></strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">RootLayout</span><span class="p">({</span><span class="w"> </span><span class="nx">children</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">html</span><span class="w"> </span><span class="na">lang</span><span class="o">=</span><span class="s">&quot;es&quot;</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="w">        </span><span class="p">&lt;</span><span class="nt">header</span><span class="p">&gt;</span>
+<span class="w">          </span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">Mi</span><span class="w"> </span><span class="nx">Aplicación</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="w">          </span><span class="p">&lt;</span><span class="nt">nav</span><span class="p">&gt;</span>
+<span class="w">            </span><span class="p">&lt;</span><span class="nt">a</span><span class="w"> </span><span class="na">href</span><span class="o">=</span><span class="s">&quot;/&quot;</span><span class="p">&gt;</span><span class="nx">Inicio</span><span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">a</span><span class="w"> </span><span class="na">href</span><span class="o">=</span><span class="s">&quot;/about&quot;</span><span class="p">&gt;</span><span class="nx">Acerca</span><span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="w">          </span><span class="p">&lt;/</span><span class="nt">nav</span><span class="p">&gt;</span>
+<span class="w">        </span><span class="p">&lt;/</span><span class="nt">header</span><span class="p">&gt;</span>
+<span class="w">        </span><span class="p">{</span><span class="nx">children</span><span class="p">}</span>
+<span class="w">      </span><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<ul>
+<li>Este layout se aplica a todas las páginas dentro de <code>app</code>.</li>
+<li>Puedes crear layouts anidados en subcarpetas, como <code>app/blog/layout.js</code>, para rutas específicas.</li>
+</ul>
+<h2 id="rutas-dinamicas">Rutas dinámicas</h2>
+<p>Para rutas dinámicas (por ejemplo, <code>/blog/post-1</code>), usa corchetes en el nombre de la carpeta, como <code>[id]</code>.</p>
+<h3 id="estructura">Estructura</h3>
+<div class="highlight"><pre><span></span><code>app/
+├── blog/
+│   └── [id]/
+│       └── page.js  # Ruta: &quot;/blog/:id&quot;
+</code></pre></div>
+<h3 id="codigo-de-ejemplo_1">Código de ejemplo</h3>
+<p><strong><code>app/blog/[id]/page.js</code></strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">BlogPost</span><span class="p">({</span><span class="w"> </span><span class="nx">params</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">id</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">params</span><span class="p">;</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">Post</span><span class="w"> </span><span class="nx">del</span><span class="w"> </span><span class="nx">blog</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">id</span><span class="p">}&lt;/</span><span class="nt">h1</span><span class="p">&gt;;</span>
+<span class="p">}</span>
+</code></pre></div>
+<ul>
+<li>Acceder a <code>/blog/post-1</code> muestra "Post del blog: post-1".</li>
+<li>El objeto <code>params</code> contiene los parámetros dinámicos.</li>
+</ul>
+<h3 id="rutas-dinamicas-anidadas">Rutas dinámicas anidadas</h3>
+<p>Puedes usar múltiples segmentos dinámicos, como <code>app/blog/[category]/[id]/page.js</code> para rutas como <code>/blog/tech/post-1</code>.</p>
+<h2 id="rutas-catch-all">Rutas catch-all</h2>
+<p>Para capturar múltiples segmentos de la URL, usa <code>[...slug]</code>.</p>
+<h3 id="estructura_1">Estructura</h3>
+<div class="highlight"><pre><span></span><code>app/
+├── blog/
+│   └── [...slug]/
+│       └── page.js  # Ruta: &quot;/blog/*&quot;
+</code></pre></div>
+<h3 id="codigo-de-ejemplo_2">Código de ejemplo</h3>
+<p><strong><code>app/blog/[...slug]/page.js</code></strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">CatchAll</span><span class="p">({</span><span class="w"> </span><span class="nx">params</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">slug</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">params</span><span class="p">;</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">Ruta</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">slug</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)}&lt;/</span><span class="nt">h1</span><span class="p">&gt;;</span>
+<span class="p">}</span>
+</code></pre></div>
+<ul>
+<li>Acceder a <code>/blog/tech/2023/post-1</code> muestra "Ruta: tech/2023/post-1".</li>
+</ul>
+<h2 id="rutas-opcionales-catch-all">Rutas opcionales catch-all</h2>
+<p>Usa <code>[[...slug]]</code> para incluir la ruta base (por ejemplo, <code>/blog</code>).</p>
+<h3 id="estructura_2">Estructura</h3>
+<div class="highlight"><pre><span></span><code>app/
+├── blog/
+│   └── [[...slug]]/
+│       └── page.js  # Ruta: &quot;/blog&quot; y &quot;/blog/*&quot;
+</code></pre></div>
+<h3 id="codigo-de-ejemplo_3">Código de ejemplo</h3>
+<p><strong><code>app/blog/[[...slug]]/page.js</code></strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">OptionalCatchAll</span><span class="p">({</span><span class="w"> </span><span class="nx">params</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">slug</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[]</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">params</span><span class="p">;</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">Ruta</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">slug</span><span class="p">.</span><span class="nx">length</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="nx">slug</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Blog Home&#39;</span><span class="p">}&lt;/</span><span class="nt">h1</span><span class="p">&gt;;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="generacion-estatica-y-dinamica">Generación estática y dinámica</h2>
+<p>Next.js permite controlar cómo se generan las páginas:</p>
+<ul>
+<li><strong>Estática (SSG):</strong> Generada en tiempo de compilación.</li>
+<li><strong>Dinámica (SSR):</strong> Generada en cada solicitud.</li>
+<li><strong>Incremental Static Regeneration (ISR):</strong> Regeneración periódica.</li>
+</ul>
+<h3 id="ejemplo-de-ssr">Ejemplo de SSR</h3>
+<p><strong><code>app/dynamic/page.js</code></strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">dynamic</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;force-dynamic&#39;</span><span class="p">;</span>
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">DynamicPage</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">Página</span><span class="w"> </span><span class="nx">renderizada</span><span class="w"> </span><span class="nx">en</span><span class="w"> </span><span class="nx">el</span><span class="w"> </span><span class="nx">servidor</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="ejemplo-de-isr">Ejemplo de ISR</h3>
+<p><strong><code>app/isr/page.js</code></strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">revalidate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">60</span><span class="p">;</span><span class="w"> </span><span class="c1">// Regenera cada 60 segundos</span>
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">ISRPage</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">Página</span><span class="w"> </span><span class="nx">con</span><span class="w"> </span><span class="nx">ISR</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="manejo-de-errores">Manejo de errores</h2>
+<p>Crea un archivo <code>error.js</code> para manejar errores en un segmento de ruta.</p>
+<h3 id="codigo-de-ejemplo_4">Código de ejemplo</h3>
+<p><strong><code>app/error.js</code></strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="s1">&#39;use client&#39;</span><span class="p">;</span>
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="ne">Error</span><span class="p">({</span><span class="w"> </span><span class="nx">error</span><span class="p">,</span><span class="w"> </span><span class="nx">reset</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span><span class="ne">Error</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">error</span><span class="p">.</span><span class="nx">message</span><span class="p">}&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">button</span><span class="w"> </span><span class="na">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">reset</span><span class="p">}&gt;</span><span class="nx">Intentar</span><span class="w"> </span><span class="nx">de</span><span class="w"> </span><span class="nx">nuevo</span><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<ul>
+<li>Este componente se renderiza si ocurre un error en cualquier página bajo <code>app</code>.</li>
+</ul>
+<h2 id="rutas-de-api">Rutas de API</h2>
+<p>Crea endpoints de API en el directorio <code>app/api</code>.</p>
+<h3 id="estructura_3">Estructura</h3>
+<div class="highlight"><pre><span></span><code>app/
+├── api/
+│   └── hello/
+│       └── route.js  # Ruta: &quot;/api/hello&quot;
+</code></pre></div>
+<h3 id="codigo-de-ejemplo_5">Código de ejemplo</h3>
+<p><strong><code>app/api/hello/route.js</code></strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="k">export</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">GET</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">Response</span><span class="p">.</span><span class="nx">json</span><span class="p">({</span><span class="w"> </span><span class="nx">message</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;¡Hola desde la API!&#39;</span><span class="w"> </span><span class="p">});</span>
+<span class="p">}</span>
+</code></pre></div>
+<ul>
+<li>Acceder a <code>/api/hello</code> devuelve un JSON: <code>{ "message": "¡Hola desde la API!" }</code>.</li>
+</ul>
+<h2 id="navegacion-con-link">Navegación con <code>&lt;Link&gt;</code></h2>
+<p>Usa el componente <code>Link</code> de <code>next/link</code> para navegar sin recargar la página.</p>
+<h3 id="codigo-de-ejemplo_6">Código de ejemplo</h3>
+<p><strong><code>app/page.js</code></strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="nx">Link</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;next/link&#39;</span><span class="p">;</span>
+
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">Home</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">Link</span><span class="w"> </span><span class="na">href</span><span class="o">=</span><span class="s">&quot;/about&quot;</span><span class="p">&gt;</span><span class="nx">Ir</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">About</span><span class="p">&lt;/</span><span class="nt">Link</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="tutorial-aplicacion-con-multiples-paginas-y-layouts-en-nextjs">Tutorial: Aplicación con Múltiples Páginas y Layouts en Next.js</h2>
+<p>Este tutorial te guía paso a paso para crear una aplicación en <strong>Next.js</strong> con el <strong>App Router</strong>, incluyendo múltiples páginas que comparten un layout raíz y un layout anidado para una sección de blog. Crearemos las páginas "Inicio", "Acerca", "Servicios", "Contacto", "Blog" y "Blog Post", todas afectadas por layouts correspondientes.</p>
+<h3 id="prerrequisitos">Prerrequisitos</h3>
+<ul>
+<li><strong>Node.js</strong>: Versión 16.8 o superior.</li>
+<li><strong>Conocimientos básicos</strong>: JavaScript/TypeScript, React y terminal.</li>
+<li><strong>Editor de código</strong>: Recomendado VS Code.</li>
+</ul>
+<h3 id="paso-1-crear-un-nuevo-proyecto-nextjs">Paso 1: Crear un nuevo proyecto Next.js</h3>
+<ol>
+<li>Abre la terminal y crea un proyecto Next.js:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>npx<span class="w"> </span>create-next-app@latest<span class="w"> </span>my-multi-page-app
+</code></pre></div>
+<ol>
+<li>Configura el proyecto con las siguientes opciones:</li>
+<li><strong>TypeScript</strong>: Sí.</li>
+<li><strong>ESLint</strong>: Sí.</li>
+<li><strong>Tailwind CSS</strong>: Sí.</li>
+<li><strong>src/ directory</strong>: No.</li>
+<li><strong>App Router</strong>: Sí.</li>
+<li>
+<p><strong>Customize default import alias</strong>: No.</p>
+</li>
+<li>
+<p>Navega al directorio del proyecto:</p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>my-multi-page-app
+</code></pre></div>
+<ol>
+<li>Inicia el servidor de desarrollo:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>npm<span class="w"> </span>run<span class="w"> </span>dev
+</code></pre></div>
+<p>Verifica que la aplicación funciona en <code>http://localhost:3000</code>.</p>
+<h3 id="paso-2-configurar-el-layout-raiz">Paso 2: Configurar el Layout Raíz</h3>
+<p>El layout raíz (<code>app/layout.tsx</code>) define la estructura común para todas las páginas, incluyendo un encabezado con navegación.</p>
+<ol>
+<li>Abre <code>app/layout.tsx</code> y reemplaza su contenido con:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Metadata</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;next&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="s1">&#39;./globals.css&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="nx">Link</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;next/link&#39;</span><span class="p">;</span>
+
+<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">metadata</span><span class="o">:</span><span class="w"> </span><span class="kt">Metadata</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Aplicación Multi-Página&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">description</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Aplicación con múltiples páginas y layouts en Next.js&#39;</span><span class="p">,</span>
+<span class="p">};</span>
+
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">RootLayout</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">children</span><span class="p">,</span>
+<span class="p">}</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">children</span><span class="o">:</span><span class="w"> </span><span class="kt">React.ReactNode</span><span class="p">;</span>
+<span class="p">})</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">html</span><span class="w"> </span><span class="na">lang</span><span class="o">=</span><span class="s">&quot;es&quot;</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">body</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;min-h-screen bg-gray-50&quot;</span><span class="p">&gt;</span>
+<span class="w">        </span><span class="p">&lt;</span><span class="nt">header</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;bg-indigo-700 text-white p-4 shadow-md&quot;</span><span class="p">&gt;</span>
+<span class="w">          </span><span class="p">&lt;</span><span class="nt">nav</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;max-w-5xl mx-auto flex justify-between items-center&quot;</span><span class="p">&gt;</span>
+<span class="w">            </span><span class="p">&lt;</span><span class="nt">h1</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;text-2xl font-bold&quot;</span><span class="p">&gt;</span><span class="nx">Mi</span><span class="w"> </span><span class="nx">App</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="w">            </span><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;space-x-6&quot;</span><span class="p">&gt;</span>
+<span class="w">              </span><span class="p">&lt;</span><span class="nt">Link</span><span class="w"> </span><span class="na">href</span><span class="o">=</span><span class="s">&quot;/&quot;</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;hover:text-indigo-200&quot;</span><span class="p">&gt;</span>
+<span class="w">                </span><span class="nx">Inicio</span>
+<span class="w">              </span><span class="p">&lt;/</span><span class="nt">Link</span><span class="p">&gt;</span>
+<span class="w">              </span><span class="p">&lt;</span><span class="nt">Link</span><span class="w"> </span><span class="na">href</span><span class="o">=</span><span class="s">&quot;/about&quot;</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;hover:text-indigo-200&quot;</span><span class="p">&gt;</span>
+<span class="w">                </span><span class="nx">Acerca</span>
+<span class="w">              </span><span class="p">&lt;/</span><span class="nt">Link</span><span class="p">&gt;</span>
+<span class="w">              </span><span class="p">&lt;</span><span class="nt">Link</span><span class="w"> </span><span class="na">href</span><span class="o">=</span><span class="s">&quot;/services&quot;</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;hover:text-indigo-200&quot;</span><span class="p">&gt;</span>
+<span class="w">                </span><span class="nx">Servicios</span>
+<span class="w">              </span><span class="p">&lt;/</span><span class="nt">Link</span><span class="p">&gt;</span>
+<span class="w">              </span><span class="p">&lt;</span><span class="nt">Link</span><span class="w"> </span><span class="na">href</span><span class="o">=</span><span class="s">&quot;/contact&quot;</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;hover:text-indigo-200&quot;</span><span class="p">&gt;</span>
+<span class="w">                </span><span class="nx">Contacto</span>
+<span class="w">              </span><span class="p">&lt;/</span><span class="nt">Link</span><span class="p">&gt;</span>
+<span class="w">              </span><span class="p">&lt;</span><span class="nt">Link</span><span class="w"> </span><span class="na">href</span><span class="o">=</span><span class="s">&quot;/blog&quot;</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;hover:text-indigo-200&quot;</span><span class="p">&gt;</span>
+<span class="w">                </span><span class="nx">Blog</span>
+<span class="w">              </span><span class="p">&lt;/</span><span class="nt">Link</span><span class="p">&gt;</span>
+<span class="w">            </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="w">          </span><span class="p">&lt;/</span><span class="nt">nav</span><span class="p">&gt;</span>
+<span class="w">        </span><span class="p">&lt;/</span><span class="nt">header</span><span class="p">&gt;</span>
+<span class="w">        </span><span class="p">&lt;</span><span class="nt">main</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;max-w-5xl mx-auto p-6&quot;</span><span class="p">&gt;{</span><span class="nx">children</span><span class="p">}&lt;/</span><span class="nt">main</span><span class="p">&gt;</span>
+<span class="w">        </span><span class="p">&lt;</span><span class="nt">footer</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;bg-gray-800 text-white p-4 text-center&quot;</span><span class="p">&gt;</span>
+<span class="w">          </span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="o">&amp;</span><span class="nx">copy</span><span class="p">;</span><span class="w"> </span><span class="mf">2025</span><span class="w"> </span><span class="nx">Mi</span><span class="w"> </span><span class="nx">App</span><span class="p">.</span><span class="w"> </span><span class="nx">Todos</span><span class="w"> </span><span class="nx">los</span><span class="w"> </span><span class="nx">derechos</span><span class="w"> </span><span class="nx">reservados</span><span class="p">.&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="w">        </span><span class="p">&lt;/</span><span class="nt">footer</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Explicación</strong>:</p>
+<ul>
+<li>Usamos <code>Link</code> para navegación sin recarga.</li>
+<li>Tailwind CSS estiliza el encabezado, contenido principal y pie de página.</li>
+<li>El layout raíz se aplica a todas las páginas en <code>app</code>.</li>
+</ul>
+<h3 id="paso-3-crear-la-pagina-principal">Paso 3: Crear la Página Principal</h3>
+<ol>
+<li>Abre <code>app/page.tsx</code> y actualiza con:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">Home</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;text-center&quot;</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">h2</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;text-4xl font-bold text-gray-800 mb-4&quot;</span><span class="p">&gt;</span><span class="nx">Bienvenido</span><span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">p</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;text-lg text-gray-600&quot;</span><span class="p">&gt;</span>
+<span class="w">        </span><span class="nx">Explora</span><span class="w"> </span><span class="nx">nuestra</span><span class="w"> </span><span class="nx">aplicación</span><span class="w"> </span><span class="nx">con</span><span class="w"> </span><span class="nx">múltiples</span><span class="w"> </span><span class="nx">páginas</span><span class="w"> </span><span class="nx">y</span><span class="w"> </span><span class="nx">layouts</span><span class="w"> </span><span class="nx">en</span><span class="w"> </span><span class="nx">Next</span><span class="p">.</span><span class="nx">js</span><span class="p">.</span>
+<span class="w">      </span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Explicación</strong>:</p>
+<ul>
+<li>Esta página se renderiza en <code>/</code>.</li>
+<li>Comparte el layout raíz.</li>
+</ul>
+<h3 id="paso-4-crear-las-paginas-acerca-servicios-y-contacto">Paso 4: Crear las Páginas "Acerca", "Servicios" y "Contacto"</h3>
+<ol>
+<li>Crea las carpetas y archivos para las páginas:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>-p<span class="w"> </span>app/about<span class="w"> </span>app/services<span class="w"> </span>app/contact
+touch<span class="w"> </span>app/about/page.tsx<span class="w"> </span>app/services/page.tsx<span class="w"> </span>app/contact/page.tsx
+</code></pre></div>
+<ol>
+<li><strong>Acerca</strong> (<code>app/about/page.tsx</code>):</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">About</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">h2</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;text-3xl font-bold text-gray-800 mb-4&quot;</span><span class="p">&gt;</span><span class="nx">Acerca</span><span class="w"> </span><span class="nx">de</span><span class="w"> </span><span class="nx">Nosotros</span><span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">p</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;text-lg text-gray-600&quot;</span><span class="p">&gt;</span>
+<span class="w">        </span><span class="nx">Somos</span><span class="w"> </span><span class="nx">una</span><span class="w"> </span><span class="nx">empresa</span><span class="w"> </span><span class="nx">dedicada</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">crear</span><span class="w"> </span><span class="nx">soluciones</span><span class="w"> </span><span class="nx">innovadoras</span><span class="w"> </span><span class="nx">con</span><span class="w"> </span><span class="nx">Next</span><span class="p">.</span><span class="nx">js</span><span class="p">.</span>
+<span class="w">      </span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<ol>
+<li><strong>Servicios</strong> (<code>app/services/page.tsx</code>):</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">Services</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">h2</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;text-3xl font-bold text-gray-800 mb-4&quot;</span><span class="p">&gt;</span><span class="nx">Nuestros</span><span class="w"> </span><span class="nx">Servicios</span><span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">ul</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;list-disc list-inside text-lg text-gray-600&quot;</span><span class="p">&gt;</span>
+<span class="w">        </span><span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span><span class="nx">Desarrollo</span><span class="w"> </span><span class="nx">web</span><span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="w">        </span><span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span><span class="nx">Consultoría</span><span class="w"> </span><span class="nx">tecnológica</span><span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="w">        </span><span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span><span class="nx">Diseño</span><span class="w"> </span><span class="nx">UI</span><span class="o">/</span><span class="nx">UX</span><span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<ol>
+<li><strong>Contacto</strong> (<code>app/contact/page.tsx</code>):</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">Contact</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">h2</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;text-3xl font-bold text-gray-800 mb-4&quot;</span><span class="p">&gt;</span><span class="nx">Contáctanos</span><span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">p</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;text-lg text-gray-600&quot;</span><span class="p">&gt;</span>
+<span class="w">        </span><span class="nx">Envíenos</span><span class="w"> </span><span class="nx">un</span><span class="w"> </span><span class="nx">correo</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">a</span><span class="w"> </span><span class="na">href</span><span class="o">=</span><span class="s">&quot;mailto:info@miapp.com&quot;</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;text-indigo-600 hover:underline&quot;</span><span class="p">&gt;</span><span class="nx">info</span><span class="kd">@miapp</span><span class="p">.</span><span class="nx">com</span><span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;.</span>
+<span class="w">      </span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Explicación</strong>:</p>
+<ul>
+<li>Cada página se renderiza en su ruta correspondiente (<code>/about</code>, <code>/services</code>, <code>/contact</code>).</li>
+<li>Todas comparten el layout raíz.</li>
+</ul>
+<h3 id="paso-5-crear-una-seccion-de-blog-con-layout-anidado">Paso 5: Crear una Sección de Blog con Layout Anidado</h3>
+<p>Crearemos una sección de blog con un layout específico que incluye una barra lateral, afectando a las páginas "Blog" y "Blog Post".</p>
+<ol>
+<li>Crea la carpeta <code>app/blog</code> y el archivo de layout:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>app/blog
+touch<span class="w"> </span>app/blog/layout.tsx
+</code></pre></div>
+<ol>
+<li>Agrega el layout anidado (<code>app/blog/layout.tsx</code>):</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">BlogLayout</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">children</span><span class="p">,</span>
+<span class="p">}</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">children</span><span class="o">:</span><span class="w"> </span><span class="kt">React.ReactNode</span><span class="p">;</span>
+<span class="p">})</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;flex gap-6&quot;</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">aside</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;w-1/4 bg-gray-100 p-4 rounded-lg&quot;</span><span class="p">&gt;</span>
+<span class="w">        </span><span class="p">&lt;</span><span class="nt">h3</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;text-xl font-semibold mb-2&quot;</span><span class="p">&gt;</span><span class="nx">Blog</span><span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+<span class="w">        </span><span class="p">&lt;</span><span class="nt">ul</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;space-y-2&quot;</span><span class="p">&gt;</span>
+<span class="w">          </span><span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="w">            </span><span class="p">&lt;</span><span class="nt">a</span><span class="w"> </span><span class="na">href</span><span class="o">=</span><span class="s">&quot;/blog&quot;</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;text-indigo-600 hover:underline&quot;</span><span class="p">&gt;</span>
+<span class="w">              </span><span class="nx">Todos</span><span class="w"> </span><span class="nx">los</span><span class="w"> </span><span class="nx">posts</span>
+<span class="w">            </span><span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="w">          </span><span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="w">          </span><span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="w">            </span><span class="p">&lt;</span><span class="nt">a</span><span class="w"> </span><span class="na">href</span><span class="o">=</span><span class="s">&quot;/blog/post-1&quot;</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;text-indigo-600 hover:underline&quot;</span><span class="p">&gt;</span>
+<span class="w">              </span><span class="nx">Post</span><span class="w"> </span><span class="mf">1</span>
+<span class="w">            </span><span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="w">          </span><span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="w">        </span><span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;/</span><span class="nt">aside</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;w-3/4&quot;</span><span class="p">&gt;{</span><span class="nx">children</span><span class="p">}&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Explicación</strong>:</p>
+<ul>
+<li>Este layout se aplica a todas las páginas dentro de <code>app/blog</code>.</li>
+<li>
+<p>Incluye una barra lateral con enlaces y envuelve el contenido de las páginas.</p>
+</li>
+<li>
+<p>Crea la página principal del blog (<code>app/blog/page.tsx</code>):</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code>touch<span class="w"> </span>app/blog/page.tsx
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">Blog</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">h2</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;text-3xl font-bold text-gray-800 mb-4&quot;</span><span class="p">&gt;</span><span class="nx">Nuestro</span><span class="w"> </span><span class="nx">Blog</span><span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">p</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;text-lg text-gray-600&quot;</span><span class="p">&gt;</span>
+<span class="w">        </span><span class="nx">Bienvenido</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">nuestro</span><span class="w"> </span><span class="nx">blog</span><span class="p">.</span><span class="w"> </span><span class="nx">Aquí</span><span class="w"> </span><span class="nx">encontrarás</span><span class="w"> </span><span class="nx">artículos</span><span class="w"> </span><span class="nx">interesantes</span><span class="p">.</span>
+<span class="w">      </span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<ol>
+<li>Crea una página de post dinámico (<code>app/blog/[id]/page.tsx</code>):</li>
+</ol>
+<div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>app/blog/<span class="o">[</span>id<span class="o">]</span>
+touch<span class="w"> </span>app/blog/<span class="o">[</span>id<span class="o">]</span>/page.tsx
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">BlogPost</span><span class="p">({</span><span class="w"> </span><span class="nx">params</span><span class="w"> </span><span class="p">}</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">params</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">h2</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;text-3xl font-bold text-gray-800 mb-4&quot;</span><span class="p">&gt;</span><span class="nx">Post</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">params</span><span class="p">.</span><span class="nx">id</span><span class="p">}&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">p</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;text-lg text-gray-600&quot;</span><span class="p">&gt;</span>
+<span class="w">        </span><span class="nx">Este</span><span class="w"> </span><span class="nx">es</span><span class="w"> </span><span class="nx">el</span><span class="w"> </span><span class="nx">contenido</span><span class="w"> </span><span class="nx">del</span><span class="w"> </span><span class="nx">post</span><span class="w"> </span><span class="p">{</span><span class="nx">params</span><span class="p">.</span><span class="nx">id</span><span class="p">}.</span>
+<span class="w">      </span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Explicación</strong>:</p>
+<ul>
+<li>La página principal del blog se renderiza en <code>/blog</code>.</li>
+<li>La página de post dinámico se renderiza en <code>/blog/:id</code> (por ejemplo, <code>/blog/post-1</code>).</li>
+<li>Ambas páginas usan el layout anidado de <code>app/blog/layout.tsx</code>, que a su vez está envuelto por el layout raíz.</li>
+</ul>
+<h3 id="paso-6-probar-la-aplicacion">Paso 6: Probar la Aplicación</h3>
+<ol>
+<li>Asegúrate de que el servidor está corriendo (<code>npm run dev</code>).</li>
+<li>Abre <code>http://localhost:3000</code> y navega por las rutas:</li>
+<li><code>/</code>: Página principal.</li>
+<li><code>/about</code>: Página "Acerca".</li>
+<li><code>/services</code>: Página "Servicios".</li>
+<li><code>/contact</code>: Página "Contacto".</li>
+<li><code>/blog</code>: Página principal del blog con barra lateral.</li>
+<li><code>/blog/post-1</code>: Página de un post con barra lateral.</li>
+<li>Verifica que:</li>
+<li>Todas las páginas comparten el layout raíz (encabezado y pie de página).</li>
+<li>Las páginas bajo <code>/blog</code> tienen una barra lateral adicional.</li>
+<li>La navegación con <code>Link</code> es fluida.</li>
+</ol>
+<h3 id="paso-7-construir-para-produccion">Paso 7: Construir para Producción</h3>
+<ol>
+<li>Genera una versión optimizada:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>npm<span class="w"> </span>run<span class="w"> </span>build
+</code></pre></div>
+<ol>
+<li>Inicia el servidor de producción:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>npm<span class="w"> </span>start
+</code></pre></div>
+<ol>
+<li>Verifica en <code>http://localhost:3000</code>.</li>
+</ol>
+<h3 id="estructura-final-del-proyecto">Estructura Final del Proyecto</h3>
+<div class="highlight"><pre><span></span><code>my-multi-page-app/
+├── app/
+│   ├── about/
+│   │   └── page.tsx
+│   ├── blog/
+│   │   ├── [id]/
+│   │   │   └── page.tsx
+│   │   ├── layout.tsx
+│   │   └── page.tsx
+│   ├── contact/
+│   │   └── page.tsx
+│   ├── services/
+│   │   └── page.tsx
+│   ├── layout.tsx
+│   ├── page.tsx
+│   └── globals.css
+├── public/
+├── package.json
+└── ...
+</code></pre></div>
+<h2 id="tutorial-configurar-nextjs-con-clerk-para-autenticacion">Tutorial: Configurar Next.js con Clerk para autenticación</h2>
+<p>Este tutorial se centra en el uso del App Router de Next.js y la integración con Clerk para autenticación de usuarios.</p>
+<p><a href="https://clerk.com/docs/quickstarts/nextjs">https://clerk.com/docs/quickstarts/nextjs</a></p>
+<h3 id="configuracion-completa-con-rutas-publicas-y-protegidas">Configuración completa con rutas públicas y protegidas</h3>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">clerkMiddleware</span><span class="p">,</span><span class="w"> </span><span class="nx">createRouteMatcher</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@clerk/nextjs/server&#39;</span>
+
+<span class="c1">// Definir rutas públicas (accesibles sin autenticación)</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">isPublicRoute</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createRouteMatcher</span><span class="p">([</span>
+<span class="w">  </span><span class="s1">&#39;/&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="s1">&#39;/about&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="s1">&#39;/contact&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="s1">&#39;/pricing&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="s1">&#39;/sign-in(.*)&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="s1">&#39;/sign-up(.*)&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="s1">&#39;/api/public(.*)&#39;</span>
+<span class="p">])</span>
+
+<span class="c1">// Definir rutas que requieren autenticación básica</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">isProtectedRoute</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createRouteMatcher</span><span class="p">([</span>
+<span class="w">  </span><span class="s1">&#39;/dashboard(.*)&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="s1">&#39;/profile(.*)&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="s1">&#39;/settings(.*)&#39;</span>
+<span class="p">])</span>
+
+<span class="c1">// Definir rutas que requieren permisos de administrador</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">isAdminRoute</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createRouteMatcher</span><span class="p">([</span>
+<span class="w">  </span><span class="s1">&#39;/admin(.*)&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="s1">&#39;/management(.*)&#39;</span>
+<span class="p">])</span>
+
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">clerkMiddleware</span><span class="p">(</span><span class="k">async</span><span class="w"> </span><span class="p">(</span><span class="nx">auth</span><span class="p">,</span><span class="w"> </span><span class="nx">req</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Si es una ruta pública, permitir acceso</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">isPublicRoute</span><span class="p">(</span><span class="nx">req</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="c1">// Proteger rutas de administrador con permisos específicos</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">isAdminRoute</span><span class="p">(</span><span class="nx">req</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">auth</span><span class="p">.</span><span class="nx">protect</span><span class="p">((</span><span class="nx">has</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="nx">has</span><span class="p">({</span><span class="w"> </span><span class="nx">permission</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;org:admin:example1&#39;</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nx">has</span><span class="p">({</span><span class="w"> </span><span class="nx">permission</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;org:admin:example2&#39;</span><span class="w"> </span><span class="p">})</span>
+<span class="w">    </span><span class="p">})</span>
+<span class="w">    </span><span class="k">return</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="c1">// Proteger rutas generales que requieren autenticación</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">isProtectedRoute</span><span class="p">(</span><span class="nx">req</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">auth</span><span class="p">.</span><span class="nx">protect</span><span class="p">()</span>
+<span class="w">    </span><span class="k">return</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="c1">// Por defecto, proteger todas las demás rutas</span>
+<span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">auth</span><span class="p">.</span><span class="nx">protect</span><span class="p">()</span>
+<span class="p">})</span>
+
+<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">matcher</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="c1">// Skip Next.js internals and all static files, unless found in search params</span>
+<span class="w">    </span><span class="s1">&#39;/((?!_next|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="c1">// Always run for API routes</span>
+<span class="w">    </span><span class="s1">&#39;/(api|trpc)(.*)&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="ejemplo-alternativo-proteger-todo-excepto-rutas-publicas">Ejemplo alternativo: Proteger todo excepto rutas públicas</h3>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">clerkMiddleware</span><span class="p">,</span><span class="w"> </span><span class="nx">createRouteMatcher</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@clerk/nextjs/server&#39;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">isPublicRoute</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createRouteMatcher</span><span class="p">([</span><span class="s1">&#39;/sign-in(.*)&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;/sign-up(.*)&#39;</span><span class="p">])</span>
+
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">clerkMiddleware</span><span class="p">(</span><span class="k">async</span><span class="w"> </span><span class="p">(</span><span class="nx">auth</span><span class="p">,</span><span class="w"> </span><span class="nx">request</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">isPublicRoute</span><span class="p">(</span><span class="nx">request</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">auth</span><span class="p">.</span><span class="nx">protect</span><span class="p">()</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">})</span>
+
+<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">matcher</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="c1">// Skip Next.js internals and all static files, unless found in search params</span>
+<span class="w">    </span><span class="s1">&#39;/((?!_next|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="c1">// Always run for API routes</span>
+<span class="w">    </span><span class="s1">&#39;/(api|trpc)(.*)&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="ejemplo-con-multiples-grupos-de-rutas">Ejemplo con múltiples grupos de rutas</h3>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">clerkMiddleware</span><span class="p">,</span><span class="w"> </span><span class="nx">createRouteMatcher</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@clerk/nextjs/server&#39;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">isTenantRoute</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createRouteMatcher</span><span class="p">([</span><span class="s1">&#39;/organization-selector(.*)&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;/orgid/(.*)&#39;</span><span class="p">])</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">isTenantAdminRoute</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createRouteMatcher</span><span class="p">([</span><span class="s1">&#39;/orgId/(.*)/memberships&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;/orgId/(.*)/domain&#39;</span><span class="p">])</span>
+
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">clerkMiddleware</span><span class="p">(</span><span class="k">async</span><span class="w"> </span><span class="p">(</span><span class="nx">auth</span><span class="p">,</span><span class="w"> </span><span class="nx">req</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Restrict admin routes to users with specific permissions</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">isTenantAdminRoute</span><span class="p">(</span><span class="nx">req</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">auth</span><span class="p">.</span><span class="nx">protect</span><span class="p">((</span><span class="nx">has</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="nx">has</span><span class="p">({</span><span class="w"> </span><span class="nx">permission</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;org:admin:example1&#39;</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nx">has</span><span class="p">({</span><span class="w"> </span><span class="nx">permission</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;org:admin:example2&#39;</span><span class="w"> </span><span class="p">})</span>
+<span class="w">    </span><span class="p">})</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="c1">// Restrict organization routes to signed in users</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">isTenantRoute</span><span class="p">(</span><span class="nx">req</span><span class="p">))</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">auth</span><span class="p">.</span><span class="nx">protect</span><span class="p">()</span>
+<span class="p">})</span>
+
+<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">matcher</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="c1">// Skip Next.js internals and all static files, unless found in search params</span>
+<span class="w">    </span><span class="s1">&#39;/((?!_next|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="c1">// Always run for API routes</span>
+<span class="w">    </span><span class="s1">&#39;/(api|trpc)(.*)&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="puntos-clave">Puntos clave:</h3>
+<ul>
+<li><strong>Rutas públicas</strong>: Accesibles sin autenticación usando <code>createRouteMatcher()</code>  <a href="https://clerk.com/docs/references/nextjs/clerk-middleware#protect-api-routes">(1)</a> </li>
+<li><strong>Rutas protegidas</strong>: Requieren autenticación usando <code>auth.protect()</code> </li>
+<li><strong>Rutas con permisos</strong>: Requieren roles o permisos específicos usando <code>auth.protect((has) =&gt; {...})</code> </li>
+<li><strong>Comportamiento por defecto</strong>: <code>clerkMiddleware</code> no protege ninguna ruta por defecto, debes optar por la protección </li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      2025 &copy; by JFVG
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs.sticky", "navigation.tabs", "navigation.top", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.indexes"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>
