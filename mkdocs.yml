@@ -58,19 +58,10 @@ nav:
   - Inicio: index.md  
   - Contenido:
       - content/p0.md      
-      - content/p1.md      
-      - content/p2.md      
-      - content/p3.md      
-      - content/p4.md      
-      - content/p5.md      
-      - content/p6.md      
+       
       
 
-  - Proyecto Integrador: 
-      - pi/p1.md   
-  - Blog:
-     - blog/index.md
-  - Acerca de: about.md
+
 
 plugins:
   - search

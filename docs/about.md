@@ -1,6 +1,0 @@
-El Submódulo React es una iniciativa educativa del SENA, diseñada para introducir a los estudiantes en el dinámico mundo del desarrollo de interfaces de usuario con **React**, con énfasis en herramientas clave como la creación de componentes reutilizables, el manejo del estado con hooks y la integración con APIs. Este curso combina teoría y práctica para ofrecer una base sólida en el diseño, desarrollo e implementación de aplicaciones web modernas y escalables.
-
-### **Propósito del Curso**
-Este curso tiene como objetivo formar a los estudiantes en el desarrollo de aplicaciones web con **React**, capacitándolos para resolver problemas reales, desde la creación de interfaces dinámicas hasta la integración con servicios externos y APIs. Al finalizar, los participantes estarán listos para aplicar sus habilidades en entornos profesionales, desarrollando soluciones innovadoras y participando en proyectos tecnológicos de alto impacto.
-
-¡Únete a nosotros y comienza tu camino hacia el futuro del desarrollo web con React!
