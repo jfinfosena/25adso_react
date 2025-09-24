@@ -1,0 +1,2408 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="jhonfvg">
+      
+      
+        <link rel="canonical" href="https://jfinfosena.github.io/25adso-react/content/p1/">
+      
+      
+        <link rel="prev" href="../..">
+      
+      
+        <link rel="next" href="../p2/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.3">
+    
+    
+      
+        <title>Clase 2 Introducción a React y Configuración del Entorno - React</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.d7758b05.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#clase-2-introduccion-a-react-y-configuracion-del-entorno" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="React" class="md-header__button md-logo" aria-label="React" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="m11.28 3.22 4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.275-.326.75.75 0 0 1 .215-.734L13.94 8l-3.72-3.72a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215m-6.56 0a.75.75 0 0 1 1.042.018.75.75 0 0 1 .018 1.042L2.06 8l3.72 3.72a.749.749 0 0 1-.326 1.275.75.75 0 0 1-.734-.215L.47 8.53a.75.75 0 0 1 0-1.06Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            React
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Clase 2 Introducción a React y Configuración del Entorno
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="orange" data-md-color-accent="lime"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Inicio
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+    
+  
+  Contenido
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../activities/p1/" class="md-tabs__link">
+          
+  
+    
+  
+  Actividades
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../pi/p1/" class="md-tabs__link">
+          
+  
+    
+  
+  Proyecto Integrador
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="React" class="md-nav__button md-logo" aria-label="React" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="m11.28 3.22 4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.275-.326.75.75 0 0 1 .215-.734L13.94 8l-3.72-3.72a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215m-6.56 0a.75.75 0 0 1 1.042.018.75.75 0 0 1 .018 1.042L2.06 8l3.72 3.72a.749.749 0 0 1-.326 1.275.75.75 0 0 1-.734-.215L.47 8.53a.75.75 0 0 1 0-1.06Z"/></svg>
+
+    </a>
+    React
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Inicio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Contenido
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Contenido
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Clase 2 Introducción a React y Configuración del Entorno
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Clase 2 Introducción a React y Configuración del Entorno
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#bienvenidoa-al-mundo-de-react" class="md-nav__link">
+    <span class="md-ellipsis">
+      ¡Bienvenido/a al mundo de React!
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fundamentos-teoricos-y-contexto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fundamentos Teóricos y Contexto
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fundamentos Teóricos y Contexto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-es-react" class="md-nav__link">
+    <span class="md-ellipsis">
+      ¿Qué es React?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#por-que-usar-react-principales-beneficios" class="md-nav__link">
+    <span class="md-ellipsis">
+      ¿Por Qué Usar React? Principales Beneficios
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conceptos-clave-iniciales" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conceptos Clave Iniciales
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alternativas-a-react" class="md-nav__link">
+    <span class="md-ellipsis">
+      Alternativas a React
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prerrequisitos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerrequisitos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instalacion-de-nodejs-y-npm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalación de Node.js y npm
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creando-proyecto-react-con-vite" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creando Proyecto React con Vite
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Creando Proyecto React con Vite">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#explicacion-paso-a-paso" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explicación paso a paso
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-completo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplo completo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#url-oficial-de-vite" class="md-nav__link">
+    <span class="md-ellipsis">
+      URL oficial de Vite
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ventajas-de-usar-vite-con-react" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ventajas de usar Vite con React
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creando-proyecto-react-con-nextjs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creando Proyecto React con Next.js
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Creando Proyecto React con Next.js">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#explicacion-paso-a-paso_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explicación paso a paso
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-completo_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplo completo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#url-oficial-de-nextjs" class="md-nav__link">
+    <span class="md-ellipsis">
+      URL oficial de Next.js
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ventajas-de-usar-nextjs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ventajas de usar Next.js
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diferencias-con-vite" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diferencias con Vite
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extensiones-de-vs-code-especificas-para-react" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extensiones de VS Code Específicas para React
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#que-es-jsx" class="md-nav__link">
+    <span class="md-ellipsis">
+      ¿Qué es JSX?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-funciona-jsx" class="md-nav__link">
+    <span class="md-ellipsis">
+      ¿Cómo funciona JSX?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#caracteristicas-principales-de-jsx" class="md-nav__link">
+    <span class="md-ellipsis">
+      Características principales de JSX
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reglas-de-jsx" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reglas de JSX
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejemplo-practico-de-jsx-en-react" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplo práctico de JSX en React
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejemplo práctico de JSX en React">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#codigo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Código
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explicacion-del-ejemplo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explicación del ejemplo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-probarlo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cómo probarlo
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jsx-en-vite-vs-nextjs" class="md-nav__link">
+    <span class="md-ellipsis">
+      JSX en Vite vs. Next.js
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ventajas-de-jsx" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ventajas de JSX
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limitaciones-de-jsx" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limitaciones de JSX
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consejos-para-trabajar-con-jsx" class="md-nav__link">
+    <span class="md-ellipsis">
+      Consejos para trabajar con JSX
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#actividad-basica-para-principiantes-tu-primer-componente-interactivo-en-nextjs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Actividad Básica para Principiantes: Tu Primer Componente Interactivo en Next.js
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Clase 3 Componente en React
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Clase 4 Crear Componentes en React con Next.js (JavaScript) y Estilizar con CSS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Clase 5 Agregar CSS a Componentes en Next.js
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Clase 6 Enrutamiento en Next.js 13+ (App Router)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Clase 7: Renderizado Dinámico de Arreglos Locales en React y Next.js
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p7/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Clase 8: Hook useState - Guía Simple y Detallada
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Clase 9: Hook useEffect - Guía Simple y Detallada
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p9/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Evaluación de Conocimiento
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Actividades
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Actividades
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../activities/p1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Actividad Práctica 1: Uso de Props en Next.js (App Router)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../activities/p2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Actividad Práctica 2: Estilizado de Componentes en Next.js
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../activities/p3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Actividad Práctica 3: Enrutamiento en Next.js 13+ (App Router)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Proyecto Integrador
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Proyecto Integrador
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pi/p1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Proyecto Integrador - Aplicación Web con React y Next.js
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#bienvenidoa-al-mundo-de-react" class="md-nav__link">
+    <span class="md-ellipsis">
+      ¡Bienvenido/a al mundo de React!
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fundamentos-teoricos-y-contexto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fundamentos Teóricos y Contexto
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fundamentos Teóricos y Contexto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-es-react" class="md-nav__link">
+    <span class="md-ellipsis">
+      ¿Qué es React?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#por-que-usar-react-principales-beneficios" class="md-nav__link">
+    <span class="md-ellipsis">
+      ¿Por Qué Usar React? Principales Beneficios
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conceptos-clave-iniciales" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conceptos Clave Iniciales
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alternativas-a-react" class="md-nav__link">
+    <span class="md-ellipsis">
+      Alternativas a React
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prerrequisitos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerrequisitos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instalacion-de-nodejs-y-npm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalación de Node.js y npm
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creando-proyecto-react-con-vite" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creando Proyecto React con Vite
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Creando Proyecto React con Vite">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#explicacion-paso-a-paso" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explicación paso a paso
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-completo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplo completo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#url-oficial-de-vite" class="md-nav__link">
+    <span class="md-ellipsis">
+      URL oficial de Vite
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ventajas-de-usar-vite-con-react" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ventajas de usar Vite con React
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creando-proyecto-react-con-nextjs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creando Proyecto React con Next.js
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Creando Proyecto React con Next.js">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#explicacion-paso-a-paso_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explicación paso a paso
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-completo_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplo completo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#url-oficial-de-nextjs" class="md-nav__link">
+    <span class="md-ellipsis">
+      URL oficial de Next.js
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ventajas-de-usar-nextjs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ventajas de usar Next.js
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diferencias-con-vite" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diferencias con Vite
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extensiones-de-vs-code-especificas-para-react" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extensiones de VS Code Específicas para React
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#que-es-jsx" class="md-nav__link">
+    <span class="md-ellipsis">
+      ¿Qué es JSX?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-funciona-jsx" class="md-nav__link">
+    <span class="md-ellipsis">
+      ¿Cómo funciona JSX?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#caracteristicas-principales-de-jsx" class="md-nav__link">
+    <span class="md-ellipsis">
+      Características principales de JSX
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reglas-de-jsx" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reglas de JSX
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejemplo-practico-de-jsx-en-react" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplo práctico de JSX en React
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejemplo práctico de JSX en React">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#codigo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Código
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explicacion-del-ejemplo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explicación del ejemplo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-probarlo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cómo probarlo
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jsx-en-vite-vs-nextjs" class="md-nav__link">
+    <span class="md-ellipsis">
+      JSX en Vite vs. Next.js
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ventajas-de-jsx" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ventajas de JSX
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limitaciones-de-jsx" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limitaciones de JSX
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consejos-para-trabajar-con-jsx" class="md-nav__link">
+    <span class="md-ellipsis">
+      Consejos para trabajar con JSX
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#actividad-basica-para-principiantes-tu-primer-componente-interactivo-en-nextjs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Actividad Básica para Principiantes: Tu Primer Componente Interactivo en Next.js
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="clase-2-introduccion-a-react-y-configuracion-del-entorno">Clase 2 Introducción a React y Configuración del Entorno</h1>
+<h2 id="bienvenidoa-al-mundo-de-react">¡Bienvenido/a al mundo de React!</h2>
+<p>En esta primera clase, sentaremos las bases para tu viaje con React. Entenderemos qué es esta poderosa biblioteca, por qué es tan popular, y daremos los primeros pasos prácticos configurando nuestro entorno de desarrollo y creando nuestra primera (muy simple) aplicación React.</p>
+<hr />
+<h2 id="fundamentos-teoricos-y-contexto">Fundamentos Teóricos y Contexto</h2>
+<h3 id="que-es-react">¿Qué es React?</h3>
+<ul>
+<li>React es una biblioteca (library) de JavaScript de código abierto, creada y mantenida por Meta (Facebook) y una gran comunidad.</li>
+<li>Su objetivo principal es ayudarte a construir interfaces de usuario (UIs) de forma eficiente, especialmente para aplicaciones web complejas e interactivas.</li>
+<li>La idea central de React es dividir la interfaz en pequeñas piezas reutilizables llamadas componentes. Piensa en ellos como bloques de LEGO: cada uno tiene su propia lógica y apariencia, y los combinas para crear interfaces completas.</li>
+</ul>
+<h3 id="por-que-usar-react-principales-beneficios">¿Por Qué Usar React? Principales Beneficios</h3>
+<ul>
+<li>Declarativo: En lugar de decirle al navegador <em>cómo</em> actualizar la pantalla paso a paso (imperativo), le dices a React <em>qué</em> quieres mostrar basado en los datos actuales (el estado). React se encarga de hacer los cambios necesarios de manera eficiente. Esto hace el código más predecible y fácil de depurar.</li>
+<li>Basado en Componentes: Facilita la reutilización de código (escribes un componente una vez y lo usas muchas veces), mejora la organización del proyecto y simplifica las pruebas.</li>
+<li>Rendimiento (Gracias al Virtual DOM):<ul>
+<li>React usa una copia virtual de la estructura de tu UI en memoria (el "Virtual DOM").</li>
+<li>Cuando los datos cambian, React compara la nueva versión del Virtual DOM con la anterior.</li>
+<li>Luego, calcula la forma más eficiente de actualizar el DOM <em>real</em> del navegador, minimizando operaciones costosas y haciendo que tu aplicación se sienta más rápida. No necesitas interactuar directamente con el Virtual DOM, ¡React lo maneja por ti!</li>
+</ul>
+</li>
+<li>Gran Ecosistema y Comunidad: Hay muchísimas herramientas, librerías adicionales, tutoriales y una comunidad activa dispuesta a ayudar. Esto también significa que hay muchas oportunidades laborales para desarrolladores React.</li>
+</ul>
+<h3 id="conceptos-clave-iniciales">Conceptos Clave Iniciales</h3>
+<ul>
+<li>SPA (Single Page Application): Aplicaciones que cargan una sola página HTML y luego actualizan el contenido dinámicamente usando JavaScript, sin necesidad de recargar toda la página al navegar. React es excelente para construir SPAs, lo que resulta en una experiencia de usuario más fluida. Contrasta con las MPAs (Multi-Page Applications) tradicionales, donde cada cambio de página implica una recarga completa desde el servidor.</li>
+<li>Virtual DOM: (Repaso) Es la representación interna que React usa para optimizar las actualizaciones del DOM real del navegador.</li>
+</ul>
+<h3 id="alternativas-a-react">Alternativas a React</h3>
+<p>Existen otros frameworks y bibliotecas populares para construir UIs:</p>
+<ul>
+<li>Angular: Un framework completo de Google, usa TypeScript y tiene una estructura más definida ("opinionado").</li>
+<li>Vue.js: Un framework progresivo, conocido por su facilidad de aprendizaje y excelente documentación.</li>
+<li>Svelte: Un enfoque diferente; es un compilador que escribe JavaScript eficiente y desaparece en tiempo de ejecución.</li>
+</ul>
+<p>No hay una opción "mejor" universalmente; la elección depende del proyecto. React destaca por su flexibilidad, enfoque en componentes y gran ecosistema.</p>
+<h3 id="prerrequisitos">Prerrequisitos</h3>
+<p>Para seguir este curso, necesitas conocimientos sólidos de:</p>
+<ul>
+<li>HTML y CSS: Fundamentales para estructurar y estilizar páginas web.</li>
+<li>JavaScript (Moderno - ES6+): ¡Esencial! Necesitas entender:<ul>
+<li>Variables: <code>let</code>, <code>const</code></li>
+<li>Funciones Flecha: <code>=&gt;</code></li>
+<li>Métodos de Array: <code>.map()</code>, <code>.filter()</code> (¡<code>map</code> es crucial!)</li>
+<li>Módulos: <code>import</code>/<code>export</code></li>
+<li>(Idealmente) Promesas, <code>async/await</code> (los usaremos más adelante).</li>
+</ul>
+</li>
+<li>
+<p>Node.js y npm:</p>
+<ul>
+<li>Node.js: Entorno para ejecutar JavaScript fuera del navegador. Lo necesitamos para las herramientas de desarrollo de React.</li>
+<li>npm (Node Package Manager): Gestor de paquetes que viene con Node.js. Lo usaremos para instalar React y otras librerías (dependencias).</li>
+</ul>
+</li>
+<li>
+<p>Un Editor de Código: VS Code es muy recomendado por sus extensiones útiles para React/JavaScript, pero puedes usar Sublime Text, Atom, WebStorm, etc.</p>
+</li>
+</ul>
+<h3 id="instalacion-de-nodejs-y-npm">Instalación de Node.js y npm</h3>
+<ol>
+<li>Ve a <a href="https://nodejs.org/">https://nodejs.org/</a>.</li>
+<li>Descarga e instala la versión LTS (Long Term Support) – es la más estable. Sigue los pasos del instalador.</li>
+<li>Abre tu terminal (Terminal en Mac/Linux, CMD/PowerShell/Git Bash en Windows).</li>
+<li>Verifica la instalación ejecutando estos comandos (deberían mostrarte números de versión):
+    <div class="highlight"><pre><span></span><code>node<span class="w"> </span>-v
+npm<span class="w"> </span>-v
+</code></pre></div>
+    Si ves las versiones, ¡estás listo! Si tienes problemas, pide ayuda.</li>
+</ol>
+<hr />
+<h2 id="creando-proyecto-react-con-vite">Creando Proyecto React con Vite</h2>
+<h3 id="explicacion-paso-a-paso">Explicación paso a paso</h3>
+<ol>
+<li>Requisitos previos:</li>
+<li>Asegúrate de tener Node.js instalado (versión 14.18+ o superior). Puedes verificarlo con:
+     <div class="highlight"><pre><span></span><code>node<span class="w"> </span>-v
+</code></pre></div></li>
+<li>
+<p>Tener un gestor de paquetes como npm (viene con Node.js) o pnpm (opcional, más rápido).</p>
+</li>
+<li>
+<p>Crear un proyecto con Vite:
+   Vite ofrece plantillas preconfiguradas para React. Usa el siguiente comando para iniciar un proyecto:</p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code>npm<span class="w"> </span>create<span class="w"> </span>vite@latest
+</code></pre></div>
+<ul>
+<li>Esto inicia un asistente interactivo.</li>
+<li>Nombre del proyecto: Ingresa un nombre (ejemplo: <code>mi-proyecto-react</code>).</li>
+<li>Framework: Selecciona <code>React</code>.</li>
+<li>Variante: Elige <code>JavaScript</code> o <code>TypeScript</code> (para este ejemplo, usaremos JavaScript).</li>
+</ul>
+<p>Alternativamente, puedes usar un solo comando para evitar el asistente:
+   <div class="highlight"><pre><span></span><code>npm<span class="w"> </span>create<span class="w"> </span>vite@latest<span class="w"> </span>mi-proyecto-react<span class="w"> </span>--<span class="w"> </span>--template<span class="w"> </span>react
+</code></pre></div></p>
+<ol>
+<li>
+<p>Navegar al directorio del proyecto:
+   <div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>mi-proyecto-react
+</code></pre></div></p>
+</li>
+<li>
+<p>Instalar dependencias:
+   <div class="highlight"><pre><span></span><code>npm<span class="w"> </span>install
+</code></pre></div></p>
+</li>
+<li>
+<p>Iniciar el servidor de desarrollo:
+   <div class="highlight"><pre><span></span><code>npm<span class="w"> </span>run<span class="w"> </span>dev
+</code></pre></div></p>
+</li>
+<li>Esto inicia un servidor local (generalmente en <code>http://localhost:5173</code>).</li>
+<li>
+<p>Abre la URL en tu navegador para ver la aplicación React predeterminada.</p>
+</li>
+<li>
+<p>Estructura del proyecto:
+   Una vez creado, el proyecto tendrá una estructura similar a esta:
+   <div class="highlight"><pre><span></span><code>mi-proyecto-react/
+├── node_modules/
+├── public/
+│   └── vite.svg
+├── src/
+│   ├── assets/
+│   ├── App.jsx
+│   ├── main.jsx
+│   ├── App.css
+│   └── index.css
+├── .gitignore
+├── index.html
+├── package.json
+└── vite.config.js
+</code></pre></div></p>
+</li>
+<li><code>src/main.jsx</code>: Punto de entrada que renderiza la aplicación.</li>
+<li><code>src/App.jsx</code>: Componente principal de React.</li>
+<li>
+<p><code>vite.config.js</code>: Configuración de Vite.</p>
+</li>
+<li>
+<p>Personalizar el proyecto:
+   Edita <code>src/App.jsx</code> para agregar tu propio código. Por ejemplo, reemplaza su contenido con:</p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useState</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="s1">&#39;./App.css&#39;</span><span class="p">;</span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">count</span><span class="p">,</span><span class="w"> </span><span class="nx">setCount</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="mf">0</span><span class="p">);</span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;App&quot;</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">Contador</span><span class="w"> </span><span class="nx">con</span><span class="w"> </span><span class="nx">React</span><span class="w"> </span><span class="nx">y</span><span class="w"> </span><span class="nx">Vite</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="nx">Has</span><span class="w"> </span><span class="nx">hecho</span><span class="w"> </span><span class="nx">clic</span><span class="w"> </span><span class="p">{</span><span class="nx">count</span><span class="p">}</span><span class="w"> </span><span class="nx">veces</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">button</span><span class="w"> </span><span class="na">onClick</span><span class="o">=</span><span class="p">{()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">setCount</span><span class="p">(</span><span class="nx">count</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1</span><span class="p">)}&gt;</span><span class="nx">Incrementar</span><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">App</span><span class="p">;</span>
+</code></pre></div>
+<ul>
+<li>Este código crea un contador simple que incrementa un valor al hacer clic en un botón.</li>
+<li>
+<p>El servidor de Vite recargará automáticamente los cambios en el navegador.</p>
+</li>
+<li>
+<p>Construir para producción:
+   Cuando estés listo para desplegar, genera una versión optimizada:
+   <div class="highlight"><pre><span></span><code>npm<span class="w"> </span>run<span class="w"> </span>build
+</code></pre></div></p>
+</li>
+<li>
+<p>Los archivos optimizados estarán en la carpeta <code>dist/</code>.</p>
+</li>
+<li>
+<p>Previsualizar la build:
+   Para verificar la versión de producción localmente:
+   <div class="highlight"><pre><span></span><code>npm<span class="w"> </span>run<span class="w"> </span>preview
+</code></pre></div></p>
+</li>
+</ul>
+<h3 id="ejemplo-completo">Ejemplo completo</h3>
+<p>Supongamos que quieres crear un proyecto llamado <code>contador-app</code>. Ejecuta:</p>
+<div class="highlight"><pre><span></span><code>npm<span class="w"> </span>create<span class="w"> </span>vite@latest<span class="w"> </span>contador-app<span class="w"> </span>--<span class="w"> </span>--template<span class="w"> </span>react
+<span class="nb">cd</span><span class="w"> </span>contador-app
+npm<span class="w"> </span>install
+npm<span class="w"> </span>run<span class="w"> </span>dev
+</code></pre></div>
+<p>Luego, edita <code>src/App.jsx</code> con el código del contador mostrado arriba. Abre <code>http://localhost:5173</code> en tu navegador y verás un contador funcional.</p>
+<h3 id="url-oficial-de-vite">URL oficial de Vite</h3>
+<p>La documentación y recursos oficiales están disponibles en:</p>
+<ul>
+<li><a href="https://vitejs.dev/" target="target">https://vitejs.dev/</a></li>
+</ul>
+<h3 id="ventajas-de-usar-vite-con-react">Ventajas de usar Vite con React</h3>
+<ul>
+<li>Rápido: Vite usa ES Modules y un servidor de desarrollo ultrarrápido.</li>
+<li>Configuración mínima: Plantillas listas para usar.</li>
+<li>Hot Module Replacement (HMR): Actualizaciones en tiempo real sin recargar la página.</li>
+<li>Optimizado para producción: Genera builds pequeñas y eficientes.</li>
+</ul>
+<h2 id="creando-proyecto-react-con-nextjs">Creando Proyecto React con Next.js</h2>
+<h3 id="explicacion-paso-a-paso_1"><strong>Explicación paso a paso</strong></h3>
+<ol>
+<li><strong>Requisitos previos</strong>:</li>
+<li>Asegúrate de tener <strong>Node.js</strong> instalado (versión 18.17 o superior). Verifícalo con:
+     <div class="highlight"><pre><span></span><code>node<span class="w"> </span>-v
+</code></pre></div></li>
+<li>
+<p>Usa <strong>npm</strong> (incluido con Node.js) o <strong>pnpm</strong> (opcional, más rápido).</p>
+</li>
+<li>
+<p><strong>Crear un proyecto con Next.js</strong>:
+   Next.js proporciona un comando para inicializar un proyecto con una configuración predeterminada. Ejecuta:</p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code>npx<span class="w"> </span>create-next-app@latest
+</code></pre></div>
+<ul>
+<li>Esto inicia un asistente interactivo:<ul>
+<li><strong>Nombre del proyecto</strong>: Ingresa un nombre (ejemplo: <code>mi-proyecto-next</code>).</li>
+<li><strong>TypeScript</strong>: Elige si usar TypeScript (para este ejemplo, usaremos JavaScript).</li>
+<li><strong>ESLint</strong>: Selecciona <code>Yes</code> para activar linting.</li>
+<li><strong>Tailwind CSS</strong>: Opcional (elige <code>No</code> para mantenerlo simple).</li>
+<li><strong>src directory</strong>: Elige <code>No</code> para usar la estructura estándar.</li>
+<li><strong>App Router</strong>: Selecciona <code>Yes</code> para usar el nuevo App Router (recomendado).</li>
+<li><strong>Customize default import alias</strong>: Elige <code>No</code> para simplicidad.</li>
+</ul>
+</li>
+</ul>
+<p>Alternativamente, puedes usar un solo comando para evitar el asistente:
+   <div class="highlight"><pre><span></span><code>npx<span class="w"> </span>create-next-app@latest<span class="w"> </span>mi-proyecto-next<span class="w"> </span>--javascript<span class="w"> </span>--eslint<span class="w"> </span>--no-tailwind<span class="w"> </span>--no-src-dir<span class="w"> </span>--app<span class="w"> </span>--import-alias<span class="w"> </span><span class="s2">&quot;@/*&quot;</span>
+</code></pre></div></p>
+<ol>
+<li>
+<p><strong>Navegar al directorio del proyecto</strong>:
+   <div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>mi-proyecto-next
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Iniciar el servidor de desarrollo</strong>:
+   <div class="highlight"><pre><span></span><code>npm<span class="w"> </span>run<span class="w"> </span>dev
+</code></pre></div></p>
+</li>
+<li>Esto inicia el servidor en <code>http://localhost:3000</code>.</li>
+<li>
+<p>Abre la URL en tu navegador para ver la página predeterminada de Next.js.</p>
+</li>
+<li>
+<p><strong>Estructura del proyecto</strong>:
+   Con el App Router, la estructura será similar a:
+   <div class="highlight"><pre><span></span><code>mi-proyecto-next/
+├── node_modules/
+├── public/
+│   ├── next.svg
+│   └── vercel.svg
+├── app/
+│   ├── globals.css
+│   ├── layout.jsx
+│   ├── page.jsx
+│   └── favicon.ico
+├── .gitignore
+├── next.config.mjs
+├── package.json
+├── README.md
+└── .eslintrc.json
+</code></pre></div></p>
+</li>
+<li><code>app/page.jsx</code>: Página principal de la aplicación.</li>
+<li><code>app/layout.jsx</code>: Layout raíz que envuelve todas las páginas.</li>
+<li>
+<p><code>next.config.mjs</code>: Configuración de Next.js.</p>
+</li>
+<li>
+<p><strong>Personalizar el proyecto</strong>:
+   Edita <code>app/page.jsx</code> para crear una página con un contador simple. Reemplaza su contenido con:</p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="s1">&#39;use client&#39;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Indica que este componente se renderiza en el cliente</span>
+
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useState</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="nx">styles</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./page.module.css&#39;</span><span class="p">;</span>
+
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">Home</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">count</span><span class="p">,</span><span class="w"> </span><span class="nx">setCount</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="mf">0</span><span class="p">);</span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">main</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">main</span><span class="p">}&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">Contador</span><span class="w"> </span><span class="nx">con</span><span class="w"> </span><span class="nx">Next</span><span class="p">.</span><span class="nx">js</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="nx">Has</span><span class="w"> </span><span class="nx">hecho</span><span class="w"> </span><span class="nx">clic</span><span class="w"> </span><span class="p">{</span><span class="nx">count</span><span class="p">}</span><span class="w"> </span><span class="nx">veces</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">button</span><span class="w"> </span><span class="na">onClick</span><span class="o">=</span><span class="p">{()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">setCount</span><span class="p">(</span><span class="nx">count</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1</span><span class="p">)}&gt;</span><span class="nx">Incrementar</span><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">main</span><span class="p">&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<ul>
+<li><code>'use client'</code>: Necesario para componentes que usan hooks como <code>useState</code> en el App Router, ya que Next.js renderiza por defecto en el servidor.</li>
+<li>
+<p><code>styles.main</code>: Usa los estilos CSS Modules generados automáticamente en <code>page.module.css</code>.</p>
+</li>
+<li>
+<p><strong>Ajustar los estilos</strong> (opcional):
+   En <code>app/page.module.css</code>, puedes modificar o agregar estilos, por ejemplo:
+   <div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">main</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">flex</span><span class="p">;</span>
+<span class="w">  </span><span class="k">flex-direction</span><span class="p">:</span><span class="w"> </span><span class="kc">column</span><span class="p">;</span>
+<span class="w">  </span><span class="k">align-items</span><span class="p">:</span><span class="w"> </span><span class="kc">center</span><span class="p">;</span>
+<span class="w">  </span><span class="k">justify-content</span><span class="p">:</span><span class="w"> </span><span class="kc">center</span><span class="p">;</span>
+<span class="w">  </span><span class="k">min-height</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">vh</span><span class="p">;</span>
+<span class="w">  </span><span class="k">gap</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">rem</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Construir para producción</strong>:
+   Para generar una versión optimizada:
+   <div class="highlight"><pre><span></span><code>npm<span class="w"> </span>run<span class="w"> </span>build
+</code></pre></div></p>
+</li>
+<li>
+<p>Los archivos optimizados se generan en la carpeta <code>.next/</code>.</p>
+</li>
+<li>
+<p><strong>Iniciar la aplicación en producción</strong>:
+   Previsualiza la build localmente:
+   <div class="highlight"><pre><span></span><code>npm<span class="w"> </span>run<span class="w"> </span>start
+</code></pre></div></p>
+</li>
+</ul>
+<h3 id="ejemplo-completo_1"><strong>Ejemplo completo</strong></h3>
+<p>Para crear un proyecto llamado <code>contador-next-app</code>, ejecuta:</p>
+<div class="highlight"><pre><span></span><code>npx<span class="w"> </span>create-next-app@latest<span class="w"> </span>contador-next-app<span class="w"> </span>--javascript<span class="w"> </span>--eslint<span class="w"> </span>--no-tailwind<span class="w"> </span>--no-src-dir<span class="w"> </span>--app<span class="w"> </span>--import-alias<span class="w"> </span><span class="s2">&quot;@/*&quot;</span>
+<span class="nb">cd</span><span class="w"> </span>contador-next-app
+npm<span class="w"> </span>run<span class="w"> </span>dev
+</code></pre></div>
+<p>Edita <code>app/page.jsx</code> con el código del contador mostrado arriba. Abre <code>http://localhost:3000</code> en tu navegador y verás un contador funcional.</p>
+<h3 id="url-oficial-de-nextjs"><strong>URL oficial de Next.js</strong></h3>
+<p>La documentación y recursos oficiales están disponibles en:</p>
+<ul>
+<li><a href="https://nextjs.org/" target="target">https://nextjs.org/</a></li>
+</ul>
+<h3 id="ventajas-de-usar-nextjs"><strong>Ventajas de usar Next.js</strong></h3>
+<ul>
+<li><strong>Renderizado híbrido</strong>: Soporta SSR, SSG y CSR (renderizado del lado del cliente).</li>
+<li><strong>Optimización automática</strong>: Compresión de imágenes, precarga de recursos y más.</li>
+<li><strong>App Router</strong>: Estructura moderna para manejar rutas y layouts.</li>
+<li><strong>API Routes</strong>: Crea endpoints API fácilmente dentro del proyecto.</li>
+<li><strong>Ecosistema robusto</strong>: Integración con Vercel, Tailwind CSS, y más.</li>
+</ul>
+<h3 id="diferencias-con-vite"><strong>Diferencias con Vite</strong></h3>
+<ul>
+<li><strong>Next.js</strong> es un framework completo con enrutamiento, renderizado del servidor y optimizaciones integradas, mientras que <strong>Vite</strong> es una herramienta de construcción más ligera enfocada en velocidad.</li>
+<li><strong>Next.js</strong> es ideal para aplicaciones que requieren SEO o renderizado del servidor; Vite es mejor para aplicaciones cliente ligeras.</li>
+</ul>
+<hr />
+<h2 id="extensiones-de-vs-code-especificas-para-react"><strong>Extensiones de VS Code Específicas para React</strong></h2>
+<ol>
+<li>
+<p><strong>ES7+ React/Redux/React-Native snippets</strong></p>
+<ul>
+<li><strong>Descripción</strong>: Proporciona snippets para React, Redux, React Native y GraphQL, incluyendo componentes funcionales, hooks y boilerplate común.</li>
+<li><strong>Por qué usarla</strong>: Acelera la escritura de código React (ej. <code>rafce</code> para un componente funcional con exportación). Ideal para proyectos con Vite o Next.js.</li>
+</ul>
+</li>
+<li>
+<p><strong>Simple React Snippets</strong></p>
+<ul>
+<li><strong>Descripción</strong>: Ofrece snippets minimalistas para React, como importaciones, componentes funcionales y PropTypes, sin abarcar Redux o React Native.</li>
+<li><strong>Por qué usarla</strong>: Es más ligero que ES7+ Snippets, ideal para principiantes o proyectos React puros donde no necesitas snippets adicionales.</li>
+</ul>
+</li>
+<li>
+<p><strong>Auto Rename Tag</strong></p>
+<ul>
+<li><strong>Descripción</strong>: Renombra automáticamente etiquetas JSX/HTML emparejadas al editar una, evitando errores en el código.</li>
+<li><strong>Por qué usarla</strong>: Simplifica la edición de JSX en React, especialmente en componentes complejos con muchas etiquetas anidadas, común en Vite y Next.js.</li>
+</ul>
+</li>
+<li>
+<p><strong>VSCode React Refactor</strong></p>
+<ul>
+<li><strong>Descripción</strong>: Facilita la refactorización de código JSX, permitiendo extraer fragmentos a funciones o archivos separados.</li>
+<li><strong>Por qué usarla</strong>: Mantiene el código React organizado, especialmente en proyectos grandes con Next.js (App Router) o Vite, donde los componentes crecen rápido.   </li>
+</ul>
+</li>
+</ol>
+<hr />
+<h2 id="que-es-jsx"><strong>¿Qué es JSX?</strong></h2>
+<p><strong>JSX</strong> (JavaScript XML) es una extensión de sintaxis para JavaScript que permite escribir código similar a HTML dentro de archivos JavaScript. Es una característica clave de <strong>React</strong>, utilizada para describir la interfaz de usuario (UI) de manera declarativa. Aunque parece HTML, JSX es en realidad azúcar sintáctico que se transforma en llamadas a funciones JavaScript (específicamente, a <code>React.createElement</code>).</p>
+<ul>
+<li><strong>Creado por</strong>: Facebook, como parte de React.</li>
+<li><strong>Propósito</strong>: Facilitar la creación de componentes de UI combinando lógica (JavaScript) y estructura (HTML-like) en un solo lugar.</li>
+<li><strong>No es HTML</strong>: JSX es una abstracción que se compila a JavaScript puro, lo que lo hace más flexible y potente.</li>
+</ul>
+<hr />
+<h2 id="como-funciona-jsx"><strong>¿Cómo funciona JSX?</strong></h2>
+<p>JSX permite escribir estructuras de UI que se asemejan a HTML, pero bajo el capó, se convierten en objetos JavaScript que React usa para construir el DOM virtual. Aquí está el proceso:</p>
+<ol>
+<li>
+<p><strong>Escribir JSX</strong>:
+   <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">element</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">Hola</span><span class="p">,</span><span class="w"> </span><span class="nx">React</span><span class="o">!</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;;</span>
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Compilación con Babel</strong>:
+   JSX no es interpretado directamente por los navegadores. Herramientas como <strong>Babel</strong> (usadas automáticamente en Vite y Next.js) lo transforman en JavaScript:
+   <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">element</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">React</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&quot;h1&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Hola, React!&quot;</span><span class="p">);</span>
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Renderizado</strong>:
+   React toma estas llamadas a <code>React.createElement</code> para crear un <strong>DOM virtual</strong> (una representación ligera del DOM real). Luego, React compara el DOM virtual con el DOM real y actualiza solo las partes que cambiaron (reconciliación).</p>
+</li>
+<li>
+<p><strong>Integración en componentes</strong>:
+   JSX se usa dentro de componentes React para definir su estructura. Por ejemplo:
+   <div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">Welcome</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">Bienvenido</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">React</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;;</span>
+<span class="p">}</span>
+</code></pre></div></p>
+</li>
+</ol>
+<hr />
+<h2 id="caracteristicas-principales-de-jsx"><strong>Características principales de JSX</strong></h2>
+<ol>
+<li>
+<p><strong>Sintaxis similar a HTML</strong>:</p>
+<ul>
+<li>Usa etiquetas como <code>&lt;div&gt;</code>, <code>&lt;h1&gt;</code>, o componentes personalizados (<code>&lt;MyComponent /&gt;</code>).</li>
+<li>Soporta atributos como <code>className</code>, <code>onClick</code>, etc.</li>
+</ul>
+</li>
+<li>
+<p><strong>Expresiones JavaScript</strong>:</p>
+<ul>
+<li>Puedes insertar código JavaScript dentro de JSX usando llaves <code>{}</code>:
+    <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Juan&quot;</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">element</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">Hola</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nx">name</span><span class="p">}</span><span class="o">!</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;;</span>
+</code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><strong>Componentes como etiquetas</strong>:</p>
+<ul>
+<li>Los componentes React (funcionales o de clase) se usan como etiquetas JSX:
+    <div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">Greeting</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="err">¡</span><span class="nx">Hola</span><span class="o">!</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;;</span>
+<span class="p">}</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">element</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">Greeting</span><span class="w"> </span><span class="p">/&gt;;</span>
+</code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><strong>No es un template engine</strong>:</p>
+<ul>
+<li>A diferencia de Handlebars o Pug, JSX es JavaScript puro, lo que permite usar toda la potencia de JS (map, filter, etc.) dentro de la UI.</li>
+</ul>
+</li>
+<li>
+<p><strong>Seguridad integrada</strong>:</p>
+<ul>
+<li>JSX escapa automáticamente el contenido para prevenir ataques XSS (Cross-Site Scripting). Por ejemplo:
+    <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">userInput</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&lt;script&gt;alert(&#39;hack&#39;)&lt;/script&gt;&quot;</span><span class="p">;</span>
+<span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;{</span><span class="nx">userInput</span><span class="p">}&lt;/</span><span class="nt">div</span><span class="p">&gt;;</span><span class="w"> </span><span class="c1">// Se renderiza como texto, no como script</span>
+</code></pre></div></li>
+</ul>
+</li>
+</ol>
+<hr />
+<h2 id="reglas-de-jsx"><strong>Reglas de JSX</strong></h2>
+<p>Para usar JSX correctamente, debes seguir estas reglas:</p>
+<ol>
+<li>
+<p><strong>Siempre cerrar etiquetas</strong>:</p>
+<ul>
+<li>Todas las etiquetas deben cerrarse, incluso las vacías:
+    <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">img</span><span class="w"> </span><span class="na">src</span><span class="o">=</span><span class="s">&quot;image.jpg&quot;</span><span class="w"> </span><span class="na">alt</span><span class="o">=</span><span class="s">&quot;example&quot;</span><span class="w"> </span><span class="p">/&gt;</span><span class="w"> </span><span class="c1">// Correcto</span>
+<span class="p">&lt;</span><span class="nt">img</span><span class="w"> </span><span class="na">src</span><span class="o">=</span><span class="s">&quot;image.jpg&quot;</span><span class="p">&gt;</span><span class="w"> </span><span class="c1">// Incorrecto</span>
+</code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><strong>Un solo elemento raíz</strong>:</p>
+<ul>
+<li>JSX debe devolver un solo elemento raíz. Si necesitas múltiples elementos, envuélvelos en un <code>&lt;div&gt;</code> o un <strong>Fragment</strong> (<code>&lt;&gt;</code>):
+    <div class="highlight"><pre><span></span><code><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="p">&lt;&gt;</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">Título</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="nx">Descripción</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/&gt;</span>
+<span class="p">);</span>
+</code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><strong>Usar <code>className</code> en lugar de <code>class</code></strong>:</p>
+<ul>
+<li>En JSX, los atributos HTML que coinciden con palabras reservadas de JavaScript se renombran:
+    <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;container&quot;</span><span class="p">&gt;</span><span class="nx">Contenido</span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div></li>
+<li>Otros ejemplos: <code>htmlFor</code> en lugar de <code>for</code>, <code>onClick</code> en lugar de <code>onclick</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>CamelCase para eventos y props</strong>:</p>
+<ul>
+<li>Los eventos y propiedades personalizadas usan camelCase:
+    <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">button</span><span class="w"> </span><span class="na">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">handleClick</span><span class="p">}&gt;</span><span class="nx">Clic</span><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><strong>Expresiones en llaves <code>{}</code></strong>:</p>
+<ul>
+<li>Solo se permiten expresiones JavaScript (no bloques como <code>if</code> o <code>for</code>) dentro de <code>{}</code>:
+    <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;{</span><span class="mf">2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">2</span><span class="p">}&lt;/</span><span class="nt">p</span><span class="p">&gt;</span><span class="w"> </span><span class="c1">// Correcto</span>
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;{</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="kc">true</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="s2">&quot;Hola&quot;</span><span class="p">}&lt;/</span><span class="nt">p</span><span class="p">&gt;</span><span class="w"> </span><span class="c1">// Incorrecto</span>
+</code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><strong>Componentes comienzan con mayúscula</strong>:</p>
+<ul>
+<li>Los componentes personalizados deben empezar con mayúscula para diferenciarlos de etiquetas HTML:
+    <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">MyComponent</span><span class="w"> </span><span class="p">/&gt;</span><span class="w"> </span><span class="c1">// Componente</span>
+<span class="p">&lt;</span><span class="nt">mycomponent</span><span class="w"> </span><span class="p">/&gt;</span><span class="w"> </span><span class="c1">// Error: se interpreta como HTML</span>
+</code></pre></div></li>
+</ul>
+</li>
+</ol>
+<hr />
+<h2 id="ejemplo-practico-de-jsx-en-react"><strong>Ejemplo práctico de JSX en React</strong></h2>
+<p>A continuación, un ejemplo completo que puedes usar en tus proyectos con <strong>Vite</strong> o <strong>Next.js</strong>. Este ejemplo crea un componente con un contador, usando varias características de JSX.</p>
+<h3 id="codigo"><strong>Código</strong></h3>
+<p>Crea o edita <code>src/App.jsx</code> (en Vite) o <code>app/page.jsx</code> (en Next.js con App Router):</p>
+<div class="highlight"><pre><span></span><code><span class="s1">&#39;use client&#39;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Solo para Next.js (App Router)</span>
+
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useState</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="s1">&#39;./App.css&#39;</span><span class="p">;</span><span class="w"> </span><span class="c1">// En Vite</span>
+<span class="c1">// o import styles from &#39;./page.module.css&#39;; // En Next.js</span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">count</span><span class="p">,</span><span class="w"> </span><span class="nx">setCount</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="mf">0</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">isHigh</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">count</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span>
+
+<span class="w">  </span><span class="c1">// Lista dinámica con map</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">items</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;React&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;JSX&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Vite/Next.js&#39;</span><span class="p">];</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">listItems</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">items</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">item</span><span class="p">,</span><span class="w"> </span><span class="nx">index</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">li</span><span class="w"> </span><span class="na">key</span><span class="o">=</span><span class="p">{</span><span class="nx">index</span><span class="p">}&gt;{</span><span class="nx">item</span><span class="p">}&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="w">  </span><span class="p">));</span>
+
+<span class="w">  </span><span class="c1">// Manejo de eventos</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">handleIncrement</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">setCount</span><span class="p">(</span><span class="nx">count</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1</span><span class="p">);</span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;container&quot;</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">Contador</span><span class="w"> </span><span class="nx">con</span><span class="w"> </span><span class="nx">JSX</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="nx">Conteo</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">count</span><span class="p">}&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">button</span><span class="w"> </span><span class="na">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">handleIncrement</span><span class="p">}&gt;</span><span class="nx">Incrementar</span><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">{</span><span class="cm">/* Renderizado condicional */</span><span class="p">}</span>
+<span class="w">      </span><span class="p">{</span><span class="nx">isHigh</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="p">(</span>
+<span class="w">        </span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="err">¡</span><span class="nx">El</span><span class="w"> </span><span class="nx">conteo</span><span class="w"> </span><span class="nx">es</span><span class="w"> </span><span class="nx">alto</span><span class="o">!</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="p">(</span>
+<span class="w">        </span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="nx">El</span><span class="w"> </span><span class="nx">conteo</span><span class="w"> </span><span class="nx">es</span><span class="w"> </span><span class="nx">bajo</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">)}</span>
+<span class="w">      </span><span class="p">{</span><span class="cm">/* Lista dinámica */</span><span class="p">}</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span><span class="nx">Tecnologías</span><span class="w"> </span><span class="nx">usadas</span><span class="o">:</span><span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;{</span><span class="nx">listItems</span><span class="p">}&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">{</span><span class="cm">/* Componente reutilizable */</span><span class="p">}</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">Greeting</span><span class="w"> </span><span class="na">name</span><span class="o">=</span><span class="s">&quot;Usuario&quot;</span><span class="w"> </span><span class="p">/&gt;</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// Componente reutilizable</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">Greeting</span><span class="p">({</span><span class="w"> </span><span class="nx">name</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="err">¡</span><span class="nx">Hola</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nx">name</span><span class="p">}</span><span class="o">!</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;;</span>
+<span class="p">}</span>
+
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">App</span><span class="p">;</span>
+</code></pre></div>
+<h3 id="explicacion-del-ejemplo"><strong>Explicación del ejemplo</strong></h3>
+<ul>
+<li><strong>Estructura JSX</strong>: Usa etiquetas como <code>&lt;div&gt;</code>, <code>&lt;h1&gt;</code>, <code>&lt;button&gt;</code>, y el componente personalizado <code>&lt;Greeting /&gt;</code>.</li>
+<li><strong>Expresiones</strong>: <code>{count}</code> muestra el estado, <code>{listItems}</code> renderiza una lista dinámica.</li>
+<li><strong>Eventos</strong>: <code>onClick={handleIncrement}</code> maneja clics.</li>
+<li><strong>Renderizado condicional</strong>: <code>{isHigh ? ... : ...}</code> muestra un mensaje según el estado.</li>
+<li><strong>Lista dinámica</strong>: <code>items.map</code> genera <code>&lt;li&gt;</code> con una <code>key</code> para optimizar el renderizado.</li>
+<li><strong>Props</strong>: El componente <code>Greeting</code> recibe <code>name</code> como prop.</li>
+<li><strong>Estilos</strong>: Usa <code>className</code> para aplicar estilos desde <code>App.css</code> (Vite) o <code>page.module.css</code> (Next.js).</li>
+</ul>
+<h3 id="como-probarlo"><strong>Cómo probarlo</strong></h3>
+<ol>
+<li>
+<p><strong>En Vite</strong>:</p>
+<ul>
+<li>Crea un proyecto con <code>npm create vite@latest</code> (como en tu primer pregunta).</li>
+<li>Reemplaza <code>src/App.jsx</code> con el código anterior.</li>
+<li>Ejecuta <code>npm run dev</code> y abre <code>http://localhost:5173</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>En Next.js</strong>:</p>
+<ul>
+<li>Crea un proyecto con <code>npx create-next-app@latest</code> (como en tu segunda pregunta).</li>
+<li>Reemplaza <code>app/page.jsx</code> con el código, asegurándote de añadir <code>'use client'</code> al inicio.</li>
+<li>Ejecuta <code>npm run dev</code> y abre <code>http://localhost:3000</code>.</li>
+</ul>
+</li>
+</ol>
+<hr />
+<h2 id="jsx-en-vite-vs-nextjs"><strong>JSX en Vite vs. Next.js</strong></h2>
+<ul>
+<li>
+<p><strong>Vite</strong>:</p>
+<ul>
+<li>JSX se usa principalmente para renderizado del lado del cliente (CSR).</li>
+<li>La configuración de Babel está incluida en Vite, por lo que no necesitas configurarlo manualmente.</li>
+<li>Ideal para aplicaciones ligeras donde el SEO no es crítico.</li>
+</ul>
+</li>
+<li>
+<p><strong>Next.js</strong>:</p>
+<ul>
+<li>JSX se usa en componentes que pueden renderizarse en el servidor (SSR) o estáticamente (SSG).</li>
+<li>En el <strong>App Router</strong> (como en tu proyecto), los componentes con hooks como <code>useState</code> requieren <code>'use client'</code> para indicar que son client-side.</li>
+<li>Next.js optimiza el renderizado de JSX para SEO y rendimiento.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="ventajas-de-jsx"><strong>Ventajas de JSX</strong></h2>
+<ol>
+<li><strong>Declarativo</strong>: Describe cómo debe verse la UI sin preocuparte por los detalles de manipulación del DOM.</li>
+<li><strong>Integración con JavaScript</strong>: Combina lógica y UI en un solo lugar, permitiendo usar funciones, bucles, etc.</li>
+<li><strong>Reutilización</strong>: Los componentes JSX son modulares y reutilizables.</li>
+<li><strong>Ecosistema</strong>: Compatible con herramientas como Vite, Next.js, y extensiones de VS Code (como las mencionadas en tu pregunta anterior: ES7+ Snippets, Auto Rename Tag).</li>
+</ol>
+<hr />
+<h2 id="limitaciones-de-jsx"><strong>Limitaciones de JSX</strong></h2>
+<ol>
+<li><strong>Curva de aprendizaje</strong>: La mezcla de HTML y JavaScript puede ser confusa al principio.</li>
+<li><strong>Dependencia de herramientas</strong>: Necesitas un transpilador como Babel, aunque Vite/Next.js lo manejan por ti.</li>
+<li><strong>Restricciones sintácticas</strong>: Reglas como el elemento raíz único o <code>className</code> requieren atención.</li>
+</ol>
+<hr />
+<h2 id="consejos-para-trabajar-con-jsx"><strong>Consejos para trabajar con JSX</strong></h2>
+<ol>
+<li>
+<p><strong>Usa extensiones de VS Code</strong>:</p>
+<ul>
+<li>Como mencionaste en tu última pregunta, extensiones como <strong>ES7+ React Snippets</strong> (<code>rafce</code>) y <strong>Auto Rename Tag</strong> facilitan la escritura y edición de JSX.</li>
+<li><strong>VSCode React Refactor</strong> es útil para reorganizar JSX en componentes grandes.</li>
+</ul>
+</li>
+<li>
+<p><strong>Fragments para evitar <code>&lt;div&gt;</code> innecesarios</strong>:
+    <div class="highlight"><pre><span></span><code><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="p">&lt;&gt;</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">Título</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="nx">Texto</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;/&gt;</span>
+<span class="p">);</span>
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Claves en listas</strong>:</p>
+<ul>
+<li>Siempre asigna una <code>key</code> única en elementos de listas para optimizar el renderizado:
+    <div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nx">items</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">item</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">li</span><span class="w"> </span><span class="na">key</span><span class="o">=</span><span class="p">{</span><span class="nx">item</span><span class="p">.</span><span class="nx">id</span><span class="p">}&gt;{</span><span class="nx">item</span><span class="p">.</span><span class="nx">name</span><span class="p">}&lt;/</span><span class="nt">li</span><span class="p">&gt;)}</span>
+</code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><strong>Evita inline styles complejos</strong>:</p>
+<ul>
+<li>Usa <code>className</code> con CSS externo o CSS Modules (como en Next.js) en lugar de:
+    <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">style</span><span class="o">=</span><span class="p">{{</span><span class="w"> </span><span class="nx">backgroundColor</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;blue&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">padding</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;10px&#39;</span><span class="w"> </span><span class="p">}}</span><span class="w"> </span><span class="p">/&gt;</span>
+</code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><strong>Depuración</strong>:</p>
+<ul>
+<li>Usa <strong>Console Ninja</strong> (extensión mencionada anteriormente) para inspeccionar valores en JSX directamente en VS Code.</li>
+</ul>
+</li>
+</ol>
+<hr />
+<h2 id="actividad-basica-para-principiantes-tu-primer-componente-interactivo-en-nextjs"><strong>Actividad Básica para Principiantes: Tu Primer Componente Interactivo en Next.js</strong></h2>
+<p>Esta actividad te guiará paso a paso para poner en marcha un proyecto Next.js y modificar su página principal usando <strong>JSX</strong> para crear un contador simple, aplicando reglas clave mencionadas en las fuentes.</p>
+<p><strong>Objetivo:</strong> Aprender a:
+1.  Crear un proyecto Next.js utilizando el comando recomendado.
+2.  Identificar dónde escribir código para la página principal en el <strong>App Router</strong>.
+3.  Utilizar <strong>JSX</strong> para definir la estructura de la interfaz.
+4.  Manejar el <strong>estado</strong> de un componente con <code>useState</code> (necesario para interactividad).
+5.  Responder a <strong>eventos</strong> de usuario (como clics de botón).
+6.  Insertar <strong>expresiones JavaScript</strong> dentro de JSX usando <code>{}</code>.</p>
+<p><strong>Pasos:</strong></p>
+<ol>
+<li>
+<p><strong>Verificar los Prerrequisitos:</strong></p>
+<ul>
+<li>Asegúrate de tener <strong>Node.js</strong> instalado. Las fuentes recomiendan la versión LTS, idealmente 18.17+ o superior para Next.js. Puedes verificarlo en tu terminal con <code>node -v</code>.</li>
+<li><strong>npm</strong> (Node Package Manager) viene con Node.js. Verifícalo con <code>npm -v</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Crear el Proyecto Next.js:</strong></p>
+<ul>
+<li>Abre tu terminal o línea de comandos.</li>
+<li>Usa el comando proporcionado en las fuentes para crear un nuevo proyecto. Vamos a usar opciones simples para principiantes, enfocándonos en JavaScript y el App Router:
+    <div class="highlight"><pre><span></span><code>npx<span class="w"> </span>create-next-app@latest<span class="w"> </span>mi-primer-contador<span class="w"> </span>--javascript<span class="w"> </span>--eslint<span class="w"> </span>--no-tailwind<span class="w"> </span>--no-src-dir<span class="w"> </span>--app<span class="w"> </span>--import-alias<span class="w"> </span><span class="s2">&quot;@/*&quot;</span>
+</code></pre></div>
+    Este comando iniciará el proceso para crear un proyecto Next.js llamado <code>mi-primer-contador</code>. Seleccionamos JavaScript, activamos ESLint (recomendado), omitimos Tailwind y la carpeta <code>src</code>, y usamos el nuevo <strong>App Router</strong>, que es la estructura recomendada.</li>
+</ul>
+</li>
+<li>
+<p><strong>Navegar al Directorio del Proyecto:</strong></p>
+<ul>
+<li>Entra en la carpeta del proyecto que acabas de crear:
+    <div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>mi-primer-contador
+</code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><strong>Iniciar el Servidor de Desarrollo:</strong></p>
+<ul>
+<li>Ejecuta el comando para iniciar la aplicación Next.js en modo desarrollo:
+    <div class="highlight"><pre><span></span><code>npm<span class="w"> </span>run<span class="w"> </span>dev
+</code></pre></div></li>
+<li>Esto iniciará un servidor local, accesible por defecto en <strong><code>http://localhost:3000</code></strong>. Ábrelo en tu navegador. Verás la página de inicio predeterminada de Next.js.</li>
+</ul>
+</li>
+<li>
+<p><strong>Identificar el Archivo Principal:</strong></p>
+<ul>
+<li>Con el <strong>App Router</strong>, la página principal que ves en <code>http://localhost:3000</code> corresponde al archivo <strong><code>app/page.jsx</code></strong> dentro de tu proyecto. Aquí es donde escribiremos nuestro componente usando <strong>JSX</strong>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Implementar el Componente Contador Simple:</strong></p>
+<ul>
+<li>Abre el archivo <strong><code>app/page.jsx</code></strong> en tu editor de código (VS Code es recomendado, y las extensiones mencionadas en las fuentes pueden ser útiles).</li>
+<li>Reemplaza el contenido existente con el código de un contador simple, adaptado del ejemplo práctico de las fuentes, y que usa los conceptos básicos de JSX y React:
+    <div class="highlight"><pre><span></span><code><span class="s1">&#39;use client&#39;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Necesario para usar hooks como useState en el App Router</span>
+
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useState</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react&#39;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Importamos el hook useState para el estado</span>
+
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">Home</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// 1. Declarar el estado del contador usando useState. Empieza en 0.</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">count</span><span class="p">,</span><span class="w"> </span><span class="nx">setCount</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="mf">0</span><span class="p">);</span>
+
+<span class="w">  </span><span class="c1">// 2. Función para actualizar el estado cuando se haga clic en el botón.</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">handleIncrement</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">setCount</span><span class="p">(</span><span class="nx">count</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1</span><span class="p">);</span><span class="w"> </span><span class="c1">// Incrementa el valor del estado</span>
+<span class="w">  </span><span class="p">};</span>
+
+<span class="w">  </span><span class="c1">// 3. Estructura de la interfaz usando JSX.</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="c1">// JSX debe devolver un solo elemento raíz. Usamos un div simple.</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">{</span><span class="cm">/* Usamos etiquetas HTML como h1 y p */</span><span class="p">}</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">Mi</span><span class="w"> </span><span class="nx">Primer</span><span class="w"> </span><span class="nx">Contador</span><span class="w"> </span><span class="nx">con</span><span class="w"> </span><span class="nx">Next</span><span class="p">.</span><span class="nx">js</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+
+<span class="w">      </span><span class="p">{</span><span class="cm">/* Insertamos la variable &#39;count&#39; (el estado) usando llaves {} */</span><span class="p">}</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="nx">El</span><span class="w"> </span><span class="nx">contador</span><span class="w"> </span><span class="nx">está</span><span class="w"> </span><span class="nx">en</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">count</span><span class="p">}&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+
+<span class="w">      </span><span class="p">{</span><span class="cm">/* Botón que llama a handleIncrement cuando se hace clic (evento onClick con camelCase) */</span><span class="p">}</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">button</span><span class="w"> </span><span class="na">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">handleIncrement</span><span class="p">}&gt;</span>
+<span class="w">        </span><span class="nx">Incrementar</span>
+<span class="w">      </span><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+
+<span class="w">      </span><span class="p">{</span><span class="cm">/* Un pequeño ejemplo de expresión JavaScript en JSX */</span><span class="p">}</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="nx">El</span><span class="w"> </span><span class="nx">doble</span><span class="w"> </span><span class="nx">del</span><span class="w"> </span><span class="nx">contador</span><span class="w"> </span><span class="nx">es</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">count</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">2</span><span class="p">}&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></li>
+<li><strong>Conceptos clave de JSX y React en este código (basado en las fuentes):</strong><ul>
+<li><strong><code>'use client'</code></strong>: Esta directiva es crucial en el App Router de Next.js para indicar que este componente se ejecutará en el navegador (lado del cliente), lo cual es necesario para usar funcionalidades interactivas como el <code>useState</code>. Por defecto, los componentes en <code>app</code> intentan renderizarse en el servidor.</li>
+<li><strong><code>import { useState } from 'react'</code></strong>: Así traemos la herramienta de React para manejar el estado dentro de un componente funcional.</li>
+<li><strong><code>const [count, setCount] = useState(0);</code></strong>: Declara una variable de estado (<code>count</code>) y una función para actualizarla (<code>setCount</code>), inicializándola en 0.</li>
+<li><strong>Sintaxis similar a HTML</strong>: Ves etiquetas como <code>&lt;h1&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;div&gt;</code>, <code>&lt;button&gt;</code>. Recuerda que son <strong>JSX</strong>, no HTML puro.</li>
+<li><strong>Expresiones JavaScript <code>{}</code></strong>: Puedes insertar variables (<code>{count}</code>), resultados de operaciones (<code>{count * 2}</code>), o llamadas a funciones dentro de las llaves en tu JSX. Solo se permiten <em>expresiones</em>.</li>
+<li><strong>Atributos y Eventos</strong>: Atributos estándar como <code>className</code> (en lugar de <code>class</code>) y manejadores de eventos como <code>onClick</code> (en camelCase) se usan en las etiquetas JSX.</li>
+<li><strong>Elemento Raíz Único</strong>: El <code>return</code> de tu componente JSX debe devolver una única etiqueta que contenga todo lo demás (en este caso, el <code>&lt;div&gt;</code> principal).</li>
+<li><strong><code>handleIncrement</code></strong>: Esta es una función de JavaScript que define la lógica para actualizar el estado (<code>setCount</code>) cuando ocurre el evento asociado (<code>onClick</code>).</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Verificar el Resultado:</strong></p>
+<ul>
+<li>Como iniciaste el servidor con <code>npm run dev</code>, Next.js detectará automáticamente los cambios en <code>app/page.jsx</code> y recargará la página en tu navegador.</li>
+<li>Vuelve a <strong><code>http://localhost:3000</code></strong>. Deberías ver tu nuevo componente: el título, el texto mostrando "El contador está en: 0", el botón "Incrementar", y la línea mostrando "El doble...".</li>
+<li>Haz clic en el botón "Incrementar". Observa cómo el número junto a "El contador está en:" y "El doble del contador es:" <strong>se actualizan</strong> sin que la página completa se recargue. Esto es React trabajando eficientemente gracias al <strong>Virtual DOM</strong> y a tu componente interactuando con su estado.</li>
+</ul>
+</li>
+<li>
+<p><strong>Explorar (Opcional):</strong></p>
+<ul>
+<li>Experimenta cambiando el texto o agregando más elementos HTML simples.</li>
+<li>Intenta agregar una línea que muestre el triple del contador <code>&lt;h3&gt;El triple es: {count * 3}&lt;/h3&gt;</code> dentro del <code>div</code> principal.</li>
+<li>Si instalaste las extensiones de VS Code, úsalas para ver cómo te ayudan a escribir código más rápido (por ejemplo, escribiendo <code>rafce</code> y presionando Tab para crear una estructura de componente) o a renombrar etiquetas.</li>
+</ul>
+</li>
+</ol>
+<p>Al completar esta actividad básica, habrás dado tus primeros pasos en el desarrollo con Next.js y React, entendiendo cómo configurar un proyecto simple y cómo <strong>JSX</strong> te permite construir interfaces de usuario de manera declarativa e interactiva, aplicando las reglas y conceptos introducidos en las fuentes.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      2025 &copy; by JFVG
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs.sticky", "navigation.tabs", "navigation.top", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.indexes"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>

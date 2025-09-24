@@ -1,0 +1,1481 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="jhonfvg">
+      
+      
+        <link rel="canonical" href="https://jfinfosena.github.io/25adso-react/content/curso/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.3">
+    
+    
+      
+        <title>Estructura del Curso: React Básico (10 Clases x 6 horas) - React</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.d7758b05.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#estructura-del-curso-react-basico-10-clases-x-6-horas" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="React" class="md-header__button md-logo" aria-label="React" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="m11.28 3.22 4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.275-.326.75.75 0 0 1 .215-.734L13.94 8l-3.72-3.72a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215m-6.56 0a.75.75 0 0 1 1.042.018.75.75 0 0 1 .018 1.042L2.06 8l3.72 3.72a.749.749 0 0 1-.326 1.275.75.75 0 0 1-.734-.215L.47 8.53a.75.75 0 0 1 0-1.06Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            React
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Estructura del Curso: React Básico (10 Clases x 6 horas)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="orange" data-md-color-accent="lime"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Inicio
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../p1/" class="md-tabs__link">
+          
+  
+    
+  
+  Contenido
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../activities/p1/" class="md-tabs__link">
+          
+  
+    
+  
+  Actividades
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../pi/p1/" class="md-tabs__link">
+          
+  
+    
+  
+  Proyecto Integrador
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="React" class="md-nav__button md-logo" aria-label="React" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="m11.28 3.22 4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.275-.326.75.75 0 0 1 .215-.734L13.94 8l-3.72-3.72a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215m-6.56 0a.75.75 0 0 1 1.042.018.75.75 0 0 1 .018 1.042L2.06 8l3.72 3.72a.749.749 0 0 1-.326 1.275.75.75 0 0 1-.734-.215L.47 8.53a.75.75 0 0 1 0-1.06Z"/></svg>
+
+    </a>
+    React
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Inicio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Contenido
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Contenido
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Clase 2 Introducción a React y Configuración del Entorno
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Clase 3 Componente en React
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Clase 4 Crear Componentes en React con Next.js (JavaScript) y Estilizar con CSS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Clase 5 Agregar CSS a Componentes en Next.js
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Clase 6 Enrutamiento en Next.js 13+ (App Router)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Clase 7: Renderizado Dinámico de Arreglos Locales en React y Next.js
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p7/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Clase 8: Hook useState - Guía Simple y Detallada
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Clase 9: Hook useEffect - Guía Simple y Detallada
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p9/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Evaluación de Conocimiento
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Actividades
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Actividades
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../activities/p1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Actividad Práctica 1: Uso de Props en Next.js (App Router)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../activities/p2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Actividad Práctica 2: Estilizado de Componentes en Next.js
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../activities/p3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Actividad Práctica 3: Enrutamiento en Next.js 13+ (App Router)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Proyecto Integrador
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Proyecto Integrador
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pi/p1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Proyecto Integrador - Aplicación Web con React y Next.js
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#22-creando-el-proyecto-con-vite" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2. Creando el Proyecto con Vite
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23-explorando-la-estructura-del-proyecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3. Explorando la Estructura del Proyecto
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24-archivos-clave-en-src" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4. Archivos Clave en src/
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#25-arrancando-la-aplicacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.5. ¡Arrancando la Aplicación!
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-jsx-escribiendo-ui-en-react" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. JSX: Escribiendo UI en React
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. JSX: Escribiendo UI en React">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-tu-primer-componente-hola-mundo" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1. Tu Primer Componente: "Hola Mundo"
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-que-es-jsx-javascript-xml" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2. ¿Qué es JSX? (JavaScript XML)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-reglas-fundamentales-de-jsx" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3. Reglas Fundamentales de JSX
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-incrustando-javascript-en-jsx-con" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4. Incrustando JavaScript en JSX con {}
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-diferencias-clave-jsx-vs-html-resumen" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.5. Diferencias Clave JSX vs. HTML (Resumen)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-como-llega-react-al-navegador-el-renderizado" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. ¿Cómo llega React al Navegador? El Renderizado
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-a-practicar-primeros-pasos-con-codigo" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. ¡A Practicar! Primeros Pasos con Código
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="estructura-del-curso-react-basico-10-clases-x-6-horas"><strong>Estructura del Curso: React Básico (10 Clases x 6 horas)</strong></h1>
+<p><strong>Clase 1: Introducción a React y Configuración del Entorno (6 horas)</strong></p>
+<ul>
+<li><strong>Bloque 1 (1.5h):</strong><ul>
+<li>¿Qué es React? ¿Por qué usarlo? Conceptos clave (SPAs vs MPAs, Virtual DOM).</li>
+<li>Alternativas a React (Angular, Vue) - Breve comparación.</li>
+<li>Prerrequisitos del curso (Node.js, npm/yarn/pnpm, editor de código).</li>
+<li>Instalación de Node.js y gestor de paquetes.</li>
+</ul>
+</li>
+<li><strong>Bloque 2 (1.5h):</strong><ul>
+<li>Configuración del proyecto: Uso de Vite (recomendado) o Create React App.</li>
+<li>Estructura básica de un proyecto React generado.</li>
+<li>Archivos principales (<code>index.html</code>, <code>main.jsx</code>/<code>index.js</code>, <code>App.jsx</code>/<code>App.js</code>).</li>
+<li>Arrancar la aplicación de desarrollo.</li>
+</ul>
+</li>
+<li><strong>Bloque 3 (1.5h):</strong><ul>
+<li>Tu primer componente: "Hello World".</li>
+<li>Entendiendo JSX: Sintaxis, reglas (un solo elemento raíz, <code>className</code>, <code>{}</code>).</li>
+<li>Incrustar expresiones JavaScript en JSX.</li>
+<li>Diferencias entre JSX y HTML.</li>
+</ul>
+</li>
+<li><strong>Bloque 4 (1.5h):</strong><ul>
+<li>Renderizado de elementos en el DOM (<code>ReactDOM.createRoot().render()</code>).</li>
+<li>Ejercicios prácticos: Crear y renderizar varios componentes básicos, practicar sintaxis JSX.</li>
+<li>Sesión de preguntas y respuestas.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Clase 2: Componentes y Propiedades (Props) (6 horas)</strong></p>
+<ul>
+<li><strong>Bloque 1 (1.5h):</strong><ul>
+<li>¿Qué es un componente en React? Tipos de componentes (Funcionales vs Clases - enfoque en Funcionales).</li>
+<li>Creación de componentes funcionales.</li>
+<li>Importación y exportación de componentes.</li>
+</ul>
+</li>
+<li><strong>Bloque 2 (1.5h):</strong><ul>
+<li>Composición de componentes: Anidar componentes.</li>
+<li>Propiedades (Props): Concepto y propósito.</li>
+<li>Pasar datos de un componente padre a un componente hijo a través de props.</li>
+</ul>
+</li>
+<li><strong>Bloque 3 (1.5h):</strong><ul>
+<li>Destructuring de props.</li>
+<li><code>props.children</code>: Renderizar contenido anidado.</li>
+<li>Valores por defecto para las props.</li>
+<li>Validación básica de props (usando PropTypes - opcional pero útil).</li>
+</ul>
+</li>
+<li><strong>Bloque 4 (1.5h):</strong><ul>
+<li>Ejercicios prácticos: Crear una estructura de componentes (ej. Layout básico, Card con título y descripción pasados por props).</li>
+<li>Sesión de preguntas y respuestas.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Clase 3: Estado (State) con el Hook <code>useState</code> (6 horas)</strong></p>
+<ul>
+<li><strong>Bloque 1 (1.5h):</strong><ul>
+<li>¿Qué es el estado en React? ¿Por qué es necesario?</li>
+<li>El Hook <code>useState</code>: Introducción y sintaxis.</li>
+<li>Declarar una variable de estado y su función actualizadora.</li>
+</ul>
+</li>
+<li><strong>Bloque 2 (1.5h):</strong><ul>
+<li>Actualizar el estado: Uso de la función actualizadora.</li>
+<li>Entendiendo la inmutabilidad del estado (objetos y arrays).</li>
+<li>Cómo actualizar correctamente objetos y arrays en el estado.</li>
+</ul>
+</li>
+<li><strong>Bloque 3 (1.5h):</strong><ul>
+<li>Múltiples variables de estado en un componente.</li>
+<li>Actualizaciones de estado basadas en el estado previo (usando un callback en el setter).</li>
+</ul>
+</li>
+<li><strong>Bloque 4 (1.5h):</strong><ul>
+<li>Ejercicios prácticos: Crear componentes interactivos (ej. Contador simple, Toggle button, Mostrar/Ocultar un elemento).</li>
+<li>Sesión de preguntas y respuestas.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Clase 4: Manejo de Eventos (6 horas)</strong></p>
+<ul>
+<li><strong>Bloque 1 (1.5h):</strong><ul>
+<li>Manejo de eventos en React (eventos sintéticos).</li>
+<li>Diferencias con el manejo de eventos nativo de JavaScript.</li>
+<li>Eventos comunes: <code>onClick</code>, <code>onChange</code>, <code>onSubmit</code>.</li>
+</ul>
+</li>
+<li><strong>Bloque 2 (1.5h):</strong><ul>
+<li>Funciones manejadoras de eventos: Cómo definirlas.</li>
+<li>Pasar argumentos a las funciones manejadoras de eventos.</li>
+<li>Acceder al objeto del evento (<code>event</code>).</li>
+</ul>
+</li>
+<li><strong>Bloque 3 (1.5h):</strong><ul>
+<li>Combinar manejo de eventos con estado: Cambiar el estado en respuesta a una interacción del usuario.</li>
+<li>Prevenir el comportamiento por defecto del navegador (<code>event.preventDefault()</code>).</li>
+</ul>
+</li>
+<li><strong>Bloque 4 (1.5h):</strong><ul>
+<li>Ejercicios prácticos: Crear botones que cambian el estado, elementos clickeables, interacción básica entre componentes padre/hijo a través de funciones pasadas como props.</li>
+<li>Sesión de preguntas y respuestas.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Clase 5: Renderizado Condicional y de Listas (6 horas)</strong></p>
+<ul>
+<li><strong>Bloque 1 (1.5h):</strong><ul>
+<li>Renderizado condicional: Mostrar u ocultar elementos basado en condiciones.</li>
+<li>Técnicas: <code>if</code>/<code>else</code> (fuera del return), operador ternario (<code>condition ? true : false</code>), operador lógico <code>&amp;&amp;</code>.</li>
+</ul>
+</li>
+<li><strong>Bloque 2 (1.5h):</strong><ul>
+<li>Renderizado de listas de elementos.</li>
+<li>Uso del método <code>map()</code> de arrays en JSX.</li>
+<li>Renderizar una lista de componentes.</li>
+</ul>
+</li>
+<li><strong>Bloque 3 (1.5h):</strong><ul>
+<li>La prop <code>key</code>: Por qué es necesaria y cómo usarla correctamente.</li>
+<li>Reglas para elegir una buena <code>key</code>.</li>
+<li>Ejemplos de renderizado condicional dentro de listas.</li>
+</ul>
+</li>
+<li><strong>Bloque 4 (1.5h):</strong><ul>
+<li>Ejercicios prácticos: Mostrar diferentes mensajes según el estado, renderizar una lista de ítems (ej. lista de tareas, lista de productos), filtrar ítems en una lista usando renderizado condicional.</li>
+<li>Sesión de preguntas y respuestas.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Clase 6: Trabajando con Formularios Controlados (6 horas)</strong></p>
+<ul>
+<li><strong>Bloque 1 (1.5h):</strong><ul>
+<li>Formularios en HTML vs Formularios en React.</li>
+<li>Componentes controlados vs no controlados (enfoque en controlados).</li>
+<li>¿Qué es un componente controlado?</li>
+</ul>
+</li>
+<li><strong>Bloque 2 (1.5h):</strong><ul>
+<li>Capturar el valor de un campo de entrada (<code>&lt;input&gt;</code>).</li>
+<li>Manejar el estado de un solo campo de entrada.</li>
+<li>Sincronizar el valor del input con el estado.</li>
+</ul>
+</li>
+<li><strong>Bloque 3 (1.5h):</strong><ul>
+<li>Manejar múltiples campos de entrada (ej. usando un objeto en el estado).</li>
+<li>Manejar otros tipos de entrada: <code>&lt;textarea&gt;</code>, <code>&lt;select&gt;</code>, <code>&lt;input type="checkbox"&gt;</code>, <code>&lt;input type="radio"&gt;</code>.</li>
+</ul>
+</li>
+<li><strong>Bloque 4 (1.5h):</strong><ul>
+<li>Manejo del envío del formulario (<code>onSubmit</code>).</li>
+<li>Validación básica del formulario (client-side).</li>
+<li>Ejercicios prácticos: Crear un formulario de registro o contacto sencillo que capture los datos y los muestre/loguee al enviarlo.</li>
+<li>Sesión de preguntas y respuestas.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Clase 7: Efectos Secundarios con el Hook <code>useEffect</code> (6 horas)</strong></p>
+<ul>
+<li><strong>Bloque 1 (1.5h):</strong><ul>
+<li>¿Qué son los efectos secundarios? (Data fetching, suscripciones, manipulación manual del DOM, timers).</li>
+<li>El Hook <code>useEffect</code>: Propósito y sintaxis básica.</li>
+<li>Cuándo y por qué usar <code>useEffect</code>.</li>
+</ul>
+</li>
+<li><strong>Bloque 2 (1.5h):</strong><ul>
+<li>El array de dependencias de <code>useEffect</code>.</li>
+<li>Efecto que se ejecuta solo al montar el componente (array vacío <code>[]</code>).</li>
+<li>Efecto que se ejecuta en cada renderizado (sin array de dependencias - generalmente no recomendado).</li>
+</ul>
+</li>
+<li><strong>Bloque 3 (1.5h):</strong><ul>
+<li>Efecto que se ejecuta cuando cambian ciertas dependencias (array con variables).</li>
+<li>Función de limpieza (cleanup function): ¿Cuándo y cómo usarla? (ej. limpiar timers, cancelar suscripciones).</li>
+</ul>
+</li>
+<li><strong>Bloque 4 (1.5h):</strong><ul>
+<li>Ejercicios prácticos: Usar <code>useEffect</code> para cambiar el título de la página, configurar/limpiar un timer, loguear el estado o props cuando cambian.</li>
+<li>Sesión de preguntas y respuestas.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Clase 8: Peticiones HTTP (Data Fetching) (6 horas)</strong></p>
+<ul>
+<li><strong>Bloque 1 (1.5h):</strong><ul>
+<li>¿Cómo obtener datos de una API en React?</li>
+<li>Realizar peticiones HTTP con la API nativa <code>fetch</code>.</li>
+<li>Alternativas: Librerías como Axios (breve mención).</li>
+</ul>
+</li>
+<li><strong>Bloque 2 (1.5h):</strong><ul>
+<li>Integrar peticiones HTTP con <code>useEffect</code>.</li>
+<li>Manejar el estado de "carga" (loading).</li>
+<li>Manejar el estado de "error".</li>
+</ul>
+</li>
+<li><strong>Bloque 3 (1.5h):</strong><ul>
+<li>Mostrar los datos obtenidos (usando renderizado de listas y condicional).</li>
+<li>Ejemplo práctico: Obtener una lista de posts, usuarios o productos de una API pública (ej. JSONPlaceholder).</li>
+</ul>
+</li>
+<li><strong>Bloque 4 (1.5h):</strong><ul>
+<li>Ejercicios prácticos: Construir un componente que fetchea datos de una API y los muestra, añadir indicadores de carga y mensajes de error.</li>
+<li>Sesión de preguntas y respuestas.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Clase 9: Construcción de un Proyecto Pequeño (Parte 1) (6 horas)</strong></p>
+<ul>
+<li><strong>Bloque 1 (1.5h):</strong><ul>
+<li>Introducción al proyecto: Definir un proyecto sencillo que integre la mayoría de los conceptos aprendidos (ej. una lista de tareas To-Do, una galería de imágenes con búsqueda, un listado de productos simple con filtro). Elegir uno y definir el alcance.</li>
+<li>Diseño de la estructura de componentes para el proyecto.</li>
+</ul>
+</li>
+<li><strong>Bloque 2 (1.5h):</strong><ul>
+<li>Configuración inicial del proyecto.</li>
+<li>Implementar los componentes base (Layout, Input para añadir, Lista para mostrar).</li>
+<li>Establecer el estado inicial de la aplicación.</li>
+</ul>
+</li>
+<li><strong>Bloque 3 (1.5h):</strong><ul>
+<li>Implementar la funcionalidad principal (ej. añadir una nueva tarea a la lista, mostrar los ítems).</li>
+<li>Manejo del estado principal de la aplicación.</li>
+<li>Paso de datos y funciones entre componentes padre e hijo.</li>
+</ul>
+</li>
+<li><strong>Bloque 4 (1.5h):</strong><ul>
+<li>Ejercicios prácticos: Trabajar en la implementación del proyecto bajo supervisión.</li>
+<li>Resolución de problemas comunes.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Clase 10: Construcción de un Proyecto Pequeño (Parte 2) y Próximos Pasos (6 horas)</strong></p>
+<ul>
+<li><strong>Bloque 1 (1.5h):</strong><ul>
+<li>Continuar la implementación del proyecto.</li>
+<li>Añadir funcionalidades adicionales (ej. marcar tarea como completada, eliminar tarea, aplicar filtros, buscar).</li>
+<li>Refactorización básica del código.</li>
+</ul>
+</li>
+<li><strong>Bloque 2 (1.5h):</strong><ul>
+<li>Posiblemente: Persistencia básica de datos (ej. usando <code>localStorage</code> - opcional si hay tiempo).</li>
+<li>Repaso general de los conceptos clave del curso (Componentes, Props, State, Events, Conditional/List Rendering, useEffect, Data Fetching).</li>
+</ul>
+</li>
+<li><strong>Bloque 3 (1.5h):</strong><ul>
+<li>Próximos pasos en el aprendizaje de React:<ul>
+<li>React Router (navegación entre páginas).</li>
+<li>Context API o Redux (gestión de estado global).</li>
+<li>Más Hooks personalizados.</li>
+<li>Testing en React.</li>
+<li>Estilización avanzada (CSS Modules, Styled Components, Tailwind CSS).</li>
+<li>Despliegue de aplicaciones React.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Bloque 4 (1.5h):</strong><ul>
+<li>Sesión final de preguntas y respuestas.</li>
+<li>Presentación o revisión de los proyectos completados por los estudiantes (si aplica).</li>
+<li>Recursos adicionales para seguir aprendiendo.</li>
+<li>Cierre del curso.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<p>Crear un proyecto React desde cero requiere configurar muchas herramientas (Babel, Webpack, etc.). Afortunadamente, existen herramientas que nos preparan un proyecto base listo para usar:</p>
+<ul>
+<li><strong>Create React App (CRA):</strong> Fue el estándar por mucho tiempo, muy fiable pero a veces lento.</li>
+<li><strong>Vite:</strong> ¡La opción moderna y <strong>recomendada</strong>! Es extremadamente rápido para iniciar el servidor de desarrollo y actualizar los cambios en tu código gracias a tecnologías como esbuild y los módulos ES nativos. Usaremos Vite.</li>
+</ul>
+<h3 id="22-creando-el-proyecto-con-vite"><strong>2.2. Creando el Proyecto con Vite</strong></h3>
+<ol>
+<li>Abre tu terminal.</li>
+<li>Navega (usando <code>cd</code>) a la carpeta donde quieras guardar tus proyectos.</li>
+<li>
+<p>Ejecuta el siguiente comando (reemplaza <code>nombre-de-mi-app</code> con el nombre que quieras darle a tu proyecto):
+    <div class="highlight"><pre><span></span><code>npm<span class="w"> </span>create<span class="w"> </span>vite@latest<span class="w"> </span>nombre-de-mi-app<span class="w"> </span>--template<span class="w"> </span>react
+</code></pre></div></p>
+<ul>
+<li><code>npm create vite@latest</code>: Usa npm para ejecutar la última versión del creador de proyectos Vite.</li>
+<li><code>nombre-de-mi-app</code>: El nombre de la carpeta (y proyecto) que se creará.</li>
+<li><code>--template react</code>: Le dice a Vite que queremos una plantilla configurada para React (con JavaScript).</li>
+</ul>
+</li>
+<li>
+<p>Vite podría hacerte preguntas (si no pusiste el nombre antes, o para elegir framework/variante – asegúrate de elegir <code>React</code> y <code>JavaScript</code>).</p>
+</li>
+<li>Sigue las instrucciones que Vite te mostrará al final:
+    <div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>nombre-de-mi-app<span class="w">   </span><span class="c1"># Entra a la carpeta del proyecto</span>
+npm<span class="w"> </span>install<span class="w">           </span><span class="c1"># Instala las dependencias (React, etc.)</span>
+npm<span class="w"> </span>run<span class="w"> </span>dev<span class="w">           </span><span class="c1"># ¡Arranca la aplicación!</span>
+</code></pre></div></li>
+</ol>
+<h3 id="23-explorando-la-estructura-del-proyecto"><strong>2.3. Explorando la Estructura del Proyecto</strong></h3>
+<p>Abre la carpeta de tu proyecto (<code>nombre-de-mi-app</code>) en tu editor de código (en VS Code, puedes escribir <code>code .</code> en la terminal dentro de la carpeta). Verás algo así:</p>
+<ul>
+<li><code>node_modules/</code>: Carpeta con todas las librerías instaladas por <code>npm install</code>. ¡No la toques!</li>
+<li><code>public/</code>: Archivos estáticos (como el favicon) que se copian directamente.</li>
+<li><code>src/</code>: <strong>¡Aquí vivirás!</strong> Contiene tu código fuente React (componentes, CSS, etc.).</li>
+<li><code>.gitignore</code>: Le dice a Git qué archivos ignorar (importante: <code>node_modules</code>).</li>
+<li><code>index.html</code>: El único archivo HTML. Tu aplicación React se "montará" dentro del <code>&lt;div id="root"&gt;</code> que hay aquí.</li>
+<li><code>package.json</code>: Define tu proyecto: nombre, versión, scripts (como <code>dev</code>, <code>build</code>), y dependencias (las librerías que usa tu proyecto).</li>
+<li><code>package-lock.json</code>: Fija las versiones exactas de las dependencias instaladas.</li>
+<li><code>vite.config.js</code>: Configuración específica de Vite (puedes ignorarla por ahora).</li>
+</ul>
+<h3 id="24-archivos-clave-en-src"><strong>2.4. Archivos Clave en <code>src/</code></strong></h3>
+<ul>
+<li><code>main.jsx</code>: <strong>El punto de entrada de tu aplicación.</strong> Importa React, ReactDOM, tu componente principal (<code>App</code>), y le dice a ReactDOM dónde renderizar tu aplicación en el <code>index.html</code>. La extensión <code>.jsx</code> significa que contiene código JSX.</li>
+<li><code>App.jsx</code>: <strong>Tu primer componente React.</strong> Es el componente raíz que se renderiza inicialmente. Aquí empezarás a construir tu interfaz.</li>
+<li><code>index.css</code>: Un archivo CSS para estilos globales básicos.</li>
+<li><code>assets/</code>: Una carpeta para guardar imágenes u otros recursos que importes en tus componentes.</li>
+</ul>
+<h3 id="25-arrancando-la-aplicacion"><strong>2.5. ¡Arrancando la Aplicación!</strong></h3>
+<ol>
+<li>Asegúrate de estar en la carpeta raíz de tu proyecto en la terminal.</li>
+<li>Si no lo hiciste antes, instala las dependencias:
+    <div class="highlight"><pre><span></span><code>npm<span class="w"> </span>install
+</code></pre></div></li>
+<li>Ejecuta el servidor de desarrollo:
+    <div class="highlight"><pre><span></span><code>npm<span class="w"> </span>run<span class="w"> </span>dev
+</code></pre></div></li>
+<li>Vite iniciará un servidor local (probablemente en <code>http://localhost:5173</code> o similar) y debería abrir tu navegador automáticamente en esa dirección. Verás la página de bienvenida de React + Vite.</li>
+<li>¡Felicidades! Tu entorno de desarrollo React está funcionando. Mantén esta terminal abierta; detectará cambios en tu código y actualizará el navegador automáticamente (Hot Module Replacement - HMR).</li>
+</ol>
+<hr />
+<h2 id="3-jsx-escribiendo-ui-en-react"><strong>3. JSX: Escribiendo UI en React</strong></h2>
+<h3 id="31-tu-primer-componente-hola-mundo"><strong>3.1. Tu Primer Componente: "Hola Mundo"</strong></h3>
+<ol>
+<li>Abre el archivo <code>src/App.jsx</code> en tu editor.</li>
+<li>Verás una función llamada <code>App</code> que devuelve una estructura que parece HTML. ¡Eso es JSX!</li>
+<li>Vamos a simplificarlo. Borra todo el contenido dentro del <code>return (...)</code> y reemplázalo por esto:
+    <div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="s1">&#39;./App.css&#39;</span><span class="w"> </span><span class="c1">// Puedes mantener o quitar los imports no usados por ahora</span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="err">¡</span><span class="nx">Hola</span><span class="p">,</span><span class="w"> </span><span class="nx">Mundo</span><span class="w"> </span><span class="nx">React</span><span class="o">!</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="nx">Mi</span><span class="w"> </span><span class="nx">primera</span><span class="w"> </span><span class="nx">aplicación</span><span class="w"> </span><span class="nx">React</span><span class="w"> </span><span class="nx">está</span><span class="w"> </span><span class="nx">funcionando</span><span class="p">.&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="w">  </span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">App</span>
+</code></pre></div></li>
+<li>Guarda el archivo. ¡Mira cómo tu navegador se actualiza solo mostrando tu nuevo mensaje!</li>
+</ol>
+<h3 id="32-que-es-jsx-javascript-xml"><strong>3.2. ¿Qué es JSX? (JavaScript XML)</strong></h3>
+<ul>
+<li>JSX es una extensión de sintaxis para JavaScript que te permite escribir estructuras similares a HTML dentro de tu código JavaScript.</li>
+<li><strong>No es HTML real</strong>, ni tampoco una simple cadena de texto.</li>
+<li><strong>¿Por qué usarlo?</strong> Hace que definir la estructura de tus componentes sea muy visual e intuitivo.</li>
+<li><strong>Transpilación:</strong> El navegador no entiende JSX directamente. Herramientas como Babel (que Vite usa internamente) lo convierten en llamadas a funciones <code>React.createElement()</code> que el navegador sí entiende. No necesitas preocuparte por <code>createElement</code> ahora, solo saber que JSX es una forma más cómoda de escribirlo.</li>
+</ul>
+<h3 id="33-reglas-fundamentales-de-jsx"><strong>3.3. Reglas Fundamentales de JSX</strong></h3>
+<ol>
+<li><strong>Devolver un Solo Elemento Raíz:</strong> Un componente <em>siempre</em> debe devolver un único elemento JSX. Si necesitas devolver varios elementos juntos, envuélvelos en una etiqueta contenedora (como <code>&lt;div&gt;</code>) o usa un Fragmento de React (<code>&lt;&gt; ...</code>). El Fragmento es útil porque no añade un <code>&lt;div&gt;</code> extra innecesario al DOM final.
+    <div class="highlight"><pre><span></span><code><span class="c1">// Correcto:</span>
+<span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">  </span><span class="p">&lt;&gt;</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">Título</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="nx">Párrafo</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="w">  </span><span class="p">&lt;/&gt;</span>
+<span class="p">)</span>
+
+<span class="c1">// INCORRECTO:</span>
+<span class="c1">// return (</span>
+<span class="c1">//   &lt;h1&gt;Título&lt;/h1&gt;</span>
+<span class="c1">//   &lt;p&gt;Párrafo&lt;/p&gt;</span>
+<span class="c1">// )</span>
+</code></pre></div></li>
+<li><strong><code>className</code> en lugar de <code>class</code>:</strong> Para añadir clases CSS, usa el atributo <code>className</code>. (<code>class</code> es una palabra reservada en JavaScript).
+    <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;mi-clase&quot;</span><span class="p">&gt;</span><span class="nx">Contenido</span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div></li>
+<li><strong>Atributos en <code>camelCase</code>:</strong> La mayoría de los atributos HTML se escriben en <code>camelCase</code> en JSX. Ejemplos: <code>onclick</code> -&gt; <code>onClick</code>, <code>tabindex</code> -&gt; <code>tabIndex</code>, <code>maxlength</code> -&gt; <code>maxLength</code>. Una excepción importante es <code>for</code> en las etiquetas <code>&lt;label&gt;</code>, que se convierte en <code>htmlFor</code>.
+    <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">label</span><span class="w"> </span><span class="na">htmlFor</span><span class="o">=</span><span class="s">&quot;miInput&quot;</span><span class="p">&gt;</span><span class="nx">Etiqueta</span><span class="o">:</span><span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span><span class="w"> </span><span class="na">id</span><span class="o">=</span><span class="s">&quot;miInput&quot;</span><span class="w"> </span><span class="na">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">handleClick</span><span class="p">}</span><span class="w"> </span><span class="p">/&gt;</span>
+</code></pre></div></li>
+<li><strong>Cerrar Todas las Etiquetas:</strong> En JSX, <em>toda</em> etiqueta debe tener una etiqueta de cierre (<code>&lt;div&gt;&lt;/div&gt;</code>) o ser auto-cerrada si no tiene contenido (<code>&lt;img src="..." alt="..." /&gt;</code>, <code>&lt;input /&gt;</code>, <code>&lt;br /&gt;</code>).</li>
+</ol>
+<h3 id="34-incrustando-javascript-en-jsx-con"><strong>3.4. Incrustando JavaScript en JSX con <code>{}</code></strong></h3>
+<p>Puedes insertar cualquier <strong>expresión</strong> de JavaScript válida directamente dentro de tu JSX usando llaves <code>{}</code>.</p>
+<ul>
+<li><strong>Variables:</strong>
+    <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">nombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Mundo&quot;</span><span class="p">;</span>
+<span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">Hola</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nx">nombre</span><span class="p">}</span><span class="o">!</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;;</span><span class="w"> </span><span class="c1">// Muestra: Hola, Mundo!</span>
+</code></pre></div></li>
+<li><strong>Operaciones:</strong>
+    <div class="highlight"><pre><span></span><code><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="nx">Resultado</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="mf">5</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">10</span><span class="p">}&lt;/</span><span class="nt">p</span><span class="p">&gt;;</span><span class="w"> </span><span class="c1">// Muestra: Resultado: 50</span>
+</code></pre></div></li>
+<li><strong>Llamadas a Funciones:</strong>
+    <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">getAño</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">().</span><span class="nx">getFullYear</span><span class="p">();</span>
+<span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="nx">Año</span><span class="w"> </span><span class="nx">actual</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">getAño</span><span class="p">()}&lt;/</span><span class="nt">p</span><span class="p">&gt;;</span><span class="w"> </span><span class="c1">// Muestra: Año actual: 2023 (o el año actual)</span>
+</code></pre></div></li>
+<li><strong>Valores Booleanos, <code>null</code>, <code>undefined</code>:</strong> Estos valores <em>no renderizan nada visible</em>, lo cual es útil para mostrar cosas condicionalmente (lo veremos más adelante). <code>0</code> (cero) sí se renderiza.</li>
+</ul>
+<h3 id="35-diferencias-clave-jsx-vs-html-resumen"><strong>3.5. Diferencias Clave JSX vs. HTML (Resumen)</strong></h3>
+<ul>
+<li><code>class</code> =&gt; <code>className</code></li>
+<li><code>for</code> =&gt; <code>htmlFor</code></li>
+<li>Atributos =&gt; <code>camelCase</code> (ej. <code>onclick</code> =&gt; <code>onClick</code>)</li>
+<li>Estilos en línea (<code>style</code>): Requieren un objeto JavaScript con claves camelCase.
+    <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">style</span><span class="o">=</span><span class="p">{{</span><span class="w"> </span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">fontSize</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;16px&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">backgroundColor</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;lightyellow&#39;</span><span class="w"> </span><span class="p">}}&gt;</span>
+<span class="w">  </span><span class="nx">Texto</span><span class="w"> </span><span class="nx">con</span><span class="w"> </span><span class="nx">estilo</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div></li>
+<li>Todas las etiquetas deben cerrarse (<code>&lt;br /&gt;</code>, <code>&lt;img /&gt;</code>, etc.).</li>
+<li>Comentarios: <code>{/* Así se escribe un comentario en JSX */}</code></li>
+</ul>
+<hr />
+<h2 id="4-como-llega-react-al-navegador-el-renderizado"><strong>4. ¿Cómo llega React al Navegador? El Renderizado</strong></h2>
+<p>Echemos un último vistazo al archivo <code>src/main.jsx</code>. Es el pegamento que une tu código React con el HTML de tu navegador:</p>
+<ol>
+<li><code>import ReactDOM from 'react-dom/client';</code>: Importa la parte de React que sabe cómo hablar con el DOM del navegador.</li>
+<li><code>ReactDOM.createRoot(document.getElementById('root'))</code>: Encuentra el <code>&lt;div id="root"&gt;</code> en tu <code>index.html</code> y crea una "raíz" de React en ese punto. Es donde tu aplicación vivirá.</li>
+<li><code>.render(&lt;App /&gt;)</code> (o <code>&lt;React.StrictMode&gt;&lt;App /&gt;&lt;/React.StrictMode&gt;</code>) : Le dice a React que renderice (dibuje) tu componente <code>App</code> (y todo lo que este contenga) dentro de esa raíz.<ul>
+<li><code>&lt;React.StrictMode&gt;</code> es un ayudante que activa verificaciones adicionales <em>solo en desarrollo</em> para ayudarte a encontrar posibles problemas en tu código. No afecta la aplicación final (build de producción).</li>
+</ul>
+</li>
+</ol>
+<p><strong>El Flujo Completo:</strong> El navegador carga <code>index.html</code> -&gt; <code>index.html</code> carga <code>main.jsx</code> -&gt; <code>main.jsx</code> usa <code>ReactDOM</code> para tomar tu componente <code>&lt;App /&gt;</code> y lo inserta dentro del <code>&lt;div id="root"&gt;</code>.</p>
+<hr />
+<h2 id="5-a-practicar-primeros-pasos-con-codigo"><strong>5. ¡A Practicar! Primeros Pasos con Código</strong></h2>
+<p>Ahora es tu turno de experimentar. Intenta hacer lo siguiente en tu proyecto:</p>
+<ul>
+<li>
+<p><strong>Ejercicio 1: Modifica <code>App.jsx</code></strong></p>
+<ul>
+<li>Cambia el contenido dentro del <code>return</code> de <code>App</code>. Añade un título (<code>&lt;h1&gt;</code>), un párrafo (<code>&lt;p&gt;</code>) y una lista desordenada (<code>&lt;ul&gt;</code>) con varios elementos (<code>&lt;li&gt;</code>).</li>
+<li>Crea una variable JavaScript (ej. <code>const titulo = "Mi Lista de Tareas";</code>) antes del <code>return</code> y úsala dentro de un <code>&lt;h1&gt;</code> usando <code>{titulo}</code>.</li>
+<li>Añade una <code>className</code> a algún elemento (ej. <code>&lt;ul className="lista-bonita"&gt;</code>) y define algunos estilos simples para esa clase en <code>src/App.css</code> o <code>src/index.css</code>.</li>
+<li>Añade una imagen. Puedes descargar una, ponerla en <code>src/assets/</code>, importarla (<code>import miImagen from './assets/imagen.png';</code>) y usarla en una etiqueta <code>&lt;img src={miImagen} alt="Descripción" /&gt;</code>. ¡Recuerda la barra de cierre <code>/</code> y el <code>alt</code>!</li>
+</ul>
+</li>
+<li>
+<p><strong>Ejercicio 2: Crea un Nuevo Componente</strong></p>
+<ul>
+<li>Crea un nuevo archivo en <code>src/</code>, llámalo <code>Saludo.jsx</code>.</li>
+<li>Dentro de <code>Saludo.jsx</code>, define una función simple que devuelva un elemento JSX, por ejemplo:
+    <div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">Saludo</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span><span class="err">¡</span><span class="nx">Componente</span><span class="w"> </span><span class="nx">de</span><span class="w"> </span><span class="nx">Saludo</span><span class="o">!</span><span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;;</span>
+<span class="p">}</span>
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">Saludo</span><span class="p">;</span><span class="w"> </span><span class="c1">// ¡No olvides exportarlo!</span>
+</code></pre></div></li>
+<li>Ahora, en <code>src/App.jsx</code>, importa tu nuevo componente al principio del archivo:
+    <div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="nx">Saludo</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./Saludo&#39;</span><span class="p">;</span>
+</code></pre></div></li>
+<li>Usa tu componente dentro del JSX de <code>App</code> como si fuera una etiqueta HTML: <code>&lt;Saludo /&gt;</code>.
+    <div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">Mi</span><span class="w"> </span><span class="nx">Aplicación</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">Saludo</span><span class="w"> </span><span class="p">/&gt;</span><span class="w"> </span><span class="p">{</span><span class="cm">/* &lt;-- Aquí usas tu componente */</span><span class="p">}</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="nx">Más</span><span class="w"> </span><span class="nx">contenido</span><span class="p">...&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></li>
+<li>Guarda ambos archivos y verifica que veas el saludo en tu navegador.</li>
+</ul>
+</li>
+</ul>
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      2025 &copy; by JFVG
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs.sticky", "navigation.tabs", "navigation.top", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.indexes"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>
